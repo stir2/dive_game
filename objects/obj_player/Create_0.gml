@@ -46,6 +46,10 @@ jump_height = 0;
 grav = 0;
 air_level = tank_size;
 
+// Platforming constants
+COYOTE_FRAMES = 4;
+JUMP_BUFFER = 4;
+
 // Physics constants to use when the player is in water
 ACCEL_WATER = new vec2(0.7, 0.8);
 DECEL_WATER = new vec2(0.9, 0.9);
@@ -58,5 +62,3 @@ DECEL_AIR = new vec2(0.9, 0.95);
 JUMP_HEIGHT_AIR = 15;
 GRAV_AIR = 0.6;
 
-// Time counter to increment every frame
-t = 0;

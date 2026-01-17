@@ -3,7 +3,7 @@ for(c = 0; c < array_length(controls); c++){
 	key_down[c] = keyboard_check(controls[c]);
 	key_pressed[c] = keyboard_check_pressed(controls[c]);
 	if(key_pressed[c]){
-		latest_t_pressed[c] = t;
+		latest_t_pressed[c] = global.t;
 	}
 }
 
@@ -76,13 +76,10 @@ in_water = x < 700;
 
 // Increase/decrease air level depending on area
 if(in_water){
-	if(t % 16 == 0){
+	if(global.t % 16 == 0){
 		air_level--;
 	}
 } else {
 	air_level = min(air_level + 1, tank_size);
 }
 show_debug_message("Air level: " + string(air_level));
-
-
-t++;
