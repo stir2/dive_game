@@ -10,13 +10,13 @@
 
 // Define control constants
 controls = [
-	ord("d"),
-	ord("a"),
-	ord("w"),
-	ord("s"),
+	ord("D"),
+	ord("A"),
+	ord("W"),
+	ord("S"),
 	mb_left,
 	mb_right,
-	ord("e")
+	vk_space
 ];
 
 // key_down(KEY) is true when KEY is held
