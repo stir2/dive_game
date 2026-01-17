@@ -5,6 +5,7 @@
 	#macro DOWN 3
 	#macro SH_ATK 4
 	#macro LN_ATK 5
+	#macro PROPEL 6
 }
 
 // Define control constants
@@ -14,7 +15,8 @@ controls = [
 	vk_up,
 	vk_down,
 	mb_left,
-	mb_right
+	mb_right,
+	ord("e")
 ];
 
 // key_down(KEY) is true when KEY is held
