@@ -10,10 +10,10 @@
 
 // Define control constants
 controls = [
-	vk_right,
-	vk_left,
-	vk_up,
-	vk_down,
+	ord("d"),
+	ord("a"),
+	ord("w"),
+	ord("s"),
 	mb_left,
 	mb_right,
 	ord("e")
