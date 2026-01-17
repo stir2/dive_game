@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"objHarpoon",
+  "%Name":"obj_harpoon",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"objHarpoon",
+  "name":"obj_harpoon",
   "overriddenProperties":[],
   "parent":{
     "name":"dive_game",
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprHarpoon",
-    "path":"sprites/sprHarpoon/sprHarpoon.yy",
+    "name":"spr_harpoon",
+    "path":"sprites/spr_harpoon/spr_harpoon.yy",
   },
   "spriteMaskId":null,
   "visible":true,
