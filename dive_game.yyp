@@ -19,7 +19,10 @@
   },
   "name":"dive_game",
   "resources":[
+    {"id":{"name":"objHarpoon","path":"objects/objHarpoon/objHarpoon.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"sprHarpoon","path":"sprites/sprHarpoon/sprHarpoon.yy",},},
+    {"id":{"name":"sprHarpoonReel","path":"sprites/sprHarpoonReel/sprHarpoonReel.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
