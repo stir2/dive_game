@@ -21,6 +21,7 @@
   "resources":[
     {"id":{"name":"objEnemy","path":"objects/objEnemy/objEnemy.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"sprEnemy","path":"sprites/sprEnemy/sprEnemy.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
