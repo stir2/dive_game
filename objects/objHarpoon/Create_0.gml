@@ -10,6 +10,13 @@ onPlayer = true;
 xMovement = 0;
 yMovement = 0;
 
+//Hitbox Variable 
+myHitbox = noone;
+true_bbox_left = sprite_get_bbox_left(sprite_index);
+true_bbox_right = sprite_get_bbox_right(sprite_index);
+true_bbox_top = sprite_get_bbox_top(sprite_index);
+true_bbox_bottom = sprite_get_bbox_bottom(sprite_index);
+
 
 //idle state for harpoon, points in the direction of the player's mouse
 statePoint = function(){
@@ -21,10 +28,24 @@ statePoint = function(){
 	image_angle = angle;
 	
 	//on left click, if on player, throw
-	if(mouse_check_button_pressed(mb_left) && onPlayer){state = stateThrow;}
+	if(mouse_check_button_pressed(mb_left) && onPlayer){
+		state = stateThrow;
+		
+		//Store angle for short time to get size right
+		var _temp_angle = image_angle;
+		image_angle = 0;
+		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
+		image_angle = _temp_angle;
+	}
 
 	//on right click, close attack
-	if(mouse_check_button_pressed(mb_right) && onPlayer){state = stateHit;}
+	if(mouse_check_button_pressed(mb_right) && onPlayer){
+		state = stateHit;
+		var _temp_angle = image_angle;
+		image_angle = 0;
+		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
+		image_angle = _temp_angle;
+	}
 	sprite_index = sprHarpoon;
 }
 
@@ -65,6 +86,7 @@ stateReel = function(){
 		y = startY;
 		onPlayer = true;
 		state = statePoint;
+		instance_destroy(myHitBox);
 	}
 	sprite_index = sprHarpoonReel;
 }
@@ -80,6 +102,7 @@ stateHit = function(){
 	if(hitCounter <= 0){
 		hitCounter = hitTime;
 		state = statePoint;
+		instance_destroy(myHitBox);
 	}
 }
 
