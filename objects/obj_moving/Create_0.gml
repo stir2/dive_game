@@ -16,7 +16,7 @@ angle_speed = 0;
 /**
 /// @desc Returns a changed speed value, and ensures said speed value does not go over its limit.
 /// @param {any} _varSpeed The speed you wish to increase and return back
-/// @param {any*} _acceleration The speed you want to increase by
+/// @param {any*} a_acceleration The speed you want to increase by
 /// @param {any*} _max_speed The top speed to stop by
 /// @param {any*} _direction The firection the current instance is heading
 */

@@ -1,3 +1,4 @@
+event_inherited();
 { // Define input macros
 	#macro RIGHT 0
 	#macro LEFT 1
@@ -7,6 +8,15 @@
 	#macro LN_ATK 5
 	#macro PROPEL 6
 }
+
+hp = infinity;
+//Rewrite tookdamage script 
+tookDamage = function() {
+	air_level -= 10;
+}
+
+myHurtbox = instance_create_depth(x, y, 0, obj_HurtBox, new HurtBox(id, true, bbox_left, bbox_top, bbox_right, bbox_bottom));
+
 
 // Define control constants
 controls = [

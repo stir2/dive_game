@@ -1,3 +1,6 @@
+event_inherited();
+
+
 hp = 1; 
 iFrames = 0;
 
