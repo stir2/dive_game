@@ -25,7 +25,7 @@ state_point = function(){
 	image_angle = angle;
 	
 	//on left click, if on player, throw
-	if(mouse_check_button_pressed(mb_left) && onPlayer){
+	if(mouse_check_button_pressed(mb_left) && on_player){
 		state = state_throw;
 		
 		//Store angle for short time to get size right
@@ -36,7 +36,7 @@ state_point = function(){
 	}
 
 	//on right click, close attack
-	if(mouse_check_button_pressed(mb_right) && onPlayer){
+	if(mouse_check_button_pressed(mb_right) && on_player){
 		state = state_hit;
 		var _temp_angle = image_angle;
 		image_angle = 0;
