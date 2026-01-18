@@ -62,3 +62,8 @@ DECEL_AIR = new vec2(0.9, 0.95);
 JUMP_HEIGHT_AIR = 15;
 GRAV_AIR = 0.6;
 
+// Time counter to increment every frame
+t = 0;
+
+//Create harpoon object with this obj as anchor
+instance_create_layer(x, y, "Instances", obj_harpoon, {my_player : id});
