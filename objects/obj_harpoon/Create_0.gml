@@ -1,35 +1,32 @@
 /// @description Insert description here
 // You can write your code in this editor
 //vars:
-startX = x;
-startY = y;
-targetX = x;
-targetY = y;
+target_x = mouse_x;
+target_y = mouse_y;
+throw_distance_total = 0;
+throw_distance_passed = 0;
 angle = 0;
-onPlayer = true;
-xMovement = 0;
-yMovement = 0;
-
-//Hitbox Variable 
-myHitbox = noone;
-true_bbox_left = sprite_get_bbox_left(sprite_index);
-true_bbox_right = sprite_get_bbox_right(sprite_index);
-true_bbox_top = sprite_get_bbox_top(sprite_index);
-true_bbox_bottom = sprite_get_bbox_bottom(sprite_index);
+throw_speed = 10;
+reel_speed = 5;
+on_player = true;
+x_movement = 0;
+y_movement = 0;
 
 
 //idle state for harpoon, points in the direction of the player's mouse
-statePoint = function(){
-	targetX = mouse_x;
-	targetY = mouse_y;
+state_point = function(){
+	x = my_player.x;
+	y = my_player.y
+	target_x = mouse_x;
+	target_y = mouse_y;
 	//set angle so that throw and reel can access it
-	angle = point_direction(startX, startY, targetX, targetY);
+	angle = point_direction(my_player.x, my_player.y, target_x, target_y);
 	//make harpoon sprite point towards target
 	image_angle = angle;
 	
 	//on left click, if on player, throw
 	if(mouse_check_button_pressed(mb_left) && onPlayer){
-		state = stateThrow;
+		state = state_throw;
 		
 		//Store angle for short time to get size right
 		var _temp_angle = image_angle;
@@ -40,70 +37,76 @@ statePoint = function(){
 
 	//on right click, close attack
 	if(mouse_check_button_pressed(mb_right) && onPlayer){
-		state = stateHit;
+		state = state_hit;
 		var _temp_angle = image_angle;
 		image_angle = 0;
 		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
 		image_angle = _temp_angle;
 	}
-	sprite_index = sprHarpoon;
+	sprite_index = spr_harpoon;
 }
 
-throwTime = 30;
-throwCounter = throwTime;
 //throwing towards target point
-stateThrow = function(){
-	//if onPlayer is still true (throw just happened, set xMovement and yMovement)
-	if(onPlayer){
-		xMovement = (targetX - startX)/throwTime;
-		yMovement = (targetY - startY)/throwTime;
+state_throw = function(){
+	//if on_player is still true (throw just happened) set total distance
+	if(on_player){
+		throw_distance_total = point_distance(x, y, target_x, target_y);
+		
+		//tell harpoon that it isn't on the player anymore
+		on_player = false;
 	}
-	//tell harpoon that it isn't on the player anymore
-	onPlayer = false;
 	
+	
+	//calculate movement based on current speed
+	x_movement = cos((angle * pi)/180) * throw_speed;
+	y_movement = -sin((angle * pi)/180) * throw_speed;
+	
+	throw_distance_passed += point_distance(x, y, x + x_movement, y + y_movement);
 	//move towards the target direction until target is reached
-	x += xMovement;
-	y += yMovement;
-	throwCounter--;
+	x += x_movement;
+	y += y_movement;
 	
-	//once target is reached, reset vars and set to stateReel
-	if(throwCounter <= 0){
-		throwCounter = throwTime;
-		state = stateReel;
+	//once target is reached, reset vars and set to state_reel
+	if((throw_distance_total >= 0 && throw_distance_passed > throw_distance_total) || (throw_distance_total <= 0 && throw_distance_passed < throw_distance_total)){
+		throw_distance_passed = 0;
+		state = state_reel;
 	}
 }
 
 //come back to player
-stateReel = function(){
-	if(mouse_check_button(mb_left) && x != startX && y != startY){
-		x -= xMovement;
-		y -= yMovement;
+state_reel = function(){
+	if(mouse_check_button(mb_left)){
+		angle = point_direction(x, y, my_player.x, my_player.y);
+		image_angle = angle;
+		x_movement = cos((angle * pi)/180) * reel_speed;
+		y_movement = -sin((angle * pi)/180) * reel_speed;
+		x += x_movement;
+		y += y_movement;
 	}
 	
 	//once back to player, set back to idle state
-	if((x > startX - 3 && x < startX + 3) + (y > startY - 3 && y < startY + 3)){ //floating point cushioning
-		x = startX;
-		y = startY;
-		onPlayer = true;
-		state = statePoint;
+	if(place_meeting(x, y, my_player)){
+		on_player = true;
+		state = state_point;
 		instance_destroy(myHitBox);
 	}
-	sprite_index = sprHarpoonReel;
 }
 
-hitTime = 8;
-hitCounter = hitTime;
+hit_time = 8;
+hit_counter = hit_time;
 //for a certain number of frames, do hit animation
-stateHit = function(){
-	hitCounter--;
+state_hit = function(){
+	x = my_player.x;
+	y = my_player.y;
+	hit_counter--;
 	image_angle += 3;
 	
 	//once animation is over, reset vars and go back to idle state
-	if(hitCounter <= 0){
-		hitCounter = hitTime;
-		state = statePoint;
+	if(hit_counter <= 0){
+		hit_counter = hit_time;
+		state = state_point;
 		instance_destroy(myHitBox);
 	}
 }
 
-state = statePoint;
+state = state_point;

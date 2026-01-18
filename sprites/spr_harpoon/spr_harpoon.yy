@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"dive_game",
-    "path":"dive_game.yyp",
+    "name":"Test Art",
+    "path":"folders/Test Art.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
