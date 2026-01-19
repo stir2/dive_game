@@ -76,7 +76,7 @@ in_water = x < 700;
 
 // Increase/decrease air level depending on area
 if(in_water){
-	if(global.t % 16 == 0){
+	if(global.t % 40 == 0){
 		air_level--;
 	}
 } else {

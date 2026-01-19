@@ -30,7 +30,8 @@ hurtUser = function(_hitBoxID, _dmg, _knockbackSpd, _knockbackAng, _xDir, _yDir,
 		var _hbCenterX = _hitBoxID.x + _hitBoxID.width/2;
 		var _hbCenterY = _hitBoxID.y + _hitBoxID.height/2;
 	
-		if (_knockbackAng == undefined) {_knockbackAng = point_direction(_hbCenterX, _hbCenterY, _centerX, _centerY);}
+		
+		_knockbackAng ??= point_direction(_hbCenterX, _hbCenterY, _centerX, _centerY);
 		show_debug_message(_knockbackAng);
 	}
 	
