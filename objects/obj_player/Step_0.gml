@@ -49,7 +49,6 @@ if(latest_t_pressed[RIGHT] > latest_t_pressed[LEFT]){
 	horiz_input = 0;
 }
 
-show_debug_message("horiz_input: " + string(horiz_input));
 x_speed += horiz_input * accel.x;
 
 // Apply velocity decel
