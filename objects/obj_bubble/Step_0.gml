@@ -1,3 +1,5 @@
+event_inherited();
+
 if(global.t - latest_t_wandered > WANDER_COOLDOWN){
 	target_vel.x = random_range(-1 * WANDER_STRENGTH, WANDER_STRENGTH) * (1 - SPAWN_LOCATION_INFLUENCE);
 	target_vel.y= random_range(-1 * WANDER_STRENGTH, WANDER_STRENGTH) * (1 - SPAWN_LOCATION_INFLUENCE);

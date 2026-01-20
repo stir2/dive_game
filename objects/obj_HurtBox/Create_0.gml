@@ -25,10 +25,10 @@ hurtUser = function(_hitBoxID, _dmg, _knockbackSpd, _knockbackAng, _xDir, _yDir,
 	//Check to see if knock angle equals anything, if not then get the hurt boxes user and get the
 	//angle its coming at
 	if (instance_exists(_hitBoxID)) { 
-		var _centerX = x + width/2;
-		var _centerY = y + height/2; 
-		var _hbCenterX = _hitBoxID.x + _hitBoxID.width/2;
-		var _hbCenterY = _hitBoxID.y + _hitBoxID.height/2;
+		var _centerX = x;
+		var _centerY = y; 
+		var _hbCenterX = _hitBoxID.x;
+		var _hbCenterY = _hitBoxID.y;
 	
 		
 		_knockbackAng ??= point_direction(_hbCenterX, _hbCenterY, _centerX, _centerY);

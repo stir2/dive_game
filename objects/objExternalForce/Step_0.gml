@@ -10,7 +10,7 @@ if (instance_exists(myInstance)) {
 		set_speed_at_angle(other.angSpeed, other.angle);
 		other.angSpeed = speed_adjust_by(other.angSpeed, other.decaySpeed, 0, 1);
 		
-		//moveAndCollide();
+		moveAndCollide();
 		x += x_speed;
 		y += y_speed;
 		

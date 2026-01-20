@@ -1,4 +1,5 @@
 event_inherited();
+
 { // Define input macros
 	#macro RIGHT 0
 	#macro LEFT 1
@@ -49,7 +50,7 @@ grounded = false;
 tank_size = 40;
 
 // Vars for the player's current state, whether in water or air, set these each step
-vel = new vec2(0, 0);
+//vel = new vec2(0, 0);
 accel = new vec2(0, 0);
 decel = new vec2(0, 0);
 jump_height = 0;
@@ -74,6 +75,8 @@ GRAV_AIR = 0.6;
 
 // Time counter to increment every frame
 t = 0;
+
+
 
 //Create harpoon object with this obj as anchor
 instance_create_layer(x, y, "Instances", obj_harpoon, {my_player : id});

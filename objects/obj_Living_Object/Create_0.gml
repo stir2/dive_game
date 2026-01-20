@@ -4,6 +4,9 @@ event_inherited();
 hp = 1; 
 iFrames = 0;
 
+//boolean for if in water or not 
+in_water = false;
+
 tookDamage = function() { 
 	if (hp == 0) instance_destroy();
 }
