@@ -27,7 +27,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.1.210",
+    "IDEVersion":"2024.14.2.213",
   },
   "name":"dive_game",
   "resources":[
@@ -72,9 +72,7 @@
     {"id":{"name":"sprMovingBallDown","path":"sprites/sprMovingBallDown/sprMovingBallDown.yy",},},
     {"id":{"name":"sprNoHitBox","path":"sprites/sprNoHitBox/sprNoHitBox.yy",},},
     {"id":{"name":"sprResizeableBox","path":"sprites/sprResizeableBox/sprResizeableBox.yy",},},
-    {"id":{"name":"sprShaderTile","path":"sprites/sprShaderTile/sprShaderTile.yy",},},
     {"id":{"name":"sprWaterBox","path":"sprites/sprWaterBox/sprWaterBox.yy",},},
-    {"id":{"name":"shaderTile","path":"tilesets/shaderTile/shaderTile.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
