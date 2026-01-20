@@ -37,17 +37,16 @@ function pop(){
 function respawn(){
 	state = "respawning";
 	latest_t_unpopped = global.t;
-	sprite_index = spr_bubble;
 	x = spawn.x;
 	y = spawn.y;
-	
+	visible = true;
 	// begin reverse pop animation
 }
 
 function animBuffer(){
 	if(state == "popped"){
 		if(global.t - latest_t_popped > POP_ANIM_LENGTH){
-			sprite_index = sprNoHitBox;
+			visible = false;
 		}
 	} else if(state == "respawning") {
 		if(global.t - latest_t_unpopped > POP_ANIM_LENGTH){
