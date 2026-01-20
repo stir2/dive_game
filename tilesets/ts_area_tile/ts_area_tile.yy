@@ -1,25 +1,25 @@
 {
   "$GMTileSet":"v1",
-  "%Name":"shaderTile",
+  "%Name":"ts_area_tile",
   "autoTileSets":[],
   "macroPageTiles":{
     "SerialiseHeight":0,
     "SerialiseWidth":0,
     "TileSerialiseData":[],
   },
-  "name":"shaderTile",
+  "name":"ts_area_tile",
   "out_columns":2,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
-    "name":"dive_game",
-    "path":"dive_game.yyp",
+    "name":"Tile Sets",
+    "path":"folders/Tile Sets.yy",
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"sprShaderTile",
-    "path":"sprites/sprShaderTile/sprShaderTile.yy",
+    "name":"spr_area_tile",
+    "path":"sprites/spr_area_tile/spr_area_tile.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{

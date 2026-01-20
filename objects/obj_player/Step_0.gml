@@ -79,7 +79,7 @@ if(in_water){
 	if(global.t % 40 == 0){
 		air_level--;
 	}
-} else {
+} else if (global.t % 10 == 0){
 	air_level = min(air_level + 1, tank_size);
 }
  show_debug_message("Air level: " + string(air_level));

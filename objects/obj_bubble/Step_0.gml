@@ -65,11 +65,16 @@ if(place_meeting(x, y, obj_harpoon) || !in_water){
 
 // Unsquish bubbles
 var tries = 0;
+currTry = new vec2(0, 0);
 while (place_meeting(x, y, obj_bubble) && tries < 50) {
-    x += irandom_range(-0.5 * tries, 0.5 * tries);
-    y += irandom_range(-0.5 * tries, 0.5 * tries);
+	currTry = new vec2(irandom_range(-0.5 * tries, 0.5 * tries), 
+					irandom_range(-0.5 * tries, 0.5 * tries));
+    x += currTry.x;
+    y += currTry.y;
     tries++;
 	show_debug_message("UNSQUISH");
 }
+vel.x += currTry.x * 0.05;
+vel.y += currTry.y * 0.05;
 
 animBuffer();
