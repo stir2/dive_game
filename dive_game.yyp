@@ -47,7 +47,6 @@
     {"id":{"name":"obj_moving","path":"objects/obj_moving/obj_moving.yy",},},
     {"id":{"name":"obj_oceanblock","path":"objects/obj_oceanblock/obj_oceanblock.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
-    {"id":{"name":"obj_renderer","path":"objects/obj_renderer/obj_renderer.yy",},},
     {"id":{"name":"obj_ResizeableBox","path":"objects/obj_ResizeableBox/obj_ResizeableBox.yy",},},
     {"id":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},},
     {"id":{"name":"obj_water_zone","path":"objects/obj_water_zone/obj_water_zone.yy",},},
