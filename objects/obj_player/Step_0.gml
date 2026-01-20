@@ -41,13 +41,16 @@ if (key_down[DOWN] && !key_down[UP]){
 // Move left or right based on the latest key pressed
 if(latest_t_pressed[RIGHT] > latest_t_pressed[LEFT]){
 	
-	x_speed = x_speed + (key_down[RIGHT] ? 1 : (key_down[LEFT] ? -1 : 0)) * accel.x;
+	horiz_input = (key_down[RIGHT] ? 1 : (key_down[LEFT] ? -1 : 0));
 } else if (latest_t_pressed[RIGHT] < latest_t_pressed[LEFT]){
 	
-	x_speed = x_speed + (key_down[LEFT] ? -1 : (key_down[RIGHT] ? 1 : 0)) * accel.x;
+	horiz_input = (key_down[LEFT] ? -1 : (key_down[RIGHT] ? 1 : 0));
 } else {
-	// Both right/left been pressed at the same time, do nothing
+	horiz_input = 0;
 }
+
+show_debug_message("horiz_input: " + string(horiz_input));
+x_speed += horiz_input * accel.x;
 
 // Apply velocity decel
 x_speed *= decel.x;
@@ -91,3 +94,5 @@ if(in_water){
 	air_level = min(air_level + 1, tank_size);
 }
 //show_debug_message("Air level: " + string(air_level));
+
+setAnimationFrame();

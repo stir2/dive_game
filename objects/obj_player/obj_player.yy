@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_testplayer",
-    "path":"sprites/spr_testplayer/spr_testplayer.yy",
+    "name":"spr_diver_idle",
+    "path":"sprites/spr_diver_idle/spr_diver_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

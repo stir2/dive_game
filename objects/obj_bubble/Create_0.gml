@@ -28,6 +28,9 @@ function random_range(_a, _b){
 }
 
 function pop(){
+	if(state == "popped"){
+		return -1;
+	}
 	state = "popped";
 	latest_t_popped = global.t;
 	mask_index = sprNoHitBox;
@@ -35,6 +38,9 @@ function pop(){
 }
 
 function respawn(){
+	if(state == "respawning"){
+		return -1;
+	}
 	state = "respawning";
 	latest_t_unpopped = global.t;
 	x = spawn.x;

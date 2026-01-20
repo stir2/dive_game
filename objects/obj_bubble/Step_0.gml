@@ -56,7 +56,6 @@ if(state == "popped"){
 		}
 	}
 
-
 	if(place_meeting(x, y, obj_player)){
 		add_player_air(air_amount);
 		pop();

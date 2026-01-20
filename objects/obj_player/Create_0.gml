@@ -76,7 +76,22 @@ GRAV_AIR = 0.6;
 // Time counter to increment every frame
 t = 0;
 
-
+horiz_input = 0;
 
 //Create harpoon object with this obj as anchor
 instance_create_layer(x, y, "Instances", obj_harpoon, {my_player : id});
+
+function setAnimationFrame(){
+	if(key_down[UP] && abs(y_speed) > abs(x_speed)){
+		sprite_index = spr_diver_up;
+	} else if (horiz_input == 1){
+		sprite_index = spr_diver_right;
+		image_xscale = 1;
+	} else if (horiz_input == -1){
+		sprite_index = spr_diver_right;
+		image_xscale = -1;
+	} else {
+		sprite_index = spr_diver_idle;
+	}
+	mask_index = spr_diver_idle;
+}
