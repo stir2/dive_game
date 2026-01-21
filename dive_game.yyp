@@ -37,6 +37,7 @@
     {"id":{"name":"obj_bubble","path":"objects/obj_bubble/obj_bubble.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"obj_dottedline","path":"objects/obj_dottedline/obj_dottedline.yy",},},
+    {"id":{"name":"obj_enemy_eel","path":"objects/obj_enemy_eel/obj_enemy_eel.yy",},},
     {"id":{"name":"obj_enemy_shark","path":"objects/obj_enemy_shark/obj_enemy_shark.yy",},},
     {"id":{"name":"obj_enemy_urchin","path":"objects/obj_enemy_urchin/obj_enemy_urchin.yy",},},
     {"id":{"name":"obj_Enemy","path":"objects/obj_Enemy/obj_Enemy.yy",},},

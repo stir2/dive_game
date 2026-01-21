@@ -1,12 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_enemy_urchin",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_enemy_eel",
+  "eventList":[],
   "managed":true,
-  "name":"obj_enemy_urchin",
+  "name":"obj_enemy_eel",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemies",
@@ -33,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_Enemy",
-    "path":"sprites/spr_Enemy/spr_Enemy.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
