@@ -68,7 +68,7 @@ state_wander = function() {
 	}
 	
 	//set xscale to equal direction were moving
-	image_xscale = -x_movement;
+	image_xscale = x_movement;
 	#endregion
 	
 	#region Scan for player
