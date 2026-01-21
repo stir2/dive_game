@@ -263,5 +263,3 @@ onSolid = function(_platformsArr = pointer_null, _instanceSearch = noone)
 	//show_debug_message("On Solid = " + string(_onSolid));
 	return _onSolid;
 }
-	
-

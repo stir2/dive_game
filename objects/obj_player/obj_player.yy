@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_diver_idle",
-    "path":"sprites/spr_diver_idle/spr_diver_idle.yy",
+    "name":"spr_diver_swim_idle",
+    "path":"sprites/spr_diver_swim_idle/spr_diver_swim_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

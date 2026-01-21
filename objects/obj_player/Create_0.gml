@@ -13,7 +13,9 @@ event_inherited();
 hp = infinity;
 //Rewrite tookdamage script 
 tookDamage = function() {
-	air_level -= 10;
+	air_level -= 5;
+	latest_t_hurt = global.t;
+	image_index = 0; // Reset animation frame just in case we were hurt previously
 }
 
 myHurtbox = instance_create_depth(x, y, 0, obj_HurtBox, new HurtBox(id, true, bbox_left, bbox_top, bbox_right, bbox_bottom));
@@ -37,6 +39,7 @@ key_pressed = [false, false, false, false, false, false];
 // latest_t_pressed(KEY) last time each key was pressed.
 // Useful for conflicting keys like left/right.
 latest_t_pressed = [-1000, -1000, -1000, -1000, -1000, -1000];
+latest_t_hurt = -1000;
 
 // 2D vector structs are so useful
 function vec2(_x, _y) constructor {
@@ -57,9 +60,11 @@ jump_height = 0;
 grav = 0;
 air_level = tank_size;
 
-// Platforming constants
+// Misc constats for all times
 COYOTE_FRAMES = 4;
 JUMP_BUFFER = 4;
+HURT_ANIM_DURATION = 47;
+PLAYER_SCALE = 1.5;
 
 // Physics constants to use when the player is in water
 ACCEL_WATER = new vec2(0.7, 0.8);
@@ -78,20 +83,40 @@ t = 0;
 
 horiz_input = 0;
 
+image_xscale = PLAYER_SCALE;
+image_yscale = PLAYER_SCALE;
+
 //Create harpoon object with this obj as anchor
 instance_create_layer(x, y, "Instances", obj_harpoon, {my_player : id});
 
 function setAnimationFrame(){
-	if(key_down[UP] && abs(y_speed) > abs(x_speed)){
-		sprite_index = spr_diver_up;
-	} else if (horiz_input == 1){
-		sprite_index = spr_diver_right;
-		image_xscale = 1;
-	} else if (horiz_input == -1){
-		sprite_index = spr_diver_right;
-		image_xscale = -1;
+	
+	var index_before = sprite_index;
+	
+	if(in_water){
+		if(key_down[UP] && abs(y_speed) > abs(x_speed)){
+			sprite_index = spr_diver_swim_up;
+		} else if (horiz_input == 0){
+			sprite_index = spr_diver_swim_idle;
+		} else {
+			sprite_index = spr_diver_swim_right;
+		}
 	} else {
-		sprite_index = spr_diver_idle;
+		if(horiz_input == 0){
+			sprite_index = spr_diver_air_idle;
+		} else {
+			sprite_index = spr_diver_walk_right;
+		}
 	}
-	mask_index = spr_diver_idle;
+	
+	if(global.t - latest_t_hurt < HURT_ANIM_DURATION){
+		sprite_index = spr_diver_hurt;
+	}
+	
+	if(horiz_input != 0) image_xscale = horiz_input * PLAYER_SCALE;
+	mask_index = spr_diver_swim_idle
+	
+	if(index_before != sprite_index){
+		image_index = 0; // Reset animation frame each time it switches
+	}
 }

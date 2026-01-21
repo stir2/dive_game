@@ -1,4 +1,5 @@
 event_inherited();
+setAnimationFrame();
 
 // Check control keys for this frame
 for(c = 0; c < array_length(controls); c++){
@@ -55,7 +56,6 @@ x_speed += horiz_input * accel.x;
 x_speed *= decel.x;
 y_speed *= decel.y;
 
-
 // Testing water/air boundaries
 //in_water = x < 700;
 
@@ -93,5 +93,3 @@ if(in_water){
 	air_level = min(air_level + 1, tank_size);
 }
 //show_debug_message("Air level: " + string(air_level));
-
-setAnimationFrame();
