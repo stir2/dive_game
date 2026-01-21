@@ -91,22 +91,57 @@ state_wander = function() {
 chargeTime = 60;
 chargeTimer = chargeTime;
 targetPlayer = noone;
-state_ready_attack = function(){ 
+state_ready_attack = function() { 
 	if (chargeTimer < 1) { 
 		//Go into attak state
-		
+		attack_counter = attack_time;
+		state = state_attack;
 	}
 	else {
 		//Decrement timer
 		chargeTimer--;
 		
 		//Aim self at player
-		image_angle = point_direction(x, y, targetPlayer.x, targetPlayer.y) * image_xscale;
+		angle_direction = point_direction(x, y, targetPlayer.x, targetPlayer.y);
+		image_angle = angle_direction;
 		
 	}
 	
-	//if (dcos(image_angle != 0))	image_xscale = -sign(dcos(image_angle))
+	image_xscale = -1;
 	
+	if (dcos(image_angle != 0))	image_yscale = sign(dcos(image_angle));
+	
+}
+	
+//attack state 
+attack_speed = 10;
+attack_time = 30;
+attack_counter = attack_time;
+state_attack = function() { 
+	//Check if timer is hit
+	if (attack_counter < 1) { 
+		//Decelerate
+		angle_speed = speed_adjust_by(angle_speed, -1, 0, 1);
+		//Divide speed by angle
+		set_speed_at_angle(angle_speed, angle_direction);
+		
+		if (angle_speed == 0) {
+			state = state_wander;
+			image_xscale = -sign(dcos(image_angle));
+			image_yscale = 1;
+			image_angle = 0;
+		}
+	}
+	else {
+		//Decrement Timer
+		attack_counter--;
+		
+		//Move at max speed
+		angle_speed = attack_speed;
+		set_speed_at_angle(angle_speed, angle_direction);
+	}
+	
+	moveAndCollide();
 }
 
 state = state_wander;
