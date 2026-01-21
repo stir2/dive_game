@@ -15,6 +15,8 @@ move_speed_max = 1.5;
 slow_down_speed = false;
 x_movement = 1;
 
+detection_radius = 350;
+
 myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 10, undefined,0,0,0,[obj_player],,,-1,,60))
 //Urchin floats around in water... that it all it does is float for now 
 state_wander = function() { 
@@ -70,7 +72,7 @@ state_wander = function() {
 	#endregion
 	
 	#region Scan for player
-	var _player = collision_circle(x,y, 200, obj_player, false, false);
+	var _player = collision_circle(x,y, detection_radius, obj_player, false, false);
 	if (instance_exists(_player)) {
 		//Set variables for ready attack state
 		chargeTimer = chargeTime;
@@ -107,14 +109,14 @@ state_ready_attack = function() {
 		
 	}
 	
-	image_xscale = -1;
+	image_xscale = 1;
 	
 	if (dcos(image_angle != 0))	image_yscale = sign(dcos(image_angle));
 	
 }
 	
 //attack state 
-attack_speed = 10;
+attack_speed = 20;
 attack_time = 30;
 attack_counter = attack_time;
 state_attack = function() { 
@@ -127,7 +129,7 @@ state_attack = function() {
 		
 		if (angle_speed == 0) {
 			state = state_wander;
-			image_xscale = -sign(dcos(image_angle));
+			image_xscale = sign(dcos(image_angle));
 			image_yscale = 1;
 			image_angle = 0;
 		}
