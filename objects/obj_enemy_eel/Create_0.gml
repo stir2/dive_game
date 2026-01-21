@@ -2,7 +2,7 @@
 event_inherited();
 
 //Set HP 
-hp = 2;
+hp = 5;
 
 // Up and down motion
 float_speed = .01;
@@ -15,7 +15,10 @@ move_speed_max = 1.5;
 slow_down_speed = false;
 x_movement = 1;
 
-detection_radius = 500;
+detection_radius = 350;
+//attack vars
+attack_time = 60;
+attack_counter = attack_time;
 
 myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 10, undefined,0,0,0,[obj_player],,,-1,,60))
 //Urchin floats around in water... that it all it does is float for now 
@@ -74,72 +77,20 @@ state_wander = function() {
 	#region Scan for player
 	var _player = collision_circle(x,y, detection_radius, obj_player, false, false);
 	if (instance_exists(_player)) {
-		//Set variables for ready attack state
-		chargeTimer = chargeTime;
-		targetPlayer = _player
-		
-		//Go into ready attack state
-		state = state_ready_attack;
+		//send projectile
+		if(attack_counter == attack_time){
+			var _player = collision_circle(x,y, detection_radius, obj_player, false, false);
+			if (instance_exists(_player)) {
+				instance_create_layer(x, y, "Instances", obj_eel_zap, {angle : point_direction(x, y, _player.x, _player.y)})
+			}
+		}
+		//decrement attack counter
+		attack_counter--;
+		if(attack_counter <= 0){attack_counter = attack_time;}
 	}
 	
 	#endregion
 	//show_debug_message("y_speed = " + string(y_speed));
-	
-	moveAndCollide();
-}
-
-
-//ready attack State 
-chargeTime = 20;
-chargeTimer = chargeTime;
-targetPlayer = noone;
-state_ready_attack = function() { 
-	if (chargeTimer < 1) { 
-		//Go into attak state
-		state = state_attack;
-	}
-	else {
-		//Decrement timer
-		chargeTimer--;
-		
-		//Aim self at player
-		angle_direction = point_direction(x, y, targetPlayer.x, targetPlayer.y);
-		image_angle = angle_direction;
-		
-	}
-	
-	image_xscale = 1;
-	
-	if (dcos(image_angle != 0))	image_yscale = sign(dcos(image_angle));
-	
-}
-	
-//attack state 
-attack_speed = 4;
-state_attack = function() { 
-	//Check if player is gone
-	var _player = collision_circle(x,y, detection_radius, obj_player, false, false);
-	if (!instance_exists(_player)){
-		//Decelerate
-		angle_speed = speed_adjust_by(angle_speed, -1, 0, 1);
-		//Divide speed by angle
-		set_speed_at_angle(angle_speed, angle_direction);
-		
-		if (angle_speed == 0) {
-			state = state_wander;
-			image_xscale = sign(dcos(image_angle));
-			image_yscale = 1;
-			image_angle = 0;
-		}
-	} 
-	else {
-		//Aim self at player
-		angle_direction = point_direction(x, y, targetPlayer.x, targetPlayer.y);
-		image_angle = angle_direction;
-		//Move at max speed
-		angle_speed = attack_speed;
-		set_speed_at_angle(angle_speed, angle_direction);
-	}
 	
 	moveAndCollide();
 }
