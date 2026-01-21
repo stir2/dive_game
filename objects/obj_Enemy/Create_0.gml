@@ -10,7 +10,6 @@ tookDamage = function() {
 	//Start Shake time
 	damage_shake_counter = damage_shake_time;
 	
-	
 }
 
 //Hurtbox Creation

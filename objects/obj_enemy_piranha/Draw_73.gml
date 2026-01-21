@@ -1,0 +1,1 @@
+draw_circle(x,y, detection_radius, true);
