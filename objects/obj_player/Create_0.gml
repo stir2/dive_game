@@ -11,6 +11,8 @@ event_inherited();
 }
 
 hp = infinity;
+sanddollars = 0;
+
 //Rewrite tookdamage script 
 tookDamage = function() {
 	air_level -= 5;
