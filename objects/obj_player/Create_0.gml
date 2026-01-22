@@ -11,7 +11,6 @@ event_inherited();
 }
 
 hp = infinity;
-sanddollars = 0;
 
 death_timer = 60;
 
@@ -132,6 +131,3 @@ function setAnimationFrame(){
 }
 //Create instance of camera
 instance_create_layer(x, y, "Instances", obj_camera);
-
-//simple hud instance for test
-instance_create_layer(x, y, "Instances", obj_HUD);

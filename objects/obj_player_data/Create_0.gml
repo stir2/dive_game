@@ -1,1 +1,0 @@
-sandollars = 0;
