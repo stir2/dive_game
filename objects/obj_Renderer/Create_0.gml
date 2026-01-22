@@ -5,10 +5,14 @@ in_water = false;
 distort1_str = 0;
 distort2_str = 0;
 glint_color =  [ 0.00,0.00,0.00,0 ];
+vignette_edges = [0, 0];
 glow_str = 0;
 
 latest_transition_t = -1000;
 blur_str = 0;
+
+// GUI constants
+//CURRENCY_UI_POS = vec2(20, view_hport - 120);
 
 //Effect constants for all times
 GLOW_QUALITY = 3;
@@ -25,24 +29,31 @@ DISTORT1_STR_WATER = 1;
 DISTORT2_STR_WATER = 1;
 GLINT_COLOR_WATER = [ 0.00,0.00,0.00,0 ];
 GLOW_STR_WATER = 0.225;
+VIGNETTE_EDGES_WATER = [ 0.67,1.30 ];
 
 // Effect constants for when the player is in air
 DISTORT1_STR_AIR = 0.1;
 DISTORT2_STR_AIR = 0.1;
 GLINT_COLOR_AIR = [ 0.00,0.00,0.00,0 ];
-GLOW_STR_AIR = 0.1;
+GLOW_STR_AIR = 0.075;
+VIGNETTE_EDGES_AIR = [ 0.95,1.30 ];
 
 fx_glow = layer_get_fx("Effect_Glow");
 fx_underwater = layer_get_fx("Effect_Underwater");
 fx_blur = layer_get_fx("Effect_Blur");
+fx_vignette = layer_get_fx("Effect_Vignette");
 
 params_glow = fx_get_parameters(fx_glow);
 params_underwater = fx_get_parameters(fx_underwater);
 params_blur = fx_get_parameters(fx_blur);
+params_vignette = fx_get_parameters(fx_vignette);
 
 params_glow.g_GlowQuality = GLOW_QUALITY;
 params_glow.g_GlowRadius = GLOW_RADIUS;
 
 fx_set_parameters(fx_glow, params_glow);
 
-show_debug_message(fx_get_parameter_names(fx_underwater));
+function vec2(_x, _y) constructor {
+    x = _x;
+    y = _y;
+}
