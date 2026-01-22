@@ -83,7 +83,7 @@ state_wander = function() {
 		//send projectile
 		if(attack_counter == attack_time){
 			if (instance_exists(_player)) {
-				//instance_create_layer(x, y, "Instances", obj_eel_zap, {angle : point_direction(x, y, _player.x, _player.y)})
+				instance_create_layer(x, y, "Instances", obj_eel_zap, {angle : point_direction(x, y, _player.x, _player.y)})
 			}
 		}
 		//decrement attack counter

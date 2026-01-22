@@ -20,13 +20,32 @@ y_dist = 0;
 x_move = 0;
 y_move = 0;
 
+//Enemies set this speed in their create events
+move_speed = .1;
+move_speed_max = 1;
 
 calculate_move = function(){
 	x_dist = (nodes[node_target].nx - x);
 	y_dist = (nodes[node_target].ny - y);
 	var _move_angle = point_direction(x, y, nodes[node_target].nx, nodes[node_target].ny);
-	x_speed = cos((_move_angle * pi)/180) * move_speed_max;
-	y_speed = -sin((_move_angle * pi)/180) * move_speed_max;
+	
+	//Get the distance that will be covered when slowing down
+	var _slow_down_distance = scrCalculateDistanceSlowingDown(angle_speed, move_speed);
+	
+	//If that distance is going to surpassing or equal to the distance we are from the target
+	if (_slow_down_distance >= point_distance(x, y, nodes[node_target].nx,  nodes[node_target].ny)){
+		//slow down
+		angle_speed = speed_adjust_by(angle_speed, -move_speed, 0, 1);
+	}
+	else { 
+		//Increase speed
+		angle_speed = speed_adjust_by(angle_speed, move_speed, move_speed_max, 1);
+	}
+	// Set Speed at move_angle
+	x_speed = cos((_move_angle * pi)/180) * angle_speed;
+	y_speed = -sin((_move_angle * pi)/180) * angle_speed;
+	
+	//Set image_xscale to be direction moving in
 	if(x_dist < 0){image_xscale = -1;}
 	else if(x_dist > 0){image_xscale = 1;}
 }
