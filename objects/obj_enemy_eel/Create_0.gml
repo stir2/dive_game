@@ -21,7 +21,7 @@ attack_time = 60;
 attack_counter = attack_time;
 
 move_in_direction = function(){
-	var _move_angle = point_direction(nodes[node_index].nx, nodes[node_index].ny, nodes[node_target].nx, nodes[node_target].ny);
+	var _move_angle = point_direction(x, y, nodes[node_target].nx, nodes[node_target].ny);
 	x_speed = cos((_move_angle * pi)/180) * move_speed_max;
 	y_speed = -sin((_move_angle * pi)/180) * move_speed_max;
 	if(x_dist < 0){image_xscale = -1;}
@@ -29,9 +29,7 @@ move_in_direction = function(){
 }
 
 myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 10, undefined,0,0,0,[obj_player],,,-1,,60));
- 
-state_wander = function() { 
-	//#region Code for Small up and down motion
+ {//#region Code for Small up and down motion
 	////Check if were slowing down or speeding up
 	////Slow down
 	//if (slow_down_float) 
@@ -79,6 +77,8 @@ state_wander = function() {
 	//}
 	
 	//set xscale to equal direction were moving
+}
+state_wander = function() { 
 	
 	idle_move();
 	
@@ -92,7 +92,7 @@ state_wander = function() {
 		if(attack_counter == attack_time){
 			var _player = collision_circle(x,y, detection_radius, obj_player, false, false);
 			if (instance_exists(_player)) {
-				instance_create_layer(x, y, "Instances", obj_eel_zap, {angle : point_direction(x, y, _player.x, _player.y)})
+				//instance_create_layer(x, y, "Instances", obj_eel_zap, {angle : point_direction(x, y, _player.x, _player.y)})
 			}
 		}
 		//decrement attack counter

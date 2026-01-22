@@ -56,8 +56,8 @@ idle_move = function(){
 					else{node_target = node_index - 1;}
 				}
 				
-				x_dist = (nodes[node_target].nx - nodes[node_index].nx);
-				y_dist = (nodes[node_target].ny - nodes[node_index].ny);
+				x_dist = (nodes[node_target].nx - x);
+				y_dist = (nodes[node_target].ny - y);
 			}
 			//if we have not reached the target node
 			else{move_in_direction();}
@@ -67,7 +67,7 @@ idle_move = function(){
 			if(array_length(nodes) <= 1){break;}
 			//if we have reached the target node
 			//(if x/y dist is pos/neg and we have reached or gone past it)
-			if(((x_dist >= 0 && x >= nodes[node_target].nx) || (x_dist < 0 && x <= nodes[node_target].nx)) && ((y_dist >= 0 && y >= nodes[node_target].ny) || (y_dist < 0 && y <= nodes[node_target].ny))){
+			if(((x_dist >= 0 && x >= nodes[node_target].nx) || (x_dist <= 0 && x <= nodes[node_target].nx)) && ((y_dist >= 0 && y >= nodes[node_target].ny) || (y_dist <= 0 && y <= nodes[node_target].ny))){
 				node_index = node_target;
 				////if we've reached the end of the node string
 				if(node_index == array_length(nodes) - 1){
@@ -77,8 +77,8 @@ idle_move = function(){
 				////if we've not reached the end, set next node to next index
 				else{node_target = node_index + 1;}
 				
-				x_dist = (nodes[node_target].nx - nodes[node_index].nx);
-				y_dist = (nodes[node_target].ny - nodes[node_index].ny);
+				x_dist = (nodes[node_target].nx - x);
+				y_dist = (nodes[node_target].ny - y);
 			}
 			//if we have not reached the target node
 			else{move_in_direction();}
