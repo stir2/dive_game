@@ -122,3 +122,5 @@ function setAnimationFrame(){
 		image_index = 0; // Reset animation frame each time it switches
 	}
 }
+//Create instance of camera
+instance_create_layer(x, y, "Instances", obj_camera);

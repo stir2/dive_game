@@ -6,8 +6,8 @@
   "name":"obj_oceanblock",
   "overriddenProperties":[],
   "parent":{
-    "name":"Test Art",
-    "path":"folders/Test Art.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",
