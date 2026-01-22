@@ -10,7 +10,7 @@ in_water = true;
 
 VEL_TRANSITION_MULT = 0.005;
 BOUNCE_STRENGTH = 0.7;
-RESPAWN_COOLDOWN = 10 * 60;
+RESPAWN_COOLDOWN = infinity //10 * 60; this made enemy prize bubbles come back out of nowhere
 WANDER_COOLDOWN = 1 * 60;
 WANDER_STRENGTH = 1;
 SPAWN_LOCATION_INFLUENCE = 0.7;

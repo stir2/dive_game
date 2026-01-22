@@ -1,6 +1,12 @@
 event_inherited();
 setAnimationFrame();
 
+if(air_level <= 0){
+	if(death_timer <= 0){room_restart();}
+	death_timer--;
+	return;
+}
+
 // Check control keys for this frame
 for(c = 0; c < array_length(controls); c++){
 	key_down[c] = keyboard_check(controls[c]);

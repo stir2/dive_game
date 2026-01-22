@@ -132,7 +132,21 @@ stateIdle = function(){
 
 //State for when the enemy is supposed to die
 stateDead = function(){
+	//make death effect - replace lol
+	instance_create_layer(x, y, "Instances", obj_ridiculous_explosion);
 	
+	//spawn air if low
+	if(obj_player.air_level < obj_player.tank_size/2){
+		instance_create_layer(x, y, "Instances", obj_bubble_medium);
+	}
+	//spawn sand dollars
+	else{
+		var _sd_spacing = 50;
+		for(var _i = 0; _i < drop_amount; _i++){
+			instance_create_layer(x + random(_sd_spacing), y + random(_sd_spacing), "Instances", obj_sanddollar);
+		}
+	}
+	instance_destroy();
 }
 
 state = stateIdle; 

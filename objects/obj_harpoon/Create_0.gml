@@ -71,11 +71,11 @@ state_throw = function(){
 		throw_distance_passed = 0;
 		state = state_reel;
 	}
-	
+	/* This killed enemy reward bubbles instantly
 	var bubble_touching = instance_place(x, y, obj_bubble);
 	if(instance_exists(bubble_touching)){
 		bubble_touching.pop();
-	}
+	}*/
 }
 
 //come back to player

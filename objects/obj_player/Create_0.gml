@@ -13,6 +13,8 @@ event_inherited();
 hp = infinity;
 sanddollars = 0;
 
+death_timer = 60;
+
 //Rewrite tookdamage script 
 tookDamage = function() {
 	air_level -= 5;
@@ -115,8 +117,14 @@ function setAnimationFrame(){
 		sprite_index = spr_diver_hurt;
 	}
 	
+	if(air_level <= 0){
+		sprite_index = spr_diver_death;
+	}
+	
 	if(horiz_input != 0) image_xscale = horiz_input * PLAYER_SCALE;
 	mask_index = spr_diver_swim_idle
+	
+	
 	
 	if(index_before != sprite_index){
 		image_index = 0; // Reset animation frame each time it switches
@@ -124,3 +132,6 @@ function setAnimationFrame(){
 }
 //Create instance of camera
 instance_create_layer(x, y, "Instances", obj_camera);
+
+//simple hud instance for test
+instance_create_layer(x, y, "Instances", obj_HUD);
