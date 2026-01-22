@@ -8,7 +8,9 @@
   ],
   "managed":true,
   "name":"obj_enemy_eel",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Enemy","path":"objects/obj_Enemy/obj_Enemy.yy",},"propertyId":{"name":"movement_type","path":"objects/obj_Enemy/obj_Enemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
+  ],
   "parent":{
     "name":"Enemies",
     "path":"folders/Objects/Enemies.yy",
