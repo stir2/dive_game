@@ -20,14 +20,6 @@ detection_radius = 350;
 attack_time = 60;
 attack_counter = attack_time;
 
-move_in_direction = function(){
-	var _move_angle = point_direction(x, y, nodes[node_target].nx, nodes[node_target].ny);
-	x_speed = cos((_move_angle * pi)/180) * move_speed_max;
-	y_speed = -sin((_move_angle * pi)/180) * move_speed_max;
-	if(x_dist < 0){image_xscale = -1;}
-	else if(x_dist > 0){image_xscale = 1;}
-}
-
 myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 10, undefined,0,0,0,[obj_player],,,-1,,60));
  {//#region Code for Small up and down motion
 	////Check if were slowing down or speeding up
@@ -90,7 +82,6 @@ state_wander = function() {
 	if (instance_exists(_player)) {
 		//send projectile
 		if(attack_counter == attack_time){
-			var _player = collision_circle(x,y, detection_radius, obj_player, false, false);
 			if (instance_exists(_player)) {
 				//instance_create_layer(x, y, "Instances", obj_eel_zap, {angle : point_direction(x, y, _player.x, _player.y)})
 			}

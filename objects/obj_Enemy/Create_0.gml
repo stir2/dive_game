@@ -20,7 +20,16 @@ y_dist = 0;
 x_move = 0;
 y_move = 0;
 
-move_in_direction = function(){}
+
+calculate_move = function(){
+	x_dist = (nodes[node_target].nx - x);
+	y_dist = (nodes[node_target].ny - y);
+	var _move_angle = point_direction(x, y, nodes[node_target].nx, nodes[node_target].ny);
+	x_speed = cos((_move_angle * pi)/180) * move_speed_max;
+	y_speed = -sin((_move_angle * pi)/180) * move_speed_max;
+	if(x_dist < 0){image_xscale = -1;}
+	else if(x_dist > 0){image_xscale = 1;}
+}
 
 //moves the enemy in whichever way is denoted
 idle_move = function(){
@@ -54,13 +63,9 @@ idle_move = function(){
 					}
 					////if we've not reached the beginning, set next node to previous index
 					else{node_target = node_index - 1;}
-				}
-				
-				x_dist = (nodes[node_target].nx - x);
-				y_dist = (nodes[node_target].ny - y);
+				}				
 			}
-			//if we have not reached the target node
-			else{move_in_direction();}
+			calculate_move();
 			
 		}break;
 		case Movement_Type.loop : {
@@ -76,12 +81,8 @@ idle_move = function(){
 				}
 				////if we've not reached the end, set next node to next index
 				else{node_target = node_index + 1;}
-				
-				x_dist = (nodes[node_target].nx - x);
-				y_dist = (nodes[node_target].ny - y);
 			}
-			//if we have not reached the target node
-			else{move_in_direction();}
+			calculate_move();
 		}break;
 		default : {
 			//bubble type wander code goes here (all enemies should float if node info is unavailable)

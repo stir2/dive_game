@@ -15,3 +15,8 @@ draw_text(x, y+20, "[" + string(x) + ", " + string(y) + "]");
 draw_text(x, y+30, "[" + string(nodes[node_target].nx) + ", " + string(nodes[node_target].ny) + "]");
 draw_text(x, y+40, "x_dist: " + string(x_dist));
 draw_text(x, y+50, "y_dist: " + string(y_dist));
+
+draw_circle(x, y, 2, false);
+for (var _i = 0; _i < array_length(nodes); _i++) { 
+    draw_circle_colour(nodes[_i].nx, nodes[_i].ny, 2, c_red, c_orange, false);
+}

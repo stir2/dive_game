@@ -11,16 +11,17 @@ directionFloating = -1;
 slow_down_float = false;
 //Left and right motion
 move_speed = .01;
-move_speed_max = 1.5;
+move_speed_max = 4; //1.5
 slow_down_speed = false;
 x_movement = 1;
 
 detection_radius = 350;
 
+
 myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 10, undefined,0,0,0,[obj_player],,,-1,,60))
 //Urchin floats around in water... that it all it does is float for now 
 state_wander = function() { 
-	#region Code for Small up and down motion
+	{/*#region Code for Small up and down motion
 	//Check if were slowing down or speeding up
 	//Slow down
 	if (slow_down_float) 
@@ -70,6 +71,10 @@ state_wander = function() {
 	//set xscale to equal direction were moving
 	image_xscale = x_movement;
 	#endregion
+	*/
+	}
+	
+	idle_move();
 	
 	#region Scan for player
 	var _player = collision_circle(x,y, detection_radius, obj_player, false, false);
@@ -129,6 +134,7 @@ state_attack = function() {
 		
 		if (angle_speed == 0) {
 			state = state_wander;
+			calculate_move();
 			image_xscale = sign(dcos(image_angle));
 			image_yscale = 1;
 			image_angle = 0;
