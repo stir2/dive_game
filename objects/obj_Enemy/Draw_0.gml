@@ -8,10 +8,14 @@ if (damage_shake_counter > 0) {
 else {
 	shake_angle = 0;
 }
-draw_sprite_ext(sprite_index, image_number, x, y, image_xscale, image_yscale, 
+
+scrSetPaletteSwapShader(spr_palette_enemy, image_alpha, current_palette);
+
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 
 	image_angle + shake_angle, (damage_shake_counter > 0) ? 
 	make_colour_hsv(170, 150, 255) : c_white, image_alpha);
-
+	
+shader_reset();
 //draw_text(x, y, string(node_index) + ", " + string(node_target));
 //draw_text(x, y+10, "[" + string(nodes[node_index].nx) + ", " + string(nodes[node_index].ny) + "]");
 //draw_text(x, y+20, "[" + string(x) + ", " + string(y) + "]");

@@ -91,6 +91,8 @@ state_wander = function() {
 	//show_debug_message("y_speed = " + string(y_speed));
 	
 	moveAndCollide();
+	
+	sprite_index = spr_enemy_shark;
 }
 
 
@@ -150,6 +152,8 @@ state_attack = function() {
 	}
 	
 	moveAndCollide();
+	
+	sprite_index = spr_enemy_shark_attack;
 }
 
 state = state_wander;

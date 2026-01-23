@@ -1,6 +1,8 @@
 // Inherit the parent event
 event_inherited();
 
+current_palette = spr_palette_enemy_test;
+
 enum Movement_Type{
 	wander,
 	bounce,
