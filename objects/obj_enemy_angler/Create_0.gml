@@ -2,7 +2,7 @@
 event_inherited();
 
 //Set HP 
-hp = 5;
+hp = 3;
 
 // Up and down motion
 float_speed = .01;
@@ -17,7 +17,7 @@ x_movement = 1;
 
 detection_radius = 150;
 
-myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 10, undefined,0,0,0,[obj_player],,,-1,,60))
+myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, knock_back_amount, undefined,0,0,0,[obj_player],,,-1,,60))
 //Urchin floats around in water... that it all it does is float for now 
 state_wander = function() { 
 	//#region Code for Small up and down motion
@@ -92,7 +92,7 @@ state_wander = function() {
 
 
 //ready attack State 
-chargeTime = 3;
+chargeTime = 10;
 chargeTimer = chargeTime;
 targetPlayer = noone;
 state_ready_attack = function() { 
@@ -119,7 +119,7 @@ state_ready_attack = function() {
 }
 	
 //attack state 
-attack_speed = 10;
+attack_speed = 12;
 attack_time = 10;
 attack_counter = attack_time;
 state_attack = function() { 

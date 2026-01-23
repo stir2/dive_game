@@ -34,6 +34,7 @@
     {"$GMObjectProperty":"v2","%Name":"movement_type","filters":[],"listItems":[],"multiselect":false,"name":"movement_type","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":1,},
     {"$GMObjectProperty":"v2","%Name":"nodes","filters":[],"listItems":[],"multiselect":false,"name":"nodes","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[{nx : x, ny : y}, {nx : x + 50, ny : y + 50}]","varType":4,},
     {"$GMObjectProperty":"v2","%Name":"drop_amount","filters":[],"listItems":[],"multiselect":false,"name":"drop_amount","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"knock_back_amount","filters":[],"listItems":[],"multiselect":false,"name":"knock_back_amount","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"15","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

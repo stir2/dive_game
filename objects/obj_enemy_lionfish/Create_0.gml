@@ -17,7 +17,7 @@ x_movement = 1;
 
 detection_radius = 150;
 
-myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 10, undefined,0,0,0,[obj_player],,,-1,,60))
+myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, knock_back_amount, undefined,0,0,0,[obj_player],,,-1,,60))
 //Urchin floats around in water... that it all it does is float for now 
 state_wander = function() { 
 	//#region Code for Small up and down motion
