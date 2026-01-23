@@ -121,7 +121,7 @@ function setAnimationFrame(){
 	}
 	
 	if(horiz_input != 0) image_xscale = horiz_input * PLAYER_SCALE;
-	mask_index = spr_diver_swim_idle
+	//mask_index = spr_diver_swim_idle
 	
 	
 	

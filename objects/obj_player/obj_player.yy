@@ -39,6 +39,9 @@
     "name":"spr_diver_swim_idle",
     "path":"sprites/spr_diver_swim_idle/spr_diver_swim_idle.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_diver_air_idle",
+    "path":"sprites/spr_diver_air_idle/spr_diver_air_idle.yy",
+  },
   "visible":true,
 }

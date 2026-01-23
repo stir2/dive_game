@@ -15,8 +15,7 @@ if (instance_exists(myInstance)) {
 			other.angle = -other.angle;
 			other.angSpeed = other.angSpeed/3;
 		}
-		x += x_speed;
-		y += y_speed;
+		
 		
 		x_speed = _tempX;
 		y_speed = _tempY;
