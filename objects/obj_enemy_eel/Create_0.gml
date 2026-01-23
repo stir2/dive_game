@@ -10,8 +10,8 @@ float_speed_max = .5;
 directionFloating = -1;
 slow_down_float = false;
 //Left and right motion
-move_speed = .01;
-move_speed_max = 1.5;
+move_speed = .1;
+move_speed_max = 5;
 slow_down_speed = false;
 x_movement = 1;
 
