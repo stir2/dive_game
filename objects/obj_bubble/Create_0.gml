@@ -1,3 +1,4 @@
+event_inherited();
 spawn = new vec2(x, y);
 vel = new vec2(0, 0);
 target_vel = new vec2(0, 0);

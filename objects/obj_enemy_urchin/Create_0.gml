@@ -32,6 +32,7 @@ state_float = function() {
 	}
 	
 	//show_debug_message("y_speed = " + string(y_speed));
+	//idle_move();
 	
 	x += x_speed; 
 	y += y_speed;

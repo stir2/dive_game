@@ -1,4 +1,4 @@
-event_inherited();
+
 
 if(global.t - latest_t_wandered > WANDER_COOLDOWN){
 	target_vel.x = random_range(-1 * WANDER_STRENGTH, WANDER_STRENGTH) * (1 - SPAWN_LOCATION_INFLUENCE);
@@ -31,30 +31,37 @@ if(state == "popped"){
 	vel.x += (target_vel.x - vel.x) * VEL_TRANSITION_MULT;
 	vel.y += (target_vel.y - vel.y) * VEL_TRANSITION_MULT;
 
+	
+	x_speed = vel.x;
+	y_speed = vel.y;
+	
+	moveAndCollide();
+	
+	//NOTE: Had to comment this out cause of perfomance issues
 	// Split movement into steps, stopping if the next step will collide with a solid.
-	steps = 100;
-	for(i = 0; i < abs(vel.y) * steps; i++){
-		if(!place_meeting(x, y + sign(vel.y) / steps, obj_solid)
-		&& !place_meeting(x, y + sign(vel.y) / steps, obj_bubble)){
-			y += sign(vel.y) / steps;
-			grounded = false;
-		} else {
-			vel.y *= -1 * BOUNCE_STRENGTH;
-			latest_t_wandered = global.t; // bubbles cannot wander directly after a bounce
-			break;
-		}
-	}
+	//steps = 100;
+	//for(i = 0; i < abs(vel.y) * steps; i++){
+	//	if(!place_meeting(x, y + sign(vel.y) / steps, obj_solid)
+	//	&& !place_meeting(x, y + sign(vel.y) / steps, obj_bubble)){
+	//		y += sign(vel.y) / steps;
+	//		grounded = false;
+	//	} else {
+	//		vel.y *= -1 * BOUNCE_STRENGTH;
+	//		latest_t_wandered = global.t; // bubbles cannot wander directly after a bounce
+	//		break;
+	//	}
+	//}
 
-	for(i = 0; i < abs(vel.x) * steps; i++){
-		if(!place_meeting(x + sign(vel.x) / steps, y, obj_solid)
-		&& !place_meeting(x + sign(vel.x) / steps, y, obj_bubble)){
-			x += sign(vel.x) / steps;
-		} else {
-			vel.x *= -1 * BOUNCE_STRENGTH; 
-			latest_t_wandered = global.t; // bubbles cannot wander directly after a bounce
-			break;
-		}
-	}
+	//for(i = 0; i < abs(vel.x) * steps; i++){
+	//	if(!place_meeting(x + sign(vel.x) / steps, y, obj_solid)
+	//	&& !place_meeting(x + sign(vel.x) / steps, y, obj_bubble)){
+	//		x += sign(vel.x) / steps;
+	//	} else {
+	//		vel.x *= -1 * BOUNCE_STRENGTH; 
+	//		latest_t_wandered = global.t; // bubbles cannot wander directly after a bounce
+	//		break;
+	//	}
+	//}
 
 	if(place_meeting(x, y, obj_player)){
 		add_player_air(air_amount);
