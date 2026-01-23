@@ -48,7 +48,7 @@ state_point = function(){
 		//Create hitbox
 		var _temp_angle = image_angle;
 		image_angle = 0;
-		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, false, bbox_left+ 200, bbox_top, bbox_right + 200, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
+		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
 		myHitBox.image_angle = _temp_angle;
 		image_angle = _temp_angle;
 	}
@@ -141,8 +141,8 @@ hit_time = 8;
 hit_counter = hit_time;
 //for a certain number of frames, do hit animation
 state_hit = function(){
-	x = my_player.x;
-	y = my_player.y;
+	x = my_player.x + cos((image_angle * pi)/180) * 30;
+	y = my_player.y + -sin((image_angle * pi)/180) * 30;
 	hit_counter--;
 	
 	
