@@ -59,6 +59,9 @@ state_point = function(){
 move_time = 10;
 move_counter = move_time;
 decelration_speed = -.8;
+reel_thresh_hold = 2;
+reel_thresh_meter = 0;
+
 state_throw = function(){
 	//if on_player is still true (throw just happened) set total distance
 	if(on_player){
@@ -80,6 +83,16 @@ state_throw = function(){
 		angle_speed = speed_adjust_by(angle_speed, decelration_speed, 0, 1);
 	}
 	
+	if(mouse_check_button(mb_left)){ 
+		reel_thresh_meter ++;
+	}
+	else reel_thresh_meter = 0;
+	
+	if (reel_thresh_hold <= reel_thresh_meter){
+		//Slow down once timer is hit
+		angle_speed = speed_adjust_by(angle_speed, -2, 0, 1);
+	}
+	
 	//calculate movement based on current speed
 	//x_movement = cos((angle * pi)/180) * throw_speed;
 	//y_movement = -sin((angle * pi)/180) * throw_speed;
@@ -94,6 +107,7 @@ state_throw = function(){
 		throw_distance_passed = 0;
 		state = state_reel;
 	}
+	
 	
 	x += x_speed;
 	y += y_speed;
