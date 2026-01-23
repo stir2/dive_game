@@ -10,7 +10,7 @@
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
-  "For3D":false,
+  "For3D":true,
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"ef4f97b6-4cf1-4efa-9765-94e3c564b813","name":"ef4f97b6-4cf1-4efa-9765-94e3c564b813","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
@@ -59,7 +59,7 @@
     },
     "name":"spr_palette_enemy",
     "playback":1,
-    "playbackSpeed":30.0,
+    "playbackSpeed":0.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",

@@ -1,6 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
+default_palette = spr_palette_enemy;
 current_palette = spr_palette_enemy_test;
 
 enum Movement_Type{

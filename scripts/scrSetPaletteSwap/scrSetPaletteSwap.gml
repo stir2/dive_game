@@ -24,7 +24,7 @@ _effectPalette1 = spr_palette_blank, _effectPalette2 = spr_palette_blank, _overl
 	
 	
 	//--Set Replacement Pallete--//
-	var _uSwapPallete =  shader_get_sampler_index(shdPalleteSwap, "uPalleteSwaping");
+	var _uSwapPallete = shader_get_sampler_index(shdPalleteSwap, "uPalleteSwaping");
 	
 	//If array was inputed, access the elements in it.
 	if (is_array(_swappingPalette)) var _spr = sprite_get_texture(_swappingPalette[0], _swappingPalette[1]); 
