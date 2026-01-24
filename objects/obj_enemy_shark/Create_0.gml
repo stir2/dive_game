@@ -138,7 +138,6 @@ state_attack = function() {
 		
 		if (angle_speed == 0) {
 			state = state_wander;
-			calculate_move();
 			image_xscale = sign(dcos(image_angle));
 			image_yscale = 1;
 			image_angle = 0;

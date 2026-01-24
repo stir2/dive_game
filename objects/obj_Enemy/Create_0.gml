@@ -9,8 +9,8 @@ enum Movement_Type{
 }
 
 if(array_length(nodes) > 0){
-	x = nodes[0].nx;
-	y = nodes[0].ny;
+	x = nodes[0].x;
+	y = nodes[0].y;
 }
 
 forward = true;
@@ -26,15 +26,15 @@ move_speed = .1;
 move_speed_max = 1;
 
 calculate_move = function(){
-	x_dist = (nodes[node_target].nx - x);
-	y_dist = (nodes[node_target].ny - y);
-	var _move_angle = point_direction(x, y, nodes[node_target].nx, nodes[node_target].ny);
+	x_dist = (nodes[node_target].x - x);
+	y_dist = (nodes[node_target].y - y);
+	var _move_angle = point_direction(x, y, nodes[node_target].x, nodes[node_target].y);
 	
 	//Get the distance that will be covered when slowing down
 	var _slow_down_distance = scrCalculateDistanceSlowingDown(angle_speed, move_speed);
 	
 	//If that distance is going to surpassing or equal to the distance we are from the target
-	if (_slow_down_distance >= point_distance(x, y, nodes[node_target].nx,  nodes[node_target].ny)){
+	if (_slow_down_distance >= point_distance(x, y, nodes[node_target].x,  nodes[node_target].y)){
 		//slow down
 		angle_speed = speed_adjust_by(angle_speed, -move_speed, 0, 1);
 	}
@@ -58,7 +58,7 @@ idle_move = function(){
 			if(array_length(nodes) <= 1){break;}
 			//if we have reached the target node
 			//(if x/y dist is pos/neg and we have reached or gone past it)
-			if(((x_dist >= 0 && x >= nodes[node_target].nx) || (x_dist < 0 && x <= nodes[node_target].nx)) && ((y_dist >= 0 && y >= nodes[node_target].ny) || (y_dist < 0 && y <= nodes[node_target].ny))){
+			if(((x_dist >= 0 && x >= nodes[node_target].x) || (x_dist < 0 && x <= nodes[node_target].x)) && ((y_dist >= 0 && y >= nodes[node_target].y) || (y_dist < 0 && y <= nodes[node_target].y))){
 				node_index = node_target;
 				///if going forward
 				if(forward){
@@ -92,7 +92,7 @@ idle_move = function(){
 			if(array_length(nodes) <= 1){break;}
 			//if we have reached the target node
 			//(if x/y dist is pos/neg and we have reached or gone past it)
-			if(((x_dist >= 0 && x >= nodes[node_target].nx) || (x_dist <= 0 && x <= nodes[node_target].nx)) && ((y_dist >= 0 && y >= nodes[node_target].ny) || (y_dist <= 0 && y <= nodes[node_target].ny))){
+			if(((x_dist >= 0 && x >= nodes[node_target].x) || (x_dist <= 0 && x <= nodes[node_target].x)) && ((y_dist >= 0 && y >= nodes[node_target].y) || (y_dist <= 0 && y <= nodes[node_target].y))){
 				node_index = node_target;
 				////if we've reached the end of the node string
 				if(node_index == array_length(nodes) - 1){
