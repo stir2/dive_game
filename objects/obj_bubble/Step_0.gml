@@ -63,7 +63,7 @@ if(state == "popped"){
 	//	}
 	//}
 
-	if(place_meeting(x, y, obj_player)){
+	if(place_meeting(x, y, obj_player) && obj_player.air_level > 0){
 		add_player_air(air_amount);
 		pop();
 	}

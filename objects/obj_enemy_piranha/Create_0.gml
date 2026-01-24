@@ -10,12 +10,15 @@ float_speed_max = .5;
 directionFloating = -1;
 slow_down_float = false;
 //Left and right motion
-move_speed = .01;
-move_speed_max = 1.5;
+move_speed = .1;
+move_speed_max = 4;
 slow_down_speed = false;
 x_movement = 1;
+attack_cooldown = 35;
+attack_cool_timer = 0;
 
 detection_radius = 500;
+attack_radius = 100;
 
 myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, knock_back_amount, undefined,0,0,0,[obj_player],,,-1,,60))
 //Urchin floats around in water... that it all it does is float for now 
@@ -96,48 +99,57 @@ chargeTime = 20;
 chargeTimer = chargeTime;
 targetPlayer = noone;
 state_ready_attack = function() { 
-	if (chargeTimer < 1) { 
-		//Go into attak state
+	var _player = collision_circle(x,y, attack_radius, obj_player, false, false);
+	if (instance_exists(_player) && attack_cool_timer <= 0){
+		//Go into attack state
+		attack_counter = attack_time;
 		state = state_attack;
-	}
-	else {
+	}else {
+		_player = collision_circle(x,y, detection_radius, obj_player, false, false);
+		if (!instance_exists(_player)){
+			state = state_wander;
+		}
 		//Decrement timer
-		chargeTimer--;
 		
 		//Aim self at player
 		angle_direction = point_direction(x, y, targetPlayer.x, targetPlayer.y);
 		image_angle = angle_direction;
+		//Move at max speed
+		angle_speed = move_speed_max;
+		set_speed_at_angle(angle_speed, angle_direction);
 		
 	}
-	
+	moveAndCollide();
 	image_xscale = 1;
 	
 	if (dcos(image_angle != 0))	image_yscale = sign(dcos(image_angle));
 	
 }
-	
+
 //attack state 
-attack_speed = 4;
+attack_speed = 10;
+attack_time = 5;
+attack_counter = attack_time;
 state_attack = function() { 
-	//Check if player is gone
-	var _player = collision_circle(x,y, detection_radius, obj_player, false, false);
-	if (!instance_exists(_player)){
+	//Check if timer is hit
+	if (attack_counter < 1) { 
 		//Decelerate
 		angle_speed = speed_adjust_by(angle_speed, -1, 0, 1);
 		//Divide speed by angle
 		set_speed_at_angle(angle_speed, angle_direction);
 		
 		if (angle_speed == 0) {
-			state = state_wander;
+			state = state_ready_attack;
 			image_xscale = sign(dcos(image_angle));
 			image_yscale = 1;
 			image_angle = 0;
 		}
-	} 
+		attack_cool_timer = attack_cooldown;
+	}
 	else {
-		//Aim self at player
-		angle_direction = point_direction(x, y, targetPlayer.x, targetPlayer.y);
-		image_angle = angle_direction;
+		//Decrement Timer
+		attack_counter--;
+		
 		//Move at max speed
 		angle_speed = attack_speed;
 		set_speed_at_angle(angle_speed, angle_direction);
@@ -145,5 +157,36 @@ state_attack = function() {
 	
 	moveAndCollide();
 }
+
+////attack state 
+//attack_speed = 4;
+//state_attack = function() { 
+//	//Check if player is gone
+//	var _player = collision_circle(x,y, detection_radius, obj_player, false, false);
+//	if (!instance_exists(_player)){
+//		//Decelerate
+//		angle_speed = speed_adjust_by(angle_speed, -1, 0, 1);
+//		//Divide speed by angle
+//		set_speed_at_angle(angle_speed, angle_direction);
+		
+//		if (angle_speed == 0) {
+//			state = state_wander;
+//			image_xscale = sign(dcos(image_angle));
+//			image_yscale = 1;
+//			image_angle = 0;
+//		}
+		
+//	} 
+//	else {
+//		//Aim self at player
+//		angle_direction = point_direction(x, y, targetPlayer.x, targetPlayer.y);
+//		image_angle = angle_direction;
+//		//Move at max speed
+//		angle_speed = attack_speed;
+//		set_speed_at_angle(angle_speed, angle_direction);
+//	}
+	
+//	moveAndCollide();
+//}
 
 state = state_wander;

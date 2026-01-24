@@ -1,4 +1,4 @@
-cam = camera_create_view(0, 0, 1200, 675);
+cam = camera_create_view(0, 0, 1200 * 1.15, 675 * 1.15);
 view_visible[0] = true;
 view_enabled[0] = true;
 view_set_camera(0, cam);

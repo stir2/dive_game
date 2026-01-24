@@ -14,6 +14,8 @@ move_speed = .1;
 move_speed_max = 4; //1.5
 slow_down_speed = false;
 x_movement = 1;
+attack_cooldown = 45;
+attack_cool_timer = 0;
 
 detection_radius = 350;
 
@@ -78,7 +80,7 @@ state_wander = function() {
 	
 	#region Scan for player
 	var _player = collision_circle(x,y, detection_radius, obj_player, false, false);
-	if (instance_exists(_player)) {
+	if (instance_exists(_player) && attack_cool_timer <= 0) {
 		//Set variables for ready attack state
 		chargeTimer = chargeTime;
 		targetPlayer = _player
@@ -108,9 +110,11 @@ state_ready_attack = function() {
 		//Decrement timer
 		chargeTimer--;
 		
-		//Aim self at player
-		angle_direction = point_direction(x, y, targetPlayer.x, targetPlayer.y);
-		image_angle = angle_direction;
+		//Aim self at player (stop after some time)
+		if(chargeTimer > 10){
+			angle_direction = point_direction(x, y, targetPlayer.x, targetPlayer.y);
+			image_angle = angle_direction;
+		}
 		
 	}
 	
@@ -139,6 +143,7 @@ state_attack = function() {
 			image_yscale = 1;
 			image_angle = 0;
 		}
+		attack_cool_timer = attack_cooldown;
 	}
 	else {
 		//Decrement Timer
