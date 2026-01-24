@@ -11,13 +11,13 @@ directionFloating = -1;
 slow_down_float = false;
 //Left and right motion
 move_speed = .1;
-move_speed_max = 4; //1.5
+move_speed_max = 3; //1.5
 slow_down_speed = false;
 x_movement = 1;
 attack_cooldown = 45;
 attack_cool_timer = 0;
 
-detection_radius = 350;
+detection_radius = 230;
 
 
 myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, knock_back_amount, undefined,0,0,0,[obj_player],,,-1,,60))

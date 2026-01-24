@@ -17,7 +17,7 @@ x_movement = 1;
 attack_cooldown = 45;
 attack_cool_timer = 0;
 
-detection_radius = 100;
+detection_radius = 60;
 
 myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, knock_back_amount, undefined,0,0,0,[obj_player],,,-1,,60))
 //Urchin floats around in water... that it all it does is float for now 

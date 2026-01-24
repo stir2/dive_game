@@ -50,10 +50,10 @@ function vec2(_x, _y) constructor {
     y = _y;
 }
 
-max_speed = new vec2(5, 15);
+max_speed = new vec2(3, 10);
 in_water = true;
 grounded = false;
-tank_size = 40;
+tank_size = 5000;
 
 // Vars for the player's current state, whether in water or air, set these each step
 //vel = new vec2(0, 0);
@@ -67,10 +67,10 @@ air_level = tank_size;
 COYOTE_FRAMES = 4;
 JUMP_BUFFER = 4;
 HURT_ANIM_DURATION = 47;
-PLAYER_SCALE = 1.5;
+PLAYER_SCALE = 1;
 
 // Physics constants to use when the player is in water
-ACCEL_WATER = new vec2(0.7, 0.8);
+ACCEL_WATER = new vec2(0.5, 0.6);
 DECEL_WATER = new vec2(0.9, 0.9);
 JUMP_HEIGHT_WATER = 10;
 GRAV_WATER = 0.2;
@@ -78,7 +78,7 @@ GRAV_WATER = 0.2;
 // Physics constants to use when the player is in air
 ACCEL_AIR = new vec2(0.6, 0);
 DECEL_AIR = new vec2(0.9, 0.95);
-JUMP_HEIGHT_AIR = 15;
+JUMP_HEIGHT_AIR = 10;
 GRAV_AIR = 0.6;
 
 // Time counter to increment every frame

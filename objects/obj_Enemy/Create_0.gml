@@ -1,6 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
+
 enum Movement_Type{
 	wander,
 	bounce,

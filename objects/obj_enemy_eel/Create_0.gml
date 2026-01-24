@@ -11,11 +11,11 @@ directionFloating = -1;
 slow_down_float = false;
 //Left and right motion
 move_speed = .1;
-move_speed_max = 5;
+move_speed_max = 3;
 slow_down_speed = false;
 x_movement = 1;
 
-detection_radius = 350;
+detection_radius = 230;
 //attack vars
 attack_time = 60;
 attack_counter = attack_time;

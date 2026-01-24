@@ -1,4 +1,5 @@
-cam = camera_create_view(0, 0, 1200 * 1.15, 675 * 1.15);
+scale = .75
+cam = camera_create_view(0, 0, 1200 * scale, 675 * scale);
 view_visible[0] = true;
 view_enabled[0] = true;
 view_set_camera(0, cam);
