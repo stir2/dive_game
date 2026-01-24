@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_harpoon",
+  "%Name":"obj_harpoon_gun",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_harpoon",
+  "name":"obj_harpoon_gun",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_harpoon",
-    "path":"sprites/spr_harpoon/spr_harpoon.yy",
+    "name":"spr_harpoon_gun",
+    "path":"sprites/spr_harpoon_gun/spr_harpoon_gun.yy",
   },
   "spriteMaskId":null,
   "visible":true,
