@@ -38,6 +38,9 @@
     "name":"spr_enemy_angler_proto",
     "path":"sprites/spr_enemy_angler_proto/spr_enemy_angler_proto.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_enemy_angler_proto",
+    "path":"sprites/spr_enemy_angler_proto/spr_enemy_angler_proto.yy",
+  },
   "visible":true,
 }

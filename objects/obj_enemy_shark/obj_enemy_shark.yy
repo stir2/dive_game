@@ -38,9 +38,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Enemy_Shark_Proto",
-    "path":"sprites/spr_Enemy_Shark_Proto/spr_Enemy_Shark_Proto.yy",
+    "name":"spr_enemy_shark",
+    "path":"sprites/spr_enemy_shark/spr_enemy_shark.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_enemy_shark",
+    "path":"sprites/spr_enemy_shark/spr_enemy_shark.yy",
+  },
   "visible":true,
 }

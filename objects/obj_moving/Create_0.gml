@@ -13,6 +13,8 @@ x_speed = 0;
 y_speed = 0;
 angle_speed = 0;
 
+in_water = false;
+
 /**
 /// @desc Returns a changed speed value, and ensures said speed value does not go over its limit.
 /// @param {any} _varSpeed The speed you wish to increase and return back

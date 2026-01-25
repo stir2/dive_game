@@ -1,4 +1,4 @@
-
+depth = -1000;
 
 //This should always be made in the top left corner of the object that is using it 
 if (!instance_exists(myUser)) 
