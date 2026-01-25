@@ -79,7 +79,7 @@ t = 0;
 
 
 //Create harpoon object with this obj as anchor
-instance_create_layer(x, y, "Instances", obj_harpoon, {my_player : id});
+instance_create_layer(x, y, "Instances", obj_harpoon_gun, {my_player : id});
 
 //Create instance of camera
 instance_create_layer(x, y, "Instances", obj_camera);
