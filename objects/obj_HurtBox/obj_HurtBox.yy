@@ -8,8 +8,8 @@
   "name":"obj_HurtBox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Hit & Hurt Boxes",
+    "path":"folders/Objects/Hit & Hurt Boxes.yy",
   },
   "parentObjectId":{
     "name":"obj_ResizeableBox",

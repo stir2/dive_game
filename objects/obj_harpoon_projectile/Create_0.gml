@@ -15,6 +15,9 @@ on_player = true;
 x_movement = 0;
 y_movement = 0;
 
+effect_create_time = 4;
+effect_create_counter = 0; 
+
 depth = -100;
 
 
@@ -91,6 +94,16 @@ state_throw = function(){
 	x += x_speed;
 	y += y_speed;
 	
+	//Create Effect 
+	if (effect_create_counter < 1 && in_water) {
+		//Reset timer 
+		effect_create_counter = effect_create_time;
+		
+		//Create effect object
+		instance_create_depth(x, y, -10, obj_sprite_effect, {sprite_index : spr_effect_harpoon_shoot, image_angle : image_angle});
+	}
+	effect_create_counter--;
+	
 	//if((throw_distance_total >= 0 && throw_distance_passed > throw_distance_total) || (throw_distance_total <= 0 && throw_distance_passed < throw_distance_total)){
 	//	throw_distance_passed = 0;
 	//	state = state_reel;
@@ -106,6 +119,19 @@ state_reel = function(){
 		y_movement = -sin((angle * pi)/180) * reel_speed;
 		x += x_movement;
 		y += y_movement;
+	} else if (!place_meeting(x, y, obj_solid)){
+		y_speed = (in_water)? .5 : 10;
+		if (moveAndCollide()) {
+			x_speed = 0;
+			y_speed = 0;
+		}
+		
+		//show_debug_message(angle_difference(270, image_angle));
+		if (!(abs(angle_difference(270, image_angle)) < 10)) 
+		{image_angle += sign(angle_difference(270, image_angle)) * 4;}
+		//if (!(image_angle < 280 && image_angle > 260)) 
+		//{image_angle += (angle_difference(270, image_angle) > 180)? 1 * 10 : 1 * -10;}
+		
 	}
 	
 	//once back to player, set back to idle state

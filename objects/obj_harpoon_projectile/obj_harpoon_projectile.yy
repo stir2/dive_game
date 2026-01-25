@@ -11,8 +11,8 @@
   "name":"obj_harpoon_projectile",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Harpoon",
+    "path":"folders/Objects/Harpoon.yy",
   },
   "parentObjectId":{
     "name":"obj_moving",

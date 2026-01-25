@@ -70,6 +70,7 @@ state_point = function(){
 				//Store angle for short time to get size right
 				var _temp_angle = image_angle;
 				image_angle = 0;
+	
 				myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
 				image_angle = _temp_angle;
 			
@@ -78,13 +79,20 @@ state_point = function(){
 			}
 		}
 	} else if (sprite_index == spr_harpoon_gun_stab && scrCheckAnimationFrame(6)) { 
-				
+		
+		
 		state = state_hit;
+		
+		x = my_player.x + cos((image_angle * pi)/180) * 60;
+		y = my_player.y + -sin((image_angle * pi)/180) * 60;
+				
+		//Create effect object
+		instance_create_depth(x, y, -10, obj_sprite_effect, {sprite_index : spr_effect_harpoon_stab, image_angle : image_angle});
 		
 		//Create hitbox
 		var _temp_angle = image_angle;
 		image_angle = 0;
-		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right + 80, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
+		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right + 100, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
 		myHitBox.image_angle = _temp_angle;
 		image_angle = _temp_angle;
 	}

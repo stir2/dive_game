@@ -9,8 +9,8 @@
   "name":"obj_Hitbox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Hit & Hurt Boxes",
+    "path":"folders/Objects/Hit & Hurt Boxes.yy",
   },
   "parentObjectId":{
     "name":"obj_ResizeableBox",
@@ -54,5 +54,5 @@
     "name":"sprHitBox",
     "path":"sprites/sprHitBox/sprHitBox.yy",
   },
-  "visible":false,
+  "visible":true,
 }
