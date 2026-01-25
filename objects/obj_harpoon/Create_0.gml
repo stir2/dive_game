@@ -40,7 +40,7 @@ state_point = function(){
 		state = state_hit;
 		var _temp_angle = image_angle;
 		image_angle = 0;
-		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
+		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right + 1000, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
 		image_angle = _temp_angle;
 	}
 	sprite_index = spr_harpoon;

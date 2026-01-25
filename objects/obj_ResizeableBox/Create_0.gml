@@ -6,8 +6,8 @@ if (!instance_exists(myUser))
 	instance_destroy();
 	exit;
 }
-xOffset = 0//(xDesired - (myUser.x)); //Get Offset by finding the distance between desired x and player x
-yOffset = 0//(yDesired - (myUser.y));
+xOffset = (xDesired - (myUser.x)); //Get Offset by finding the distance between desired x and player x
+yOffset = (yDesired - (myUser.y));
 x += xOffset;
 y += yOffset;
 
