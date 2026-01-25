@@ -18,7 +18,11 @@ x_bias = 20;
 y_bias = 16;
 
 if(instance_exists(obj_player)){
-	x = obj_player.x;
-	y = obj_player.y;
-	camera_set_view_pos(cam, x, y);
+	if(room != Shop){
+		x = obj_player.x;
+		y = obj_player.y;
+		camera_set_view_pos(cam, x, y);
+	}else{
+		camera_set_view_pos(cam, 64, 64);
+	}
 }
