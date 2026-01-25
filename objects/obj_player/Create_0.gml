@@ -10,7 +10,7 @@ event_inherited();
 	#macro PROPEL 6
 }
 
-hp = infinity;
+hp = 40;
 
 death_timer = 60;
 
