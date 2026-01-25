@@ -1,4 +1,5 @@
 scale = .75
+if(room == Boss){scale = 1;}
 cam = camera_create_view(0, 0, 1200 * scale, 675 * scale);
 view_visible[0] = true;
 view_enabled[0] = true;
