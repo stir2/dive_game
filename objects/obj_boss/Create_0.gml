@@ -45,14 +45,14 @@ enemy_spawn_pos = [
 {ex : 1776, ey : 976},
 {ex : 1504, ey : 592}
 ];
-spawn_pos_index = 0;
+spawn_pos_index = -1;
 state_enemy_spawn = function(){
 	//spawn in random enemies
 	if(spawn_counter <= 0){
+		spawn_pos_index++;
 		if(spawn_pos_index < array_length(enemy_spawn_pos)){
 			instance_create_layer(enemy_spawn_pos[spawn_pos_index].ex, enemy_spawn_pos[spawn_pos_index].ey, "Instances", choose(obj_enemy_urchin, obj_enemy_eel, obj_enemy_lionfish, obj_enemy_angler, obj_enemy_piranha, obj_enemy_shark));
 		}
-		spawn_pos_index++;
 		spawn_counter = spawn_time;
 	}
 	spawn_counter--;
