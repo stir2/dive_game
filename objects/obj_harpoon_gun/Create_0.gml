@@ -10,14 +10,13 @@ target_y = mouse_y;
 //throw_distance_passed = 0;
 angle = 0;
 throw_speed = 26;
-reel_speed = 7.5;
 on_player = true;
 x_movement = 0;
 y_movement = 0;
 
 harpoon_loaded = true;
 
-my_projectile = instance_create_depth(x, y, -10, obj_harpoon_projectile, {my_player : my_player, my_gun : id});
+my_projectile = instance_create_depth(x, y, -10, obj_harpoon_projectile, {my_player : my_player, my_gun : id, reel_speed : reel_speed});
 
 depth = -100;
 
@@ -71,7 +70,7 @@ state_point = function(){
 				var _temp_angle = image_angle;
 				image_angle = 0;
 	
-				myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
+				myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], other.damage_amount, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
 				image_angle = _temp_angle;
 			
 				//Reset timer
@@ -92,7 +91,7 @@ state_point = function(){
 		//Create hitbox
 		var _temp_angle = image_angle;
 		image_angle = 0;
-		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right + 100, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
+		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right + 100, bbox_bottom], damage_amount, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
 		myHitBox.image_angle = _temp_angle;
 		image_angle = _temp_angle;
 	}

@@ -10,7 +10,6 @@ target_y = mouse_y;
 //throw_distance_passed = 0;
 angle = 0;
 throw_speed = 26;
-reel_speed = 7.5;
 on_player = true;
 x_movement = 0;
 y_movement = 0;
