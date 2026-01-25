@@ -48,7 +48,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.1.210",
+    "IDEVersion":"2024.14.2.213",
   },
   "name":"dive_game",
   "resources":[
@@ -112,6 +112,7 @@
     {"id":{"name":"spr_air","path":"sprites/spr_air/spr_air.yy",},},
     {"id":{"name":"spr_boss_arms_proto_l","path":"sprites/spr_boss_arms_proto_l/spr_boss_arms_proto_l.yy",},},
     {"id":{"name":"spr_boss_arms_proto_r","path":"sprites/spr_boss_arms_proto_r/spr_boss_arms_proto_r.yy",},},
+    {"id":{"name":"spr_boss_enemy_incoming","path":"sprites/spr_boss_enemy_incoming/spr_boss_enemy_incoming.yy",},},
     {"id":{"name":"spr_boss_proto","path":"sprites/spr_boss_proto/spr_boss_proto.yy",},},
     {"id":{"name":"spr_boss_rock","path":"sprites/spr_boss_rock/spr_boss_rock.yy",},},
     {"id":{"name":"spr_boss_spike","path":"sprites/spr_boss_spike/spr_boss_spike.yy",},},
