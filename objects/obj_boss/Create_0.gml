@@ -11,6 +11,7 @@ move_speed_max = 10;
 
 arm_l = instance_create_layer(1104, 880, "Instances", obj_boss_arm_L);
 arm_r = instance_create_layer(1392, 880, "Instances", obj_boss_arm_R);
+curr_seq = noone;
 
 attack_speed_adjusted_half_health = false;
 attack_speed_adjusted_fourth_health = false;
@@ -35,33 +36,42 @@ state_idle = function(){
 	attack_cool_timer--;
 }
 
-spawn_time = 10;
+spawn_time = 20;
 spawn_counter = spawn_time;
+okay_to_spawn = true; //are there few enough enemies to spawn during the spawn attack?
+spawn_okay_checked = false;
 enemy_spawn_pos = [
 {ex : 992, ey : 592},
-{ex : 739, ey : 976},
 {ex : 1008, ey : 1280},
 {ex : 1504, ey : 1280},
-{ex : 1776, ey : 976},
-{ex : 1504, ey : 592}
+{ex : 1504, ey : 592},
 ];
 spawn_pos_index = -1;
 state_enemy_spawn = function(){
-	//spawn in random enemies
-	if(spawn_counter <= 0){
-		spawn_pos_index++;
-		if(spawn_pos_index < array_length(enemy_spawn_pos)){
-			instance_create_layer(enemy_spawn_pos[spawn_pos_index].ex, enemy_spawn_pos[spawn_pos_index].ey, "Instances", choose(obj_enemy_urchin, obj_enemy_eel, obj_enemy_lionfish, obj_enemy_angler, obj_enemy_piranha, obj_enemy_shark));
-		}
-		spawn_counter = spawn_time;
+	//spawn in random enemies (if few){
+	if(!spawn_okay_checked){
+		okay_to_spawn = instance_number(obj_Enemy) <= 2;
+		spawn_okay_checked = true;
 	}
-	spawn_counter--;
+	
+	if(okay_to_spawn){
+		if(spawn_counter <= 0){
+			spawn_pos_index++;
+			if(spawn_pos_index < array_length(enemy_spawn_pos)){
+				instance_create_layer(enemy_spawn_pos[spawn_pos_index].ex, enemy_spawn_pos[spawn_pos_index].ey, "Instances", obj_boss_enemy_spawner);
+			}
+			spawn_counter = spawn_time;
+		}
+		spawn_counter--;
+	}
+
 	
 	//play animation
 		if(!in_sequence){
 		 if(!attacked){
 			var _seq = layer_sequence_create("Instances", x, y, seq_spines);
 			var _seqStuct = layer_sequence_get_instance(_seq);
+			curr_seq = _seq;
 
 			sequence_instance_override_object(_seqStuct, obj_boss, id);
 			sequence_instance_override_object(_seqStuct, obj_boss_arm_L, arm_l);
@@ -71,9 +81,11 @@ state_enemy_spawn = function(){
 			layer_sequence_play(_seq);
 			attacked = true;
 		 }else{
+			 if(layer_sequence_exists("Instances", curr_seq)){layer_sequence_destroy(curr_seq);}
 			 attacked = false;
 			 state = state_idle;
 			 spawn_pos_index = 0;
+			 spawn_okay_checked = false;
 			 spawn_counter = spawn_time;
 		 }
 	}
@@ -92,7 +104,7 @@ state_slam = function(){
 		rocks_shuffled = true;
 	}
 	if(rock_spawn_timer <= 0 && rock_spawn_index < array_length(shuffled_rocks_x)){
-		instance_create_layer(shuffled_rocks_x[rock_spawn_index], -32, "Instances", obj_boss_rock);
+		instance_create_layer(shuffled_rocks_x[rock_spawn_index], -512, "Instances", obj_boss_rock);
 		rock_spawn_index++;
 		rock_spawn_timer = rock_spawn_cooldown;
 	}
@@ -102,7 +114,8 @@ state_slam = function(){
 		 if(!attacked){
 			var _seq = layer_sequence_create("Instances", x, y, seq_slam);
 			var _seqStuct = layer_sequence_get_instance(_seq);
-
+			curr_seq = _seq;
+			
 			sequence_instance_override_object(_seqStuct, obj_boss, id);
 			sequence_instance_override_object(_seqStuct, obj_boss_arm_L, arm_l);
 			sequence_instance_override_object(_seqStuct, obj_boss_arm_R, arm_r);
@@ -111,6 +124,7 @@ state_slam = function(){
 			layer_sequence_play(_seq);
 			attacked = true;
 		 }else{
+			 if(layer_sequence_exists("Instances", curr_seq)){layer_sequence_destroy(curr_seq);}
 			 attacked = false;
 			 rocks_shuffled = false;
 			 rock_spawn_index = 0;
@@ -141,11 +155,12 @@ state_spikes = function(){
 			sequence_instance_override_object(_seqStuct, obj_boss, id);
 			sequence_instance_override_object(_seqStuct, obj_boss_arm_L, arm_l);
 			sequence_instance_override_object(_seqStuct, obj_boss_arm_R, arm_r);
-			
+			curr_seq = _seq;
 
 			layer_sequence_play(_seq);
 			attacked = true;
 		 }else{
+			 if(layer_sequence_exists("Instances", curr_seq)){layer_sequence_destroy(curr_seq);}
 			 attacked = false;
 			 state = state_idle;
 			 spike_angle = spike_angle_default;
@@ -198,11 +213,12 @@ state_swing = function(){
 			sequence_instance_override_object(_seqStuct, obj_boss, id);
 			sequence_instance_override_object(_seqStuct, obj_boss_arm_L, arm_l);
 			sequence_instance_override_object(_seqStuct, obj_boss_arm_R, arm_r);
-			
+			curr_seq = _seq;
 
 			layer_sequence_play(_seq);
 			attacked = true;
 		 }else{
+			 if(layer_sequence_exists("Instances", curr_seq)){layer_sequence_destroy(curr_seq);}
 			 attacked = false;
 			 bubble_spawn_pos_index = 0;
 			 bubble_spawn_counter = bubble_spawning_begin_time;

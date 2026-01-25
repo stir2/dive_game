@@ -1,13 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_boss_rock",
+  "%Name":"obj_boss_enemy_spawner",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_boss_rock",
+  "name":"obj_boss_enemy_spawner",
   "overriddenProperties":[],
   "parent":{
     "name":"Boss",
@@ -32,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_rock",
-    "path":"sprites/spr_boss_rock/spr_boss_rock.yy",
+    "name":"spr_boss_enemy_incoming",
+    "path":"sprites/spr_boss_enemy_incoming/spr_boss_enemy_incoming.yy",
   },
   "spriteMaskId":null,
   "visible":true,
