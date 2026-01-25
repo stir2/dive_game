@@ -20,6 +20,9 @@ detection_radius = 230;
 attack_time = 60;
 attack_counter = attack_time;
 
+player_attacking = noone;
+my_projectile = noone;
+
 myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, knock_back_amount, undefined,0,0,0,[obj_player],,,-1,,60));
  {//#region Code for Small up and down motion
 	////Check if were slowing down or speeding up
@@ -82,13 +85,16 @@ state_wander = function() {
 	if (instance_exists(_player)) {
 		//send projectile
 		if(attack_counter == attack_time){
-			if (instance_exists(_player)) {
-				instance_create_layer(x, y, "Instances", obj_eel_zap, {angle : point_direction(x, y, _player.x, _player.y)})
-			}
+			player_attacking = _player;
+			sprite_index = spr_enemy_eel_attack;
 		}
 		//decrement attack counter
 		attack_counter--;
 		if(attack_counter <= 0){attack_counter = attack_time;}
+	}
+	
+	if (sprite_index == spr_enemy_eel_attack && scrCheckAnimationFrame(9) && !instance_exists(my_projectile)) { 
+		my_projectile = instance_create_layer(x, y, "Instances", obj_eel_zap, {angle : point_direction(x, y, player_attacking.x, player_attacking.y)});
 	}
 	
 	#endregion
