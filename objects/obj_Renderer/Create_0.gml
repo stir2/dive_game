@@ -38,20 +38,22 @@ GLINT_COLOR_AIR = [ 0.00,0.00,0.00,0 ];
 GLOW_STR_AIR = 0.075;
 VIGNETTE_EDGES_AIR = [ 0.95,1.30 ];
 
-fx_glow = layer_get_fx("Effect_Glow");
-fx_underwater = layer_get_fx("Effect_Underwater");
-fx_blur = layer_get_fx("Effect_Blur");
-fx_vignette = layer_get_fx("Effect_Vignette");
+if(layer_exists("Effect_Glow") && layer_exists("Effect_Underwater") && layer_exists("Effect_Underwater") && layer_exists("Effect_Underwater")){
+	fx_glow = layer_get_fx("Effect_Glow");
+	fx_underwater = layer_get_fx("Effect_Underwater");
+	fx_blur = layer_get_fx("Effect_Blur");
+	fx_vignette = layer_get_fx("Effect_Vignette");
 
-params_glow = fx_get_parameters(fx_glow);
-params_underwater = fx_get_parameters(fx_underwater);
-params_blur = fx_get_parameters(fx_blur);
-params_vignette = fx_get_parameters(fx_vignette);
+	params_glow = fx_get_parameters(fx_glow);
+	params_underwater = fx_get_parameters(fx_underwater);
+	params_blur = fx_get_parameters(fx_blur);
+	params_vignette = fx_get_parameters(fx_vignette);
 
-params_glow.g_GlowQuality = GLOW_QUALITY;
-params_glow.g_GlowRadius = GLOW_RADIUS;
+	params_glow.g_GlowQuality = GLOW_QUALITY;
+	params_glow.g_GlowRadius = GLOW_RADIUS;
 
-fx_set_parameters(fx_glow, params_glow);
+	fx_set_parameters(fx_glow, params_glow);
+}
 
 function vec2(_x, _y) constructor {
     x = _x;
