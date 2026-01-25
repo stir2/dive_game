@@ -7,12 +7,17 @@
   ],
   "managed":true,
   "name":"obj_boss",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Enemy","path":"objects/obj_Enemy/obj_Enemy.yy",},"propertyId":{"name":"movement_type","path":"objects/obj_Enemy/obj_Enemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
+  ],
   "parent":{
     "name":"Boss",
     "path":"folders/Objects/Boss.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_Enemy",
+    "path":"objects/obj_Enemy/obj_Enemy.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -35,5 +40,5 @@
     "path":"sprites/spr_boss_proto/spr_boss_proto.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

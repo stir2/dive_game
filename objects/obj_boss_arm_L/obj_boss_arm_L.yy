@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_boss_arm_L",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_boss_arm_L",
   "overriddenProperties":[],
@@ -23,13 +25,15 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"knock_back_amount","filters":[],"listItems":[],"multiselect":false,"name":"knock_back_amount","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"15","varType":0,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_arms_proto_r",
-    "path":"sprites/spr_boss_arms_proto_r/spr_boss_arms_proto_r.yy",
+    "name":"spr_boss_arms_proto_l",
+    "path":"sprites/spr_boss_arms_proto_l/spr_boss_arms_proto_l.yy",
   },
   "spriteMaskId":null,
   "visible":true,
