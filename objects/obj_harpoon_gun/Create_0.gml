@@ -33,6 +33,7 @@ state_point = function(){
 	//make harpoon sprite point towards target
 	image_angle = angle;
 	
+	#region Attack choices
 	//on left click, if on player, throw
 	if(mouse_check_button_pressed(mb_left) && on_player && harpoon_loaded){
 		//We have launched the harpoon, we must say the variable is false. Harpoon Projectile will handle the rest
@@ -43,7 +44,21 @@ state_point = function(){
 		
 		harpoon_loaded = false;
 	}
+
+	//on right click, close attack
+	if(mouse_check_button_pressed(mb_right) && on_player && harpoon_loaded){
+		
+		if (sprite_index != spr_harpoon_gun_stab) { 
+			sprite_index = spr_harpoon_gun_stab;
+			image_index = 0;
+		}
+		
+		//We are charging our attack, we must state this variable is false
+		harpoon_loaded = false;
+	}
+	#endregion
 	
+	#region Animation transition handling 
 	//Shooting is about to begin
 	if (sprite_index == spr_harpoon_gun_shoot && scrCheckAnimationFrame(4)) { 
 		
@@ -62,24 +77,26 @@ state_point = function(){
 				move_counter = move_time;
 			}
 		}
-	}
-	
-	if (sprite_index != spr_harpoon_gun_shoot) {
-		if (harpoon_loaded) sprite_index = spr_harpoon_gun_loaded;
-		else sprite_index = spr_harpoon_gun;
-	}
-
-	//on right click, close attack
-	if(mouse_check_button_pressed(mb_right) && on_player && harpoon_loaded){
+	} else if (sprite_index == spr_harpoon_gun_stab && scrCheckAnimationFrame(6)) { 
+				
 		state = state_hit;
 		
 		//Create hitbox
 		var _temp_angle = image_angle;
 		image_angle = 0;
-		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
+		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right + 80, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
 		myHitBox.image_angle = _temp_angle;
 		image_angle = _temp_angle;
 	}
+	
+	
+	//If neither gun shoot or melee is performed then just have normal logic 
+	if (sprite_index != spr_harpoon_gun_shoot && sprite_index != spr_harpoon_gun_stab) {
+		if (harpoon_loaded) sprite_index = spr_harpoon_gun_loaded;
+		else sprite_index = spr_harpoon_gun;
+	}
+	
+	#endregion
 	
 	image_yscale = sign(dcos(image_angle));
 }
@@ -174,17 +191,9 @@ hit_time = 8;
 hit_counter = hit_time;
 //for a certain number of frames, do hit animation
 state_hit = function(){
-	x = my_player.x + cos((image_angle * pi)/180) * 30;
-	y = my_player.y + -sin((image_angle * pi)/180) * 30;
-	hit_counter--;
+	x = my_player.x + cos((image_angle * pi)/180) * 60;
+	y = my_player.y + -sin((image_angle * pi)/180) * 60;
 	
-	
-	//once animation is over, reset vars and go back to idle state
-	if(hit_counter <= 0){
-		hit_counter = hit_time;
-		state = state_point;
-		instance_destroy(myHitBox);
-	}
 }
 
 state = state_point;
