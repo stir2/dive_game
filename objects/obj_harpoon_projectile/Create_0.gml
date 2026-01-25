@@ -33,7 +33,7 @@ state_point = function(){
 }
 
 //throwing towards target point
-move_time = 10;
+move_time = 4;
 move_counter = move_time;
 decelration_speed = -.8;
 reel_thresh_hold = 2;

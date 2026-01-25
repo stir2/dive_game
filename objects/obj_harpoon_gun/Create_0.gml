@@ -45,21 +45,28 @@ state_point = function(){
 	}
 	
 	//Shooting is about to begin
-	if (sprite_index == spr_harpoon_gun_shoot && scrCheckAnimationFrame(3)) { 
+	if (sprite_index == spr_harpoon_gun_shoot && scrCheckAnimationFrame(4)) { 
 		
-		with (my_projectile) { 
-			state = state_throw;
+		if (my_projectile.state != my_projectile.state_throw){
+			with (my_projectile) { 
+				state = state_throw;
 			
-			//Create hitbox
-			//Store angle for short time to get size right
-			var _temp_angle = image_angle;
-			image_angle = 0;
-			myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
-			image_angle = _temp_angle;
+				//Create hitbox
+				//Store angle for short time to get size right
+				var _temp_angle = image_angle;
+				image_angle = 0;
+				myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
+				image_angle = _temp_angle;
 			
-			//Reset timer
-			move_counter = move_time;
+				//Reset timer
+				move_counter = move_time;
+			}
 		}
+	}
+	
+	if (sprite_index != spr_harpoon_gun_shoot) {
+		if (harpoon_loaded) sprite_index = spr_harpoon_gun_loaded;
+		else sprite_index = spr_harpoon_gun;
 	}
 
 	//on right click, close attack
@@ -75,9 +82,6 @@ state_point = function(){
 	}
 	
 	image_yscale = sign(dcos(image_angle));
-	
-	if (harpoon_loaded) sprite_index = spr_harpoon_gun_loaded;
-	else sprite_index = spr_harpoon_gun;
 }
 
 ////throwing towards target point
