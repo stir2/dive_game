@@ -25,7 +25,7 @@ state_point = function(){
 	image_angle = angle;
 	
 	//on left click, if on player, throw
-	if(mouse_check_button_pressed(mb_left) && on_player){
+	if(mouse_check_button_pressed(mb_left) && on_player && my_player.in_water){
 		state = state_throw;
 		
 		//Store angle for short time to get size right

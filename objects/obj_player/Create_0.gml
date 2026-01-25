@@ -86,8 +86,6 @@ t = 0;
 
 horiz_input = 0;
 
-image_xscale = PLAYER_SCALE;
-image_yscale = PLAYER_SCALE;
 
 //Create harpoon object with this obj as anchor
 instance_create_layer(x, y, "Instances", obj_harpoon, {my_player : id});
@@ -120,7 +118,7 @@ function setAnimationFrame(){
 		sprite_index = spr_diver_death;
 	}
 	
-	if(horiz_input != 0) image_xscale = horiz_input * PLAYER_SCALE;
+	if(horiz_input != 0) image_xscale = horiz_input;
 	//mask_index = spr_diver_swim_idle
 	
 	
