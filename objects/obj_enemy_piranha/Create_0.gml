@@ -92,6 +92,7 @@ state_wander = function() {
 	
 	moveAndCollide();
 	image_speed = 1;
+	image_angle = 0;
 }
 
 
@@ -114,6 +115,11 @@ state_ready_attack = function() {
 			image_angle = 0;
 			
 		}
+		else { 
+			image_xscale = 1;
+	
+			if (dcos(image_angle != 0))	image_yscale = sign(dcos(image_angle));
+		}
 		//Decrement timer
 		
 		//Aim self at player
@@ -125,9 +131,6 @@ state_ready_attack = function() {
 		
 	}
 	moveAndCollide();
-	image_xscale = 1;
-	
-	if (dcos(image_angle != 0))	image_yscale = sign(dcos(image_angle));
 	
 	image_speed = 2;
 	

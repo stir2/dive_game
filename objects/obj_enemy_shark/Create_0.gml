@@ -123,7 +123,7 @@ state_ready_attack = function() {
 	
 	image_xscale = 1;
 	
-	if (dcos(image_angle != 0))	image_yscale = sign(dcos(image_angle));
+	if (dcos(image_angle) != 0)	image_yscale = sign(dcos(image_angle));
 	
 }
 	
