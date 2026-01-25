@@ -1,6 +1,9 @@
 // Inherit the parent event
 event_inherited();
 
+default_palette = spr_palette_enemy;
+current_palette = spr_palette_enemy_test;
+
 enum Movement_Type{
 	wander,
 	bounce,
@@ -19,6 +22,20 @@ x_dist = 0;
 y_dist = 0;
 x_move = 0;
 y_move = 0;
+
+
+spawn = {x, y};
+wander_range = 100;
+wander_target_x = random_range(-wander_range + spawn.x, wander_range + spawn.x);
+wander_target_y = random_range(-wander_range + spawn.y, wander_range + spawn.y);
+
+wander_distance = 0;
+
+wander_time = 60;
+wander_counter = 60;
+
+wander_slow_down = false;
+
 
 //Enemies set this speed in their create events
 move_speed = .1;
@@ -104,7 +121,40 @@ idle_move = function(){
 			calculate_move();
 		}break;
 		default : {
+			//show_debug_message(wander_distance);
 			//bubble type wander code goes here (all enemies should float if node info is unavailable)
+			//Choose a random point to wander once we reach a angle_speed of zero.
+			if(angle_speed == 0){				
+				show_debug_message("\nNEW DIRECTION");
+				
+				//Define new target
+				//Choose a random range for both x and y that will be -WANDER_STRENGTH & +WANDER_STRENGTH
+				wander_target_x = random_range(-wander_range + spawn.x, wander_range + spawn.x);
+				wander_target_y = random_range(-wander_range + spawn.y, wander_range + spawn.y);
+				show_debug_message("X Target: " + string(wander_target_x));
+				show_debug_message("Y Target: " + string(wander_target_y));
+				wander_slow_down = false;
+				wander_counter = wander_time;
+							
+				if ((x - wander_target_x) != 0) image_xscale = sign(wander_target_x - x);
+				
+			}
+			
+			
+			//Calc Movements needed
+			if (wander_slow_down) { 
+				//slow down
+				angle_speed = speed_adjust_by(angle_speed, -move_speed, 0, 1);
+			}
+			else { 
+				//Increase speed
+				angle_speed = speed_adjust_by(angle_speed, move_speed, move_speed_max, 1);
+			}
+
+
+			set_speed_at_angle(angle_speed, point_direction(x, y, wander_target_x, wander_target_y));
+			//show_debug_message("xSpeed : " + string(x_speed));
+			//show_debug_message("ySpeed : " + string(y_speed));
 		}
 	}
 }
@@ -129,6 +179,8 @@ stateIdle = function(){
 	
 }
 
+state_wander = function() { 
+}
 
 //State for when the enemy is supposed to die
 stateDead = function(){

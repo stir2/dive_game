@@ -1,13 +1,17 @@
 event_inherited();
 
+//Choose a random point to wander to once frame difference equals wander cooldown
 if(global.t - latest_t_wandered > WANDER_COOLDOWN){
+	//Choose a random range for both x and y that will be -WANDER_STRENGTH & +WANDER_STRENGTH
 	target_vel.x = random_range(-1 * WANDER_STRENGTH, WANDER_STRENGTH) * (1 - SPAWN_LOCATION_INFLUENCE);
 	target_vel.y= random_range(-1 * WANDER_STRENGTH, WANDER_STRENGTH) * (1 - SPAWN_LOCATION_INFLUENCE);
 	
+	//Get the distance to spawn 
 	vec_to_spawn = new vec2(x - spawn.x, y - spawn.y);
 	dist_to_spawn = sqrt(vec_to_spawn.x * vec_to_spawn.x
 						+ vec_to_spawn.y * vec_to_spawn.y);
-						
+					
+	//If we are far from spawn set the new target to be back to spawn
 	if(dist_to_spawn >= 0.005){
 		uvec_to_spawn = new vec2(vec_to_spawn.x / dist_to_spawn * WANDER_STRENGTH, 
 								vec_to_spawn.y / dist_to_spawn * WANDER_STRENGTH);
@@ -16,6 +20,7 @@ if(global.t - latest_t_wandered > WANDER_COOLDOWN){
 		target_vel.y -= (uvec_to_spawn.y * SPAWN_LOCATION_INFLUENCE);
 	}						
 	
+	//Set latest_t_wandered to be this current frame
 	latest_t_wandered = global.t;
 }
 

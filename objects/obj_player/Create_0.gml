@@ -90,7 +90,7 @@ image_xscale = PLAYER_SCALE;
 image_yscale = PLAYER_SCALE;
 
 //Create harpoon object with this obj as anchor
-instance_create_layer(x, y, "Instances", obj_harpoon, {my_player : id});
+instance_create_layer(x, y, "Instances", obj_harpoon_gun, {my_player : id});
 
 function setAnimationFrame(){
 	
