@@ -176,12 +176,12 @@ state_swing = function(){
 	if(bubble_spawn_counter <= 0){
 		if(swing_right){
 			if(bubble_spawn_pos_index < array_length(bubble_spawn_pos_R)){
-				instance_create_layer(bubble_spawn_pos_R[bubble_spawn_pos_index].bx, bubble_spawn_pos_R[bubble_spawn_pos_index].by, "Instances", obj_bubble_small);
+				instance_create_layer(bubble_spawn_pos_R[bubble_spawn_pos_index].bx, bubble_spawn_pos_R[bubble_spawn_pos_index].by, "Instances", obj_bubble_medium);
 			}
 		}
 		else{
 			if(bubble_spawn_pos_index < array_length(bubble_spawn_pos_L)){
-				instance_create_layer(bubble_spawn_pos_L[bubble_spawn_pos_index].bx, bubble_spawn_pos_L[bubble_spawn_pos_index].by, "Instances", obj_bubble_small);
+				instance_create_layer(bubble_spawn_pos_L[bubble_spawn_pos_index].bx, bubble_spawn_pos_L[bubble_spawn_pos_index].by, "Instances", obj_bubble_medium);
 			}
 		}
 		bubble_spawn_pos_index++;

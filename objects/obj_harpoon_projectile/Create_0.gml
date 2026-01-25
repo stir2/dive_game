@@ -17,6 +17,8 @@ y_movement = 0;
 effect_create_time = 4;
 effect_create_counter = 0; 
 
+myHitBox = noone;
+
 depth = -100;
 
 

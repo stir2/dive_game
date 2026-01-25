@@ -61,7 +61,7 @@ state_point = function(){
 	//Shooting is about to begin
 	if (sprite_index == spr_harpoon_gun_shoot && scrCheckAnimationFrame(4)) { 
 		
-		if (my_projectile.state != my_projectile.state_throw){
+		if (my_projectile.state == my_projectile.state_point){
 			with (my_projectile) { 
 				state = state_throw;
 			
