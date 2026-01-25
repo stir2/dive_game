@@ -4,6 +4,16 @@ event_inherited();
 default_palette = spr_palette_enemy;
 current_palette = spr_palette_enemy;
 
+switch (room) { 
+	case (Level1): current_palette = spr_palette_enemy_level_1;
+	break;
+	case (Level2): current_palette = spr_palette_enemy_level_2;
+	break;
+	case (Level3): current_palette = spr_palette_enemy_level_3;
+	break;
+}
+	
+
 enum Movement_Type{
 	wander,
 	bounce,

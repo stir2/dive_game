@@ -107,6 +107,7 @@ state_ready_attack = function() {
 		//Go into attak state
 		attack_counter = attack_time;
 		state = state_attack;
+		image_index = 0;
 	}
 	else {
 		//Decrement timer
