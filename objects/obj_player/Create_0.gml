@@ -10,7 +10,7 @@ event_inherited();
 	#macro PROPEL 6
 }
 
-hp = 40;
+hp = infinity;
 
 death_timer = 60;
 
@@ -53,7 +53,7 @@ function vec2(_x, _y) constructor {
 max_speed = new vec2(3, 10);
 in_water = true;
 grounded = false;
-tank_size = 5000;
+tank_size = 40;
 
 // Vars for the player's current state, whether in water or air, set these each step
 //vel = new vec2(0, 0);
