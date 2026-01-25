@@ -40,5 +40,5 @@
     "path":"sprites/spr_boss_proto/spr_boss_proto.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }
