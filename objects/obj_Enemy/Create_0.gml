@@ -2,7 +2,7 @@
 event_inherited();
 
 default_palette = spr_palette_enemy;
-current_palette = spr_palette_enemy_test;
+current_palette = spr_palette_enemy;
 
 enum Movement_Type{
 	wander,
@@ -136,7 +136,7 @@ idle_move = function(){
 				wander_slow_down = false;
 				wander_counter = wander_time;
 							
-				if ((x - wander_target_x) != 0) image_xscale = sign(wander_target_x - x);
+				if ((wander_target_x - x) != 0) image_xscale = sign(wander_target_x - x);
 				
 			}
 			
@@ -162,7 +162,7 @@ idle_move = function(){
 damage_shake_time = 10;
 damage_shake_counter = damage_shake_time;
 shake_angle = 0;
-shake_range = 10;
+shake_range = 20;
 tookDamage = function() { 
 	//Start Shake time
 	damage_shake_counter = damage_shake_time;

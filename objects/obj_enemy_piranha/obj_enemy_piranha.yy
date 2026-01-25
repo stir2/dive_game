@@ -40,8 +40,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Enemy_Piranha_Proto",
-    "path":"sprites/spr_Enemy_Piranha_Proto/spr_Enemy_Piranha_Proto.yy",
+    "name":"spr_Enemy_Piranha",
+    "path":"sprites/spr_Enemy_Piranha/spr_Enemy_Piranha.yy",
   },
   "spriteMaskId":null,
   "visible":true,

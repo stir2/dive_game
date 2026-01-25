@@ -28,18 +28,18 @@ draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale,
 //}
 
 //draw_text(x, y, angle_speed);
-draw_text(x, y, scrCalculateDistanceSlowingDown(angle_speed, -move_speed) );
-draw_text(x, y + 10, wander_distance);
-draw_circle(wander_target_x, wander_target_y, 10, true);
+//draw_text(x, y, scrCalculateDistanceSlowingDown(angle_speed, -move_speed) );
+//draw_text(x, y + 10, wander_distance);
+//draw_circle(wander_target_x, wander_target_y, 10, true);
 
-if (scrCalculateDistanceSlowingDown(angle_speed, move_speed) >= wander_distance) { 
-	//slow down
-	draw_text(x, y + 50, "Slow down");
-}
-else { 
-	//Increase speed
-	draw_text(x, y + 50, "Speed up");
-}
+//if (scrCalculateDistanceSlowingDown(angle_speed, move_speed) >= wander_distance) { 
+//	//slow down
+//	draw_text(x, y + 50, "Slow down");
+//}
+//else { 
+//	//Increase speed
+//	draw_text(x, y + 50, "Speed up");
+//}
 
 	
 shader_reset();
