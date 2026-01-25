@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_boss_arm",
+  "%Name":"obj_boss_arm_R",
   "eventList":[],
   "managed":true,
-  "name":"obj_boss_arm",
+  "name":"obj_boss_arm_R",
   "overriddenProperties":[],
   "parent":{
     "name":"Boss",
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_arms_proto",
-    "path":"sprites/spr_boss_arms_proto/spr_boss_arms_proto.yy",
+    "name":"spr_boss_arms_proto_r",
+    "path":"sprites/spr_boss_arms_proto_r/spr_boss_arms_proto_r.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_boss_arms_proto",
+  "%Name":"spr_boss_arms_proto_l",
   "bboxMode":0,
   "bbox_bottom":237,
   "bbox_left":0,
@@ -19,11 +19,12 @@
   "height":238,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"e8f2a63a-98f2-4b00-95f2-f5e43482517e","blendMode":0,"displayName":"pasteLayer","isLocked":false,"name":"e8f2a63a-98f2-4b00-95f2-f5e43482517e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"e77a8954-6b11-4050-8fe6-9e4161cd1061","blendMode":0,"displayName":"pasteLayer","isLocked":false,"name":"e77a8954-6b11-4050-8fe6-9e4161cd1061","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_boss_arms_proto",
+  "name":"spr_boss_arms_proto_l",
   "nineSlice":null,
-  "origin":9,
+  "origin":2,
   "parent":{
     "name":"Test Art",
     "path":"folders/Test Art.yy",
@@ -33,7 +34,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_boss_arms_proto",
+    "%Name":"spr_boss_arms_proto_l",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +58,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_boss_arms_proto",
+    "name":"spr_boss_arms_proto_l",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,14 +70,14 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ab6b4efe-fdbb-4bd0-99c1-6fe209289c33","path":"sprites/spr_boss_arms_proto/spr_boss_arms_proto.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ab6b4efe-fdbb-4bd0-99c1-6fe209289c33","path":"sprites/spr_boss_arms_proto_l/spr_boss_arms_proto_l.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"88dd3a3f-bde0-4918-95d1-1df95735bb1c","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":22,
-    "yorigin":20,
+    "xorigin":166,
+    "yorigin":0,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

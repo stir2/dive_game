@@ -1,12 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_boss",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_boss_arm_L",
+  "eventList":[],
   "managed":true,
-  "name":"obj_boss",
+  "name":"obj_boss_arm_L",
   "overriddenProperties":[],
   "parent":{
     "name":"Boss",
@@ -31,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_proto",
-    "path":"sprites/spr_boss_proto/spr_boss_proto.yy",
+    "name":"spr_boss_arms_proto_r",
+    "path":"sprites/spr_boss_arms_proto_r/spr_boss_arms_proto_r.yy",
   },
   "spriteMaskId":null,
   "visible":true,
