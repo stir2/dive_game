@@ -125,14 +125,14 @@ idle_move = function(){
 			//bubble type wander code goes here (all enemies should float if node info is unavailable)
 			//Choose a random point to wander once we reach a angle_speed of zero.
 			if(angle_speed == 0){				
-				show_debug_message("\nNEW DIRECTION");
+				//show_debug_message("\nNEW DIRECTION");
 				
 				//Define new target
 				//Choose a random range for both x and y that will be -WANDER_STRENGTH & +WANDER_STRENGTH
 				wander_target_x = random_range(-wander_range + spawn.x, wander_range + spawn.x);
 				wander_target_y = random_range(-wander_range + spawn.y, wander_range + spawn.y);
-				show_debug_message("X Target: " + string(wander_target_x));
-				show_debug_message("Y Target: " + string(wander_target_y));
+				//show_debug_message("X Target: " + string(wander_target_x));
+				//show_debug_message("Y Target: " + string(wander_target_y));
 				wander_slow_down = false;
 				wander_counter = wander_time;
 							

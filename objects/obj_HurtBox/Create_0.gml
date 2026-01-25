@@ -32,11 +32,11 @@ hurtUser = function(_hitBoxID, _dmg, _knockbackSpd, _knockbackAng, _xDir, _yDir,
 	
 		
 		_knockbackAng ??= point_direction(_hbCenterX, _hbCenterY, _centerX, _centerY);
-		show_debug_message(_knockbackAng);
+		//show_debug_message(_knockbackAng);
 	}
 	
 	if (instance_exists(myUser)){
-		show_debug_message(object_get_name(myUser.object_index) + " got hit by " + object_get_name(_hitBoxID.myUser.object_index));
+		//show_debug_message(object_get_name(myUser.object_index) + " got hit by " + object_get_name(_hitBoxID.myUser.object_index));
 		with (myUser) 
 		{
 			//var _func = variable_instance_get(id, "takeDamage");

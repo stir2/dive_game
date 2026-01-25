@@ -50,4 +50,4 @@ if(layer_exists("Effect_Glow") && layer_exists("Effect_Underwater") && layer_exi
 	fx_set_parameters(fx_glow, params_glow);
 	fx_set_parameters(fx_vignette, params_vignette);
 }
-show_debug_message(vignette_edges);
+//show_debug_message(vignette_edges);

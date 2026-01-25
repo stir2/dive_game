@@ -54,5 +54,5 @@
     "name":"sprHitBox",
     "path":"sprites/sprHitBox/sprHitBox.yy",
   },
-  "visible":false,
+  "visible":true,
 }

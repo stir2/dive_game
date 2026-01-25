@@ -83,7 +83,7 @@ if(state == "popped"){
 	    x += irandom_range(-0.5 * tries, 0.5 * tries);
 	    y += irandom_range(-0.5 * tries, 0.5 * tries);
 	    tries++;
-		show_debug_message("UNSQUISH");
+		//show_debug_message("UNSQUISH");
 	}
 
 	animBuffer();

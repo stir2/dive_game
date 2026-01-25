@@ -82,8 +82,8 @@ state_point = function(){
 		
 		state = state_hit;
 		
-		x = my_player.x + cos((image_angle * pi)/180) * 60;
-		y = my_player.y + -sin((image_angle * pi)/180) * 60;
+		x = my_player.x + cos((image_angle * pi)/180) * hit_length;
+		y = my_player.y + -sin((image_angle * pi)/180) * hit_length;
 				
 		//Create effect object
 		instance_create_depth(x, y, -10, obj_sprite_effect, {sprite_index : spr_effect_harpoon_stab, image_angle : image_angle});
@@ -91,7 +91,7 @@ state_point = function(){
 		//Create hitbox
 		var _temp_angle = image_angle;
 		image_angle = 0;
-		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right + 100, bbox_bottom], damage_amount, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
+		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right + 60, bbox_bottom], damage_amount, 0, 0, 0, 0, 0, [obj_Enemy],,,-1));
 		myHitBox.image_angle = _temp_angle;
 		image_angle = _temp_angle;
 	}
@@ -196,10 +196,11 @@ state_point = function(){
 
 hit_time = 8;
 hit_counter = hit_time;
+hit_length = 30;
 //for a certain number of frames, do hit animation
 state_hit = function(){
-	x = my_player.x + cos((image_angle * pi)/180) * 60;
-	y = my_player.y + -sin((image_angle * pi)/180) * 60;
+	x = my_player.x + cos((image_angle * pi)/180) * hit_length;
+	y = my_player.y + -sin((image_angle * pi)/180) * hit_length;
 	
 }
 
