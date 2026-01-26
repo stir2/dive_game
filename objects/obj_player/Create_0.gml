@@ -11,7 +11,7 @@ event_inherited();
 }
 
 hp = infinity;
-
+sanddollars = global.sanddollars;
 death_timer = 60;
 
 //Rewrite tookdamage script 
@@ -129,3 +129,7 @@ function setAnimationFrame(){
 }
 //Create instance of camera
 instance_create_layer(x, y, "Instances", obj_camera);
+
+//instance of hud
+instance_create_layer(x, y, "Instances", obj_hud);
+

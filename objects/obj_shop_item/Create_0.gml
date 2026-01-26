@@ -22,8 +22,11 @@ switch(item_type){
 }
 
 buy = function(){
-	curr_level++;
-	global.item_levels[item_type] = curr_level;
-	price *= 3;
-	global.item_prices[item_type] = price;
+	if(obj_player.sanddollars >= price){
+		obj_player.sanddollars -= price;
+		curr_level++;
+		global.item_levels[item_type] = curr_level;
+		price *= 3;
+		global.item_prices[item_type] = price;
+	}
 }
