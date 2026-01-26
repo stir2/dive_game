@@ -191,6 +191,27 @@ stateIdle = function(){
 
 state_wander = function() { 
 }
+	
+grav = .3;
+flop_speed = 2
+state_flop = function () { 
+	
+	x_speed = flop_speed * image_xscale;
+	var _bbox_side = (image_xscale == 1)? bbox_right : bbox_left;
+	if (place_meeting(_bbox_side + (10 * image_xscale), y, obj_solid)) image_xscale = -image_xscale;
+	y_speed += grav;
+	if (onSolid(obj_solid)) { 
+		y_speed = -5;
+		image_yscale = 1;
+	}
+	
+	if (in_water) state = state_wander;
+	
+	image_angle = 0;
+	image_alpha = 1;
+	
+	moveAndCollide();
+}
 
 //State for when the enemy is supposed to die
 stateDead = function(){

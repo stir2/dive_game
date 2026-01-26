@@ -7,3 +7,5 @@ if (scrCalculateDistanceSlowingDown(angle_speed, move_speed) >= wander_distance 
 	wander_slow_down = true;
 }
 else wander_counter--;
+
+if (!in_water) state = state_flop;
