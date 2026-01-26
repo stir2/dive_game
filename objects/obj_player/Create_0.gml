@@ -10,6 +10,12 @@ event_inherited();
 	#macro PROPEL 6
 }
 
+tank_size = obj_player_data.player_tank_size;
+air_use_time = obj_player_data.player_air_use_time;
+harpoon_damage = obj_player_data.player_harpoon_damage;
+harpoon_speed = obj_player_data.player_harpoon_attack_speed;
+harpoon_reel_speed = obj_player_data.player_harpoon_reel_speed;
+
 hp = infinity;
 
 death_timer = 60;
