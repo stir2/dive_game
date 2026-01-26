@@ -3,7 +3,7 @@
   "%Name":"spr_sanddollar_blue",
   "bboxMode":0,
   "bbox_bottom":31,
-  "bbox_left":2,
+  "bbox_left":0,
   "bbox_right":31,
   "bbox_top":0,
   "collisionKind":1,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"50270150-9938-4a6a-baa3-aaa40b6fa831","name":"50270150-9938-4a6a-baa3-aaa40b6fa831","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"11be49f8-0c74-4d0b-8a90-c0e872880155","name":"11be49f8-0c74-4d0b-8a90-c0e872880155","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":32,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"3d73420c-3fea-47b6-9ce1-147bcd2fb747","blendMode":0,"displayName":"default","isLocked":false,"name":"3d73420c-3fea-47b6-9ce1-147bcd2fb747","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"bc092cf5-08fe-4c69-8dc8-5b6d6d6321c1","blendMode":0,"displayName":"default","isLocked":false,"name":"bc092cf5-08fe-4c69-8dc8-5b6d6d6321c1","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_sanddollar_blue",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"50270150-9938-4a6a-baa3-aaa40b6fa831","path":"sprites/spr_sanddollar_blue/spr_sanddollar_blue.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"25e3e313-4cb8-4b88-8687-1fb95dbff557","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"11be49f8-0c74-4d0b-8a90-c0e872880155","path":"sprites/spr_sanddollar_blue/spr_sanddollar_blue.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"ee55456d-77b0-47d9-844a-4de32227c33b","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
