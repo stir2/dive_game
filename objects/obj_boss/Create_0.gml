@@ -34,6 +34,7 @@ state_idle = function(){
 		attack_cool_timer = attack_cooldown;
 	}
 	attack_cool_timer--;
+	sprite_index = spr_boss_head_idle;
 }
 
 spawn_time = 20;
@@ -67,7 +68,7 @@ state_enemy_spawn = function(){
 
 	
 	//play animation
-		if(!in_sequence){
+	if(!in_sequence){
 		 if(!attacked){
 			var _seq = layer_sequence_create("Instances", x, y, seq_spines);
 			var _seqStuct = layer_sequence_get_instance(_seq);
@@ -89,6 +90,7 @@ state_enemy_spawn = function(){
 			 spawn_counter = spawn_time;
 		 }
 	}
+	sprite_index = spr_boss_head_roar;
 }
 
 rocks_x = [752, 1104, 1440, 1766];
@@ -132,6 +134,7 @@ state_slam = function(){
 			 state = state_idle;
 		 }
 	}
+	sprite_index = spr_boss_head_idle;
 }
 
 spike_cooldown = 5;
@@ -167,6 +170,7 @@ state_spikes = function(){
 			 spike_cool_timer = spike_cooldown;
 		 }
 	}
+	sprite_index = spr_boss_head_idle;
 }
 bubble_spawn_time = 5;
 bubble_spawning_begin_time = 35;
@@ -226,6 +230,7 @@ state_swing = function(){
 			 state = state_idle;
 		 }
 	}
+	sprite_index = spr_boss_head_idle;
 }
 
 state = state_idle;

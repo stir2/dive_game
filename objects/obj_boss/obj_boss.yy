@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_proto",
-    "path":"sprites/spr_boss_proto/spr_boss_proto.yy",
+    "name":"spr_boss_head_idle",
+    "path":"sprites/spr_boss_head_idle/spr_boss_head_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

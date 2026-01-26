@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_spike",
-    "path":"sprites/spr_boss_spike/spr_boss_spike.yy",
+    "name":"spr_boss_spike_final",
+    "path":"sprites/spr_boss_spike_final/spr_boss_spike_final.yy",
   },
   "spriteMaskId":null,
   "visible":true,
