@@ -108,7 +108,10 @@ function setAnimationFrame(){
 			sprite_index = spr_diver_swim_right;
 		}
 	} else {
-		if(horiz_input == 0){
+		if(!onSolid(obj_solid)){
+			sprite_index = spr_diver_air_jump;
+		}
+		else if(horiz_input == 0){
 			sprite_index = spr_diver_air_idle;
 		} else {
 			sprite_index = spr_diver_walk_right;

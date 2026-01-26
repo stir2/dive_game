@@ -11,7 +11,6 @@
     {"name":"inst_505C9B7A","path":"rooms/rm_main_menu/rm_main_menu.yy",},
     {"name":"inst_1717AB3","path":"rooms/rm_main_menu/rm_main_menu.yy",},
     {"name":"inst_7F45136B","path":"rooms/rm_main_menu/rm_main_menu.yy",},
-    {"name":"inst_21462020","path":"rooms/rm_main_menu/rm_main_menu.yy",},
     {"name":"inst_2D102B0D","path":"rooms/rm_main_menu/rm_main_menu.yy",},
     {"name":"inst_audio_box","path":"rooms/rm_main_menu/rm_main_menu.yy",},
     {"name":"inst_music_vol_buttons","path":"rooms/rm_main_menu/rm_main_menu.yy",},
@@ -42,9 +41,6 @@
         {"$GMRInstance":"v4","%Name":"inst_7F45136B","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7F45136B","objectId":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},"propertyId":{"name":"label","path":"objects/obj_button/obj_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Audio\"",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.65090907,"scaleY":0.5733333,"x":576.0,"y":224.0,},
-        {"$GMRInstance":"v4","%Name":"inst_21462020","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_21462020","objectId":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},"properties":[
-            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},"propertyId":{"name":"label","path":"objects/obj_button/obj_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Toggle VFX\"",},
-          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.65090907,"scaleY":0.5733333,"x":576.0,"y":320.0,},
         {"$GMRInstance":"v4","%Name":"inst_2D102B0D","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2D102B0D","objectId":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},"propertyId":{"name":"label","path":"objects/obj_button/obj_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Toggle Fullscreen",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.65090907,"scaleY":0.5733333,"x":576.0,"y":416.0,},
@@ -61,7 +57,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},"propertyId":{"name":"sub_text","path":"objects/obj_button/obj_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":" obj_settings.music_vol",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.65090907,"scaleY":0.5733333,"x":-96.0,"y":224.0,},
         {"$GMRInstance":"v4","%Name":"inst_1717AB3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1717AB3","objectId":{"name":"obj_menu_box","path":"objects/obj_menu_box/obj_menu_box.yy",},"properties":[
-            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_menu_box","path":"objects/obj_menu_box/obj_menu_box.yy",},"propertyId":{"name":"buttons_array","path":"objects/obj_menu_box/obj_menu_box.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[inst_7F45136B, inst_21462020, inst_2D102B0D]",},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_menu_box","path":"objects/obj_menu_box/obj_menu_box.yy",},"propertyId":{"name":"buttons_array","path":"objects/obj_menu_box/obj_menu_box.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[inst_7F45136B, inst_2D102B0D]",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":-0.32864937,"scaleX":11.0,"scaleY":10.0,"x":256.0,"y":352.0,},
         {"$GMRInstance":"v4","%Name":"inst_audio_box","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_audio_box","objectId":{"name":"obj_menu_box","path":"objects/obj_menu_box/obj_menu_box.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_menu_box","path":"objects/obj_menu_box/obj_menu_box.yy",},"propertyId":{"name":"buttons_array","path":"objects/obj_menu_box/obj_menu_box.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[inst_music_vol_buttons,  inst_SFX_vol_buttons, inst_master_vol_buttons]",},
