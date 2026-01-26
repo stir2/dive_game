@@ -15,7 +15,7 @@ RESPAWN_COOLDOWN = infinity //10 * 60; this made enemy prize bubbles come back o
 WANDER_COOLDOWN = 1 * 60;
 WANDER_STRENGTH = 1;
 SPAWN_LOCATION_INFLUENCE = 0.7;
-POP_ANIM_LENGTH = 8;
+POP_ANIM_LENGTH = 0;
 
 mask_index = spr_bubble;
 
@@ -53,12 +53,20 @@ function respawn(){
 function animBuffer(){
 	if(state == "popped"){
 		if(global.t - latest_t_popped > POP_ANIM_LENGTH){
-			visible = false;
+			image_speed = 1;
 		}
 	} else if(state == "respawning") {
 		if(global.t - latest_t_unpopped > POP_ANIM_LENGTH){
 			mask_index = spr_bubble;
+			visible = true;
+			image_index = 0;
+			image_speed = 0
 			state = "unpopped";
 		}
 	}
 }
+
+
+visible = true;
+image_index = 0;
+image_speed = 0;

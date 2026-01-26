@@ -17,7 +17,7 @@ harpoon_speed = obj_player_data.player_harpoon_attack_speed;
 harpoon_reel_speed = obj_player_data.player_harpoon_reel_speed;
 
 hp = infinity;
-
+sanddollars = obj_player_data.currency_count;
 death_timer = 60;
 
 //Rewrite tookdamage script 
@@ -134,3 +134,7 @@ function setAnimationFrame(){
 }
 //Create instance of camera
 instance_create_layer(x, y, "Instances", obj_camera);
+
+//instance of hud
+instance_create_layer(x, y, "Instances", obj_hud);
+

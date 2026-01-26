@@ -59,7 +59,7 @@ state_point = function(){
 	
 	#region Animation transition handling 
 	//Shooting is about to begin
-	if (sprite_index == spr_harpoon_gun_shoot && scrCheckAnimationFrame(4)) { 
+	if (sprite_index == spr_harpoon_gun_shoot && scrCheckAnimationFrame(3)) { 
 		
 		if (my_projectile.state == my_projectile.state_point){
 			with (my_projectile) { 
@@ -77,7 +77,7 @@ state_point = function(){
 				move_counter = move_time;
 			}
 		}
-	} else if (sprite_index == spr_harpoon_gun_stab && scrCheckAnimationFrame(6)) { 
+	} else if (sprite_index == spr_harpoon_gun_stab && scrCheckAnimationFrame(3)) { 
 		
 		
 		state = state_hit;

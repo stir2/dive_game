@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_rock",
-    "path":"sprites/spr_boss_rock/spr_boss_rock.yy",
+    "name":"spr_boss_boulder",
+    "path":"sprites/spr_boss_boulder/spr_boss_boulder.yy",
   },
   "spriteMaskId":null,
   "visible":true,
