@@ -156,6 +156,7 @@
     {"id":{"name":"shdPalleteSwap","path":"shaders/shdPalleteSwap/shdPalleteSwap.yy",},},
     {"id":{"name":"bgm_boss","path":"sounds/bgm_boss/bgm_boss.yy",},},
     {"id":{"name":"bgm_dive_song","path":"sounds/bgm_dive_song/bgm_dive_song.yy",},},
+    {"id":{"name":"bgm_menu","path":"sounds/bgm_menu/bgm_menu.yy",},},
     {"id":{"name":"sfx_explode","path":"sounds/sfx_explode/sfx_explode.yy",},},
     {"id":{"name":"spr_air","path":"sprites/spr_air/spr_air.yy",},},
     {"id":{"name":"spr_bg1","path":"sprites/spr_bg1/spr_bg1.yy",},},
