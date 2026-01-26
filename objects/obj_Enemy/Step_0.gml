@@ -1,4 +1,6 @@
 event_inherited();
+if (!in_water) state = state_flop;
+
 if(hp <= 0){state = stateDead;}
 
 if (state != state_wander) spawn = {x, y};

@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemy_lionfish_proto",
-    "path":"sprites/spr_enemy_lionfish_proto/spr_enemy_lionfish_proto.yy",
+    "name":"spr_enemy_lionfish",
+    "path":"sprites/spr_enemy_lionfish/spr_enemy_lionfish.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -74,6 +74,8 @@ set_speed_at_angle = function(_speedWanted, _angle){
 }
 
 collideWith = function (_collidingWith = []) {
+	//Store angle temporarly 
+	var _angle_held = image_angle;
 	//--Apply Any defaults arrays aneeded here--
 	_collidingWith = array_concat(_collidingWith, [obj_solid]);
 	//-----------------------------------------
@@ -207,6 +209,9 @@ collideWith = function (_collidingWith = []) {
 	
 	ds_list_destroy(_recLRList);
 	ds_list_destroy(_recTBList);
+	
+	//return angle amount
+	image_angle = _angle_held;
 	
 	//Return results of collision 
 	return _collisionMade;
