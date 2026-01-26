@@ -18,6 +18,7 @@
     {"name":"inst_6C6C725F","path":"rooms/Shop/Shop.yy",},
     {"name":"inst_1FA26475","path":"rooms/Shop/Shop.yy",},
     {"name":"inst_25BC3816","path":"rooms/Shop/Shop.yy",},
+    {"name":"inst_5D8CED80","path":"rooms/Shop/Shop.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -149,7 +150,9 @@
           -2147483648,0,16,6,23,-3,13,4,21,8,17,12,-75,-2147483648,1,21,-4,7,6,23,13,13,21,7,7,-4,22,2,7,23,-5,
           13,3,21,23,23,-2437,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"ts_caves1","path":"tilesets/ts_caves1/ts_caves1.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
-    {"$GMRInstanceLayer":"","%Name":"Background_Object","depth":800,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Background_Object","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"Background_Object","depth":800,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"v4","%Name":"inst_5D8CED80","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5D8CED80","objectId":{"name":"obj_background_shop","path":"objects/obj_background_shop/obj_background_shop.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.67,"scaleY":0.67,"x":1200.0,"y":768.0,},
+      ],"layers":[],"name":"Background_Object","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4280362803,"depth":900,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
   "name":"Shop",
