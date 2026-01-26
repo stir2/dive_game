@@ -95,6 +95,7 @@ state_wander = function() {
 	
 	if (sprite_index == spr_enemy_eel_attack && scrCheckAnimationFrame(9) && !instance_exists(my_projectile)) { 
 		my_projectile = instance_create_layer(x, y, "Instances", obj_eel_zap, {angle : point_direction(x, y, player_attacking.x, player_attacking.y)});
+		my_projectile.current_palette = current_palette;
 	}
 	
 	#endregion

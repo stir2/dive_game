@@ -1,3 +1,7 @@
+
+default_palette = spr_palette_enemy;
+current_palette = spr_palette_enemy;
+
 movement_speed = 15;
 life_time = 30;
 life_counter = life_time;
