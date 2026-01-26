@@ -17,3 +17,5 @@ air_level_text_pos = [];
 
 air_bubble_height = 0;
 air_bubble_start = 0;
+
+anim_timer = 0;

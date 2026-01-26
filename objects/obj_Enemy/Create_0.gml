@@ -235,6 +235,8 @@ stateDead = function(){
 			instance_create_layer(x + random(_sd_spacing), y + random(_sd_spacing), "Instances", obj_sanddollar);
 		}
 	}
+	
+	instance_create_depth(x, y, -10, obj_sprite_effect, {sprite_index : spr_explosion, image_xscale : image_xscale});
 	instance_destroy();
 }
 

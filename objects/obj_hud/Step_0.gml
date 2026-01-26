@@ -15,3 +15,5 @@ air_level_text_pos = [start_pos[0] + x_offset + text_x_offset, start_pos[1] + y_
 
 air_bubble_height = (air_level/max_air_level) * sprite_get_height(spr_hud_tank_bubbles);
 air_bubble_start = sprite_get_height(spr_hud_tank_bubbles) - air_bubble_height;
+
+anim_timer++;

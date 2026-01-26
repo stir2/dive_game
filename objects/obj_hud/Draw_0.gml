@@ -9,4 +9,4 @@ draw_sprite(spr_hud_tank, 0, air_level_icon_pos[0], air_level_icon_pos[1]);
 draw_text_transformed(air_level_text_pos[0], air_level_text_pos[1], air_level, 2.5, 2.5, 0);
 
 //air level
-draw_sprite_part(spr_hud_tank_bubbles, 0, 0, air_bubble_start, sprite_get_width(spr_hud_tank_bubbles), air_bubble_height, air_level_icon_pos[0] + 10, air_level_icon_pos[1] + 10 + air_bubble_start);
+draw_sprite_part(spr_hud_tank_bubbles, anim_timer/10, 0, air_bubble_start, sprite_get_width(spr_hud_tank_bubbles), air_bubble_height, air_level_icon_pos[0] + 10 + 8, air_level_icon_pos[1] + 10 + 2 + air_bubble_start);
