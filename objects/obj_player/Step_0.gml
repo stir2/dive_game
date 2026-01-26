@@ -98,4 +98,4 @@ if(in_water){
 } else {
 	air_level = min(air_level + 1, tank_size);
 }
-show_debug_message("X: " + string(x) + ", Y: " + string(y));
+show_debug_message("Depth: " + string(depth));
