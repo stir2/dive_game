@@ -9,7 +9,7 @@ else {
 	shake_angle = 0;
 }
 
-scrSetPaletteSwapShader(default_palette, image_alpha, current_palette);
+scrSetPaletteSwapShader(default_palette, image_alpha, current_palette, (damage_shake_counter > 0)? spr_palette_hit : spr_palette_blank);
 
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 
 	image_angle + shake_angle, (damage_shake_counter > 0) ? 

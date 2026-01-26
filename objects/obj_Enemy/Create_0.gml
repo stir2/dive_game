@@ -193,8 +193,12 @@ state_wander = function() {
 }
 	
 grav = .3;
-flop_speed = 2
+flop_speed = 2;
+flop_damage_time = 2 * 60;
+flop_damage_counter = flop_damage_time;
 state_flop = function () { 
+	if (flop_damage_counter < 0) {takeDamage(id, 1); flop_damage_counter = flop_damage_time;}
+	flop_damage_counter--;
 	
 	x_speed = flop_speed * image_xscale;
 	var _bbox_side = (image_xscale == 1)? bbox_right : bbox_left;
