@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_arms_proto_l",
-    "path":"sprites/spr_boss_arms_proto_l/spr_boss_arms_proto_l.yy",
+    "name":"spr_boss_claw_idle_L",
+    "path":"sprites/spr_boss_claw_idle_L/spr_boss_claw_idle_L.yy",
   },
   "spriteMaskId":null,
   "visible":true,
