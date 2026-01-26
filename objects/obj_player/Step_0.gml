@@ -92,7 +92,7 @@ moveAndCollide()
 
 // Increase/decrease air level depending on area
 if(in_water){
-	if(global.t % 40 == 0){
+	if(global.t % air_use_time == 0){
 		air_level--;
 	}
 } else {
