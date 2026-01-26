@@ -190,14 +190,7 @@
   ],
   "isDnd":false,
   "layers":[
-    {"$GMREffectLayer":"","%Name":"Effect_Glow","depth":0,"effectEnabled":true,"effectType":"_effect_glow","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_Glow","properties":[
-        {"name":"g_GlowRadius","type":0,"value":"256",},
-        {"name":"g_GlowQuality","type":0,"value":"3",},
-        {"name":"g_GlowIntensity","type":0,"value":"0.225",},
-        {"name":"g_GlowGamma","type":0,"value":"0",},
-        {"name":"g_GlowAlpha","type":0,"value":"1",},
-      ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
-    {"$GMREffectLayer":"","%Name":"Effect_Underwater","depth":100,"effectEnabled":true,"effectType":"_filter_underwater","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_Underwater","properties":[
+    {"$GMREffectLayer":"","%Name":"Effect_Underwater","depth":0,"effectEnabled":true,"effectType":"_filter_underwater","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_Underwater","properties":[
         {"name":"g_Distort1Speed","type":0,"value":"0.08",},
         {"name":"g_Distort2Speed","type":0,"value":"0.015",},
         {"name":"g_Distort1Scale","type":0,"value":"20",},
@@ -308,8 +301,8 @@
           -197,91,-88,-2147483648,-197,91,-88,-2147483648,-197,91,-88,-2147483648,-197,91,-88,-2147483648,-197,
           91,-88,-2147483648,-197,91,-88,-2147483648,-197,91,-88,-2147483648,-197,91,-88,-2147483648,-197,91,-88,
           -2147483648,
-        ],"TileDataFormat":1,},"tilesetId":{"name":"ts_walls","path":"tilesets/ts_walls/ts_walls.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
-    {"$GMRInstanceLayer":"","%Name":"Instances","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        ],"TileDataFormat":1,},"tilesetId":{"name":"ts_walls_full","path":"tilesets/ts_walls_full/ts_walls_full.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+    {"$GMRInstanceLayer":"","%Name":"Instances","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_131F2A89","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_131F2A89","objectId":{"name":"obj_oceanblock","path":"objects/obj_oceanblock/obj_oceanblock.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":8.0,"scaleY":3.0,"x":416.0,"y":288.0,},
         {"$GMRInstance":"v4","%Name":"inst_4784D29","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4784D29","objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":576.0,"y":256.0,},
         {"$GMRInstance":"v4","%Name":"inst_5D378D21","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5D378D21","objectId":{"name":"obj_globals","path":"objects/obj_globals/obj_globals.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":416.0,"y":0.0,},
@@ -619,7 +612,7 @@
     {"$GMRInstanceLayer":"","%Name":"Background_Object","depth":800,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_6032A943","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6032A943","objectId":{"name":"obj_background","path":"objects/obj_background/obj_background.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.2,"scaleY":1.2,"x":192.0,"y":0.0,},
       ],"layers":[],"name":"Background_Object","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4278190080,"depth":900,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
+    {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4278190080,"depth":700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
   "name":"Level1",
   "parent":{

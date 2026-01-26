@@ -24,6 +24,6 @@ if(instance_exists(obj_player)){
 		y = obj_player.y;
 		camera_set_view_pos(cam, x, y);
 	}else{
-		camera_set_view_pos(cam, 64, 64);
+		camera_set_view_pos(cam, 1148, 732);
 	}
 }
