@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_water_zone",
+  "%Name":"obj_water_line",
   "eventList":[],
   "managed":true,
-  "name":"obj_water_zone",
+  "name":"obj_water_line",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -28,9 +28,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprWaterBox",
-    "path":"sprites/sprWaterBox/sprWaterBox.yy",
+    "name":"spr_water_line",
+    "path":"sprites/spr_water_line/spr_water_line.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

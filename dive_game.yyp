@@ -62,7 +62,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.2.213",
+    "IDEVersion":"2024.14.1.210",
   },
   "name":"dive_game",
   "resources":[
@@ -107,6 +107,7 @@
     {"id":{"name":"obj_shop_item","path":"objects/obj_shop_item/obj_shop_item.yy",},},
     {"id":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},},
     {"id":{"name":"obj_sprite_effect","path":"objects/obj_sprite_effect/obj_sprite_effect.yy",},},
+    {"id":{"name":"obj_water_line","path":"objects/obj_water_line/obj_water_line.yy",},},
     {"id":{"name":"obj_water_zone","path":"objects/obj_water_zone/obj_water_zone.yy",},},
     {"id":{"name":"obj_water","path":"objects/obj_water/obj_water.yy",},},
     {"id":{"name":"objExternalForce","path":"objects/objExternalForce/objExternalForce.yy",},},
@@ -194,6 +195,7 @@
     {"id":{"name":"spr_tile_walls","path":"sprites/spr_tile_walls/spr_tile_walls.yy",},},
     {"id":{"name":"spr_trader_cart_proto","path":"sprites/spr_trader_cart_proto/spr_trader_cart_proto.yy",},},
     {"id":{"name":"spr_trader_proto","path":"sprites/spr_trader_proto/spr_trader_proto.yy",},},
+    {"id":{"name":"spr_water_line","path":"sprites/spr_water_line/spr_water_line.yy",},},
     {"id":{"name":"spr_water","path":"sprites/spr_water/spr_water.yy",},},
     {"id":{"name":"sprHitBox","path":"sprites/sprHitBox/sprHitBox.yy",},},
     {"id":{"name":"sprHurtBox","path":"sprites/sprHurtBox/sprHurtBox.yy",},},
