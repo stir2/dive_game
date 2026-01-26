@@ -1,19 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_main_menu_button",
+  "%Name":"obj_sfx",
   "eventList":[],
   "managed":true,
-  "name":"obj_main_menu_button",
+  "name":"obj_sfx",
   "overriddenProperties":[],
   "parent":{
-    "name":"Menus",
-    "path":"folders/Objects/Menus.yy",
+    "name":"Sound",
+    "path":"folders/Objects/Data Handling/Sound.yy",
   },
-  "parentObjectId":{
-    "name":"obj_button",
-    "path":"objects/obj_button/obj_button.yy",
-  },
-  "persistent":false,
+  "parentObjectId":null,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -30,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_menu_button_proto",
-    "path":"sprites/spr_menu_button_proto/spr_menu_button_proto.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
