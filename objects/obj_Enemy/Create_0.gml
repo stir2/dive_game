@@ -5,11 +5,13 @@ default_palette = spr_palette_enemy;
 current_palette = spr_palette_enemy;
 
 switch (room) { 
-	case (Level1): current_palette = spr_palette_enemy_level_1;
+	case (Level1): current_palette = spr_palette_enemy_orange;
 	break;
-	case (Level2): current_palette = spr_palette_enemy_level_2;
+	case (Level2): current_palette = spr_palette_enemy;
 	break;
-	case (Level3): current_palette = spr_palette_enemy_level_3;
+	case (Level3): current_palette = spr_palette_enemy_blue;
+	break;
+	case (Boss): current_palette = spr_palette_enemy_green;
 	break;
 }
 	
