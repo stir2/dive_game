@@ -8,25 +8,25 @@ toggle_fullscreen = function() {
 }
 
 //Volume Control Variables 
-music_vol = 60; 
+music_vol = 50; 
 sfx_vol = 100; 
-master_vol = 50;
+master_vol = 100;
 change_music_vol = function(_value = 0) { 
 	music_vol += _value;
 	music_vol = clamp(music_vol, 0, 100);
-	audio_group_set_gain(ag_bgm, music_vol);
+	audio_group_set_gain(ag_bgm, music_vol/100);
 }
 
 change_sfx_vol = function(_value = 0) { 
 	sfx_vol += _value;
 	sfx_vol = clamp(sfx_vol, 0, 100);
-	audio_group_set_gain(ag_sfx, sfx_vol);
+	audio_group_set_gain(ag_sfx, sfx_vol/100);
 }
 
 change_master_vol = function(_value = 0) { 
 	master_vol += _value;
 	master_vol = clamp(master_vol, 0, 100);
-	audio_master_gain(master_vol);
+	audio_master_gain(master_vol/100);
 }
 
 audio_group_set_gain(ag_bgm, music_vol/100);

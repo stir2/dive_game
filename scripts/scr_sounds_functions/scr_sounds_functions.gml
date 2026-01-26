@@ -184,7 +184,7 @@ function fadeoutMusic(_time = 0, _musicToFadeOutID = noone) {
 //	audio_get_type()
 //}
 
-function getMusicPlaying(_musicID) {
+function getMusicPlaying() {
 	return obj_music.musicPlaying;
 }
 
