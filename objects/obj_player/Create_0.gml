@@ -17,7 +17,7 @@ harpoon_speed = obj_player_data.player_harpoon_attack_speed;
 harpoon_reel_speed = obj_player_data.player_harpoon_reel_speed;
 
 hp = infinity;
-sanddollars = global.sanddollars;
+sanddollars = obj_player_data.currency_count;
 death_timer = 60;
 
 //Rewrite tookdamage script 

@@ -8,6 +8,7 @@ if(curr_level >= max_level){
 }
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
+draw_set_font(font_main);
 draw_text(x, bbox_top - 40, description);
 draw_text(x, bbox_top - 16, "Level " + string(curr_level));
 if(curr_level >= max_level){draw_text(x, bbox_bottom + 16, "???")}
