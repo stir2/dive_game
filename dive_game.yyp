@@ -138,7 +138,6 @@
     {"id":{"name":"rm_enemy_test","path":"rooms/rm_enemy_test/rm_enemy_test.yy",},},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
     {"id":{"name":"rm_main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"RoomEffects","path":"rooms/RoomEffects/RoomEffects.yy",},},
     {"id":{"name":"Shop","path":"rooms/Shop/Shop.yy",},},
     {"id":{"name":"TestRoom","path":"rooms/TestRoom/TestRoom.yy",},},
