@@ -91,6 +91,8 @@ state_wander = function() {
 	//show_debug_message("y_speed = " + string(y_speed));
 	
 	moveAndCollide();
+	image_speed = 1;
+	image_angle = 0;
 }
 
 
@@ -108,6 +110,15 @@ state_ready_attack = function() {
 		_player = collision_circle(x,y, detection_radius, obj_player, false, false);
 		if (!instance_exists(_player)){
 			state = state_wander;
+			image_xscale = sign(dcos(image_angle));
+			image_yscale = 1;
+			image_angle = 0;
+			
+		}
+		else { 
+			image_xscale = 1;
+	
+			if (dcos(image_angle != 0))	image_yscale = sign(dcos(image_angle));
 		}
 		//Decrement timer
 		
@@ -120,9 +131,8 @@ state_ready_attack = function() {
 		
 	}
 	moveAndCollide();
-	image_xscale = 1;
 	
-	if (dcos(image_angle != 0))	image_yscale = sign(dcos(image_angle));
+	image_speed = 2;
 	
 }
 
@@ -156,6 +166,8 @@ state_attack = function() {
 	}
 	
 	moveAndCollide();
+	
+	image_speed = 3;
 }
 
 ////attack state 

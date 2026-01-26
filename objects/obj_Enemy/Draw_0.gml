@@ -9,7 +9,7 @@ else {
 	shake_angle = 0;
 }
 
-scrSetPaletteSwapShader(default_palette, image_alpha, current_palette);
+scrSetPaletteSwapShader(default_palette, image_alpha, current_palette, (damage_shake_counter > 0)? spr_palette_hit : spr_palette_blank);
 
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 
 	image_angle + shake_angle, (damage_shake_counter > 0) ? 
@@ -28,18 +28,18 @@ draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale,
 //}
 
 //draw_text(x, y, angle_speed);
-draw_text(x, y, scrCalculateDistanceSlowingDown(angle_speed, -move_speed) );
-draw_text(x, y + 10, wander_distance);
-draw_circle(wander_target_x, wander_target_y, 10, true);
+//draw_text(x, y, scrCalculateDistanceSlowingDown(angle_speed, -move_speed) );
+//draw_text(x, y + 10, wander_distance);
+//draw_circle(wander_target_x, wander_target_y, 10, true);
 
-if (scrCalculateDistanceSlowingDown(angle_speed, move_speed) >= wander_distance) { 
-	//slow down
-	draw_text(x, y + 50, "Slow down");
-}
-else { 
-	//Increase speed
-	draw_text(x, y + 50, "Speed up");
-}
+//if (scrCalculateDistanceSlowingDown(angle_speed, move_speed) >= wander_distance) { 
+//	//slow down
+//	draw_text(x, y + 50, "Slow down");
+//}
+//else { 
+//	//Increase speed
+//	draw_text(x, y + 50, "Speed up");
+//}
 
 	
 shader_reset();

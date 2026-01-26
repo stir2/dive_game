@@ -2,7 +2,17 @@
 event_inherited();
 
 default_palette = spr_palette_enemy;
-current_palette = spr_palette_enemy_test;
+current_palette = spr_palette_enemy;
+
+switch (room) { 
+	case (Level1): current_palette = spr_palette_enemy_level_1;
+	break;
+	case (Level2): current_palette = spr_palette_enemy_level_2;
+	break;
+	case (Level3): current_palette = spr_palette_enemy_level_3;
+	break;
+}
+	
 
 enum Movement_Type{
 	wander,
@@ -136,7 +146,7 @@ idle_move = function(){
 				wander_slow_down = false;
 				wander_counter = wander_time;
 							
-				if ((x - wander_target_x) != 0) image_xscale = sign(wander_target_x - x);
+				if ((wander_target_x - x) != 0) image_xscale = sign(wander_target_x - x);
 				
 			}
 			
@@ -162,7 +172,7 @@ idle_move = function(){
 damage_shake_time = 10;
 damage_shake_counter = damage_shake_time;
 shake_angle = 0;
-shake_range = 10;
+shake_range = 20;
 tookDamage = function() { 
 	//Start Shake time
 	damage_shake_counter = damage_shake_time;
@@ -180,6 +190,31 @@ stateIdle = function(){
 }
 
 state_wander = function() { 
+}
+	
+grav = .3;
+flop_speed = 2;
+flop_damage_time = 2 * 60;
+flop_damage_counter = flop_damage_time;
+state_flop = function () { 
+	if (flop_damage_counter < 0) {takeDamage(id, 1); flop_damage_counter = flop_damage_time;}
+	flop_damage_counter--;
+	
+	x_speed = flop_speed * image_xscale;
+	var _bbox_side = (image_xscale == 1)? bbox_right : bbox_left;
+	if (place_meeting(_bbox_side + (10 * image_xscale), y, obj_solid)) image_xscale = -image_xscale;
+	y_speed += grav;
+	if (onSolid(obj_solid)) { 
+		y_speed = -5;
+		image_yscale = 1;
+	}
+	
+	if (in_water) state = state_wander;
+	
+	image_angle = 0;
+	image_alpha = 1;
+	
+	moveAndCollide();
 }
 
 //State for when the enemy is supposed to die

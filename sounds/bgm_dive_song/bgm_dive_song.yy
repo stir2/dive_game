@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"bgm_dive_song",
+  "audioGroupId":{
+    "name":"ag_bgm",
+    "path":"audiogroups/ag_bgm",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":131.21306,
+  "exportDir":"",
+  "name":"bgm_dive_song",
+  "parent":{
+    "name":"BGM",
+    "path":"folders/Sounds/BGM.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"bgm_dive_song.mp3",
+  "volume":1.0,
+}

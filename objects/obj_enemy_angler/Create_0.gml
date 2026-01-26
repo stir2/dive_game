@@ -19,7 +19,11 @@ attack_cool_timer = 0;
 
 detection_radius = 60;
 
-myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, knock_back_amount, undefined,0,0,0,[obj_player],,,-1,,60))
+direction_facing = 1;
+
+myHitBox = noone;
+
+
 //Urchin floats around in water... that it all it does is float for now 
 state_wander = function() { 
 	//#region Code for Small up and down motion
@@ -81,6 +85,7 @@ state_wander = function() {
 		//Set variables for ready attack state
 		chargeTimer = chargeTime;
 		targetPlayer = _player
+		image_index = 0;
 		
 		//Go into ready attack state
 		state = state_ready_attack;
@@ -88,17 +93,22 @@ state_wander = function() {
 	
 	#endregion
 	//show_debug_message("y_speed = " + string(y_speed));
-	sprite_index = spr_enemy_angler_bubble_proto;
+	image_xscale = direction_facing;
+	sprite_index = spr_enemy_angler;
+	if (image_alpha > 0) image_alpha -= .05;
 	moveAndCollide();
 }
 
 
 //ready attack State 
-chargeTime = 10;
+chargeTime = 5;
 chargeTimer = chargeTime;
 targetPlayer = noone;
 state_ready_attack = function() { 
 	if (chargeTimer < 1) { 
+		sprite_index = spr_enemy_angler_attack;
+		image_index = 0;
+		image_alpha = 1;
 		//Go into attak state
 		attack_counter = attack_time;
 		state = state_attack;
@@ -110,31 +120,46 @@ state_ready_attack = function() {
 		//Aim self at player
 		angle_direction = point_direction(x, y, targetPlayer.x, targetPlayer.y);
 		image_angle = angle_direction;
+		if (dcos(image_angle) != 0)	image_yscale = sign(dcos(image_angle));
+		image_xscale = 1;
 		
+		sprite_index = spr_enemy_angler;
 	}
 	
-	sprite_index = spr_enemy_angler_proto;
-	image_xscale = 1;
+	image_alpha = (chargeTime - chargeTimer)/chargeTime;
 	
 	if (dcos(image_angle != 0))	image_yscale = sign(dcos(image_angle));
 	
 }
 	
 //attack state 
-attack_speed = 12;
+attack_speed = 3;
 attack_time = 10;
 attack_counter = attack_time;
 state_attack = function() { 
-	//Check if timer is hit
-	if (attack_counter < 1) { 
+	if (!instance_exists(myHitBox) && scrCheckAnimationFrame(4)){
+		var _angle_stored = image_angle;
+		image_angle = 0;
+		
+		myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, 
+		new HitBox([id, true, bbox_left, bbox_top, bbox_right, bbox_bottom], 1, 
+		knock_back_amount, undefined,0,0,0,[obj_player],,,-1,,60));
+		
+		image_angle = _angle_stored;
+	}
+	//Check if attack animation is over
+	if (sprite_index = spr_enemy_angler) { 
 		//Decelerate
 		angle_speed = speed_adjust_by(angle_speed, -1, 0, 1);
 		//Divide speed by angle
 		set_speed_at_angle(angle_speed, angle_direction);
 		
 		if (angle_speed == 0) {
+			
+			direction_facing = sign(dcos(image_angle));
 			state = state_wander;
-			image_xscale = sign(dcos(image_angle));
+			instance_destroy(myHitBox);
+			
 			image_yscale = 1;
 			image_angle = 0;
 		}
@@ -142,11 +167,14 @@ state_attack = function() {
 	}
 	else {
 		//Decrement Timer
-		attack_counter--;
+		//attack_counter--;
 		
 		//Move at max speed
 		angle_speed = attack_speed;
 		set_speed_at_angle(angle_speed, angle_direction);
+		
+			if (dcos(image_angle) != 0)	image_yscale = sign(dcos(image_angle));
+			image_xscale = 1;
 	}
 	
 	moveAndCollide();

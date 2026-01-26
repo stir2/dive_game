@@ -92,10 +92,10 @@ moveAndCollide()
 
 // Increase/decrease air level depending on area
 if(in_water){
-	if(global.t % 40 == 0){
+	if(global.t % air_use_time == 0){
 		air_level--;
 	}
 } else {
 	air_level = min(air_level + 1, tank_size);
 }
-//show_debug_message("Air level: " + string(air_level));
+show_debug_message("X: " + string(x) + ", Y: " + string(y));

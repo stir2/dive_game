@@ -107,6 +107,7 @@ state_ready_attack = function() {
 		//Go into attak state
 		attack_counter = attack_time;
 		state = state_attack;
+		image_index = 0;
 	}
 	else {
 		//Decrement timer
@@ -122,7 +123,7 @@ state_ready_attack = function() {
 	
 	image_xscale = 1;
 	
-	if (dcos(image_angle != 0))	image_yscale = sign(dcos(image_angle));
+	if (dcos(image_angle) != 0)	image_yscale = sign(dcos(image_angle));
 	
 }
 	

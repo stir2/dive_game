@@ -32,5 +32,5 @@
     "path":"sprites/sprWaterBox/sprWaterBox.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
