@@ -12,6 +12,10 @@ curr_level = global.item_levels[item_type];
 max_level = global.item_level_cap;
 price = global.item_prices[item_type];
 
+buffer_time = 20;
+click_buff = 60;
+
+
 description = "";
 switch(item_type){
 	case ITEM.tank_up: {description = "Tank Capacity";} break;
