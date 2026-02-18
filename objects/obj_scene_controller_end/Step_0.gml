@@ -1,8 +1,8 @@
-if(keyboard_check_pressed(vk_anykey)){
+if(keyboard_check_pressed(vk_anykey) || mouse_check_button_pressed(mb_any)){
 	scene++;
 	
 	if(scene > last_scene){
-		room_goto(Level1);
+		room_goto(rm_main_menu);
 	}
 }
 
