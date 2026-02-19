@@ -85,6 +85,10 @@ state_throw = function(){
 	
 	//If a wall is reached or movement is stopped, reset vars and set to state_reel
 	if ((place_meeting(x, y, obj_solid) && ! place_meeting(x, y, obj_player)) || angle_speed == 0){
+		x_speed = 0;
+		y_speed = 0;
+		angle_speed = 0;
+		
 		throw_distance_passed = 0;
 		state = state_reel;
 		if (place_meeting(x, y, obj_solid))	sprite_index = spr_harpoon_wiggle;

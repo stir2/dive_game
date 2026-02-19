@@ -172,7 +172,7 @@ idle_move = function(){
 }
 
 damage_shake_time = 10;
-damage_shake_counter = damage_shake_time;
+damage_shake_counter = 0;
 shake_angle = 0;
 shake_range = 20;
 tookDamage = function() { 
@@ -199,6 +199,8 @@ flop_speed = 2;
 flop_damage_time = 2 * 60;
 flop_damage_counter = flop_damage_time;
 state_flop = function () { 
+	if (image_angle != 0) image_xscale = sign(dcos(image_angle));
+	
 	if (flop_damage_counter < 0) {takeDamage(id, 1); flop_damage_counter = flop_damage_time;}
 	flop_damage_counter--;
 	
@@ -206,12 +208,18 @@ state_flop = function () {
 	var _bbox_side = (image_xscale == 1)? bbox_right : bbox_left;
 	if (place_meeting(_bbox_side + (10 * image_xscale), y, obj_solid)) image_xscale = -image_xscale;
 	y_speed += grav;
+	
 	if (onSolid(obj_solid)) { 
 		y_speed = -5;
 		image_yscale = 1;
 	}
 	
-	if (in_water) state = state_wander;
+	if (in_water) 
+	{
+		angle_speed = 0;
+		state = state_wander;
+		image_yscale = 1;
+	}
 	
 	image_angle = 0;
 	image_alpha = 1;
@@ -222,7 +230,7 @@ state_flop = function () {
 //State for when the enemy is supposed to die
 stateDead = function(){
 	//make death effect - replace lol
-	instance_create_layer(x, y, "Instances", obj_ridiculous_explosion);
+	//instance_create_layer(x, y, "Instances", obj_ridiculous_explosion);
 	
 	//spawn air if low
 	if(obj_player.air_level < obj_player.tank_size/2){
@@ -236,7 +244,13 @@ stateDead = function(){
 		}
 	}
 	
-	instance_create_depth(x, y, -10, obj_sprite_effect, {sprite_index : spr_explosion, image_xscale : image_xscale});
+	instance_create_depth(x, y, -10, obj_sprite_effect, 
+	{
+		sprite_index : spr_explosion, 
+		image_xscale : image_xscale,
+		defaultPalette : default_palette,
+		swappingPalette : current_palette
+	});
 	instance_destroy();
 }
 

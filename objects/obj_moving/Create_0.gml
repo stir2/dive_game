@@ -76,6 +76,7 @@ set_speed_at_angle = function(_speedWanted, _angle){
 collideWith = function (_collidingWith = []) {
 	//Store angle temporarly 
 	var _angle_held = image_angle;
+	image_angle = 0;
 	//--Apply Any defaults arrays aneeded here--
 	_collidingWith = array_concat(_collidingWith, [obj_solid]);
 	//-----------------------------------------
@@ -270,5 +271,4 @@ onSolid = function(_platformsArr = pointer_null, _instanceSearch = noone)
 	//show_debug_message("On Solid = " + string(_onSolid));
 	return _onSolid;
 }
-	
 

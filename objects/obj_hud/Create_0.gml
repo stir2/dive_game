@@ -7,7 +7,7 @@ max_air_level = 0;
 x_offset = 15;
 y_offset = 10;
 text_x_offset = 50;
-sanddollar_offset = 100;
+sanddollar_offset = 120;
 depth = -10;
 
 sanddollar_icon_pos = [];
