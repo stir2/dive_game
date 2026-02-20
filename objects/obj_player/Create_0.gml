@@ -22,9 +22,11 @@ death_timer = 60;
 
 //Rewrite tookdamage script 
 tookDamage = function() {
-	air_level -= 5;
-	latest_t_hurt = global.t;
-	image_index = 0; // Reset animation frame just in case we were hurt previously
+	if (air_level > 0) {
+		air_level -= 5;
+		latest_t_hurt = global.t;
+		image_index = 0; // Reset animation frame just in case we were hurt previously
+	}
 }
 
 myHurtbox = instance_create_depth(x, y, 0, obj_HurtBox, new HurtBox(id, true, bbox_left, bbox_top, bbox_right, bbox_bottom));
@@ -137,6 +139,9 @@ function setAnimationFrame(){
 }
 //Create instance of camera
 instance_create_layer(x, y, "Instances", obj_camera);
+
+//Create pause instance 
+instance_create_layer(x, y, "Instances", obj_pause);
 
 //instance of hud
 instance_create_layer(x, y, "Instances", obj_hud);

@@ -11,8 +11,8 @@ with (my_gun) {
 	_gun_side_x = bbox_right;
 	_gun_side_y = y;
 	
-	_gun_side_x = x + dcos(image_angle) * (x - bbox_left);
-	_gun_side_y = y - dsin(image_angle) * (x - bbox_left);
+	_gun_side_x = x + lengthdir_x(x - bbox_left, image_angle); //x + dcos(image_angle) * (x - bbox_left);
+	_gun_side_y = y + lengthdir_y(y - bbox_top, image_angle); //y - dsin(image_angle) * (x - bbox_left);
 	
 	var _angle_holder = image_angle;
 }

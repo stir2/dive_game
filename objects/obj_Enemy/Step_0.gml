@@ -1,5 +1,5 @@
 event_inherited();
-if (!in_water) state = state_flop;
+if (!in_water && object_index != obj_boss) state = state_flop;
 
 if(hp <= 0){state = stateDead;}
 

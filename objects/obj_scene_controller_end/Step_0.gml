@@ -10,3 +10,5 @@ if((keyboard_check_pressed(vk_anykey) || mouse_check_button_pressed(mb_any)) && 
 if(instance_exists(obj_scenes_end)){
 	obj_scenes_end.image_index = scene;
 }
+
+if(next_buff > 0){next_buff--;}

@@ -35,6 +35,7 @@ state_idle = function(){
 	}
 	attack_cool_timer--;
 	sprite_index = spr_boss_head_idle;
+	
 }
 
 spawn_time = 20;
