@@ -38,9 +38,9 @@
     {"$GMFolder":"","%Name":"Boss","folderPath":"folders/Sprites/Boss.yy","name":"Boss","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Diver","folderPath":"folders/Sprites/Diver.yy","name":"Diver","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Enemies","folderPath":"folders/Sprites/Enemies.yy","name":"Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Main Menu","folderPath":"folders/Sprites/Main Menu.yy","name":"Main Menu","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Harpoon","folderPath":"folders/Sprites/Harpoon.yy","name":"Harpoon","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"effects","folderPath":"folders/Sprites/Harpoon/effects.yy","name":"effects","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Main Menu","folderPath":"folders/Sprites/Main Menu.yy","name":"Main Menu","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Palettes","folderPath":"folders/Sprites/Palettes.yy","name":"Palettes","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Shop","folderPath":"folders/Sprites/Shop.yy","name":"Shop","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Test Sprites","folderPath":"folders/Sprites/Test Sprites.yy","name":"Test Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -79,7 +79,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.1.210",
+    "IDEVersion":"2024.14.2.213",
   },
   "name":"dive_game",
   "resources":[
