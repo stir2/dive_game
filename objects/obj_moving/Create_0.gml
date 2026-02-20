@@ -81,7 +81,6 @@ collideWith = function (_collidingWith = []) {
 	_collidingWith = array_concat(_collidingWith, [obj_solid]);
 	//-----------------------------------------
 	
-	
 	#region---- Create the Collison rectangle lists ----
 	//-----Left/Right aka X
 	var _recLRList = ds_list_create();

@@ -1,1 +1,5 @@
 room_goto(rm_init);
+
+//MACROS 
+#macro ORGINAL_APPLICATION_WIDTH 1200
+#macro ORGINAL_APPLICATION_HEIGHT 675
