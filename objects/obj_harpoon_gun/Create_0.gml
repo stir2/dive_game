@@ -79,8 +79,9 @@ state_point = function(){
 		}
 	} else if (sprite_index == spr_harpoon_gun_stab && scrCheckAnimationFrame(3)) { 
 		
-		
+
 		state = state_hit;
+		audio_play_sound(sfx_harpoon_stab, 4, false);
 		
 		x = my_player.x + cos((image_angle * pi)/180) * hit_length;
 		y = my_player.y + -sin((image_angle * pi)/180) * hit_length;

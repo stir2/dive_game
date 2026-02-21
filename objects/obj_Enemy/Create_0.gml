@@ -178,6 +178,8 @@ shake_range = 20;
 tookDamage = function() { 
 	//Start Shake time
 	damage_shake_counter = damage_shake_time;
+	if(hp > 0) {audio_play_sound(sfx_enemy_hurt, 3, false);}
+	else{audio_play_sound(sfx_enemy_die, 3, false);}
 	
 }
 

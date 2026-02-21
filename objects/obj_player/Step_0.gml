@@ -94,6 +94,7 @@ moveAndCollide()
 if(in_water){
 	if(global.t % air_use_time == 0){
 		air_level--;
+		if(air_level == 15 || air_level == 10 || air_level == 7 || air_level == 5 || air_level == 3  || air_level == 2 || air_level == 1){audio_play_sound(sfx_air_low, 4, false);}
 	}
 } else {
 	air_level = min(air_level + 1, tank_size);

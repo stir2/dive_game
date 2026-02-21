@@ -47,7 +47,7 @@ state_throw = function(){
 	//if on_player is still true (throw just happened) set total distance
 	if(on_player){
 		//throw_distance_total = point_distance(x, y, target_x, target_y);
-		
+		audio_play_sound(sfx_harpoon_shoot, 4, false);
 		//tell harpoon that it isn't on the player anymore
 		on_player = false;
 	}
@@ -91,7 +91,10 @@ state_throw = function(){
 		
 		throw_distance_passed = 0;
 		state = state_reel;
-		if (place_meeting(x, y, obj_solid))	sprite_index = spr_harpoon_wiggle;
+		if (place_meeting(x, y, obj_solid)){
+			audio_play_sound(sfx_harpoon_hit_wall, 1, false);
+			sprite_index = spr_harpoon_wiggle;
+		}
 		image_index = 0;
 	}
 	
@@ -124,6 +127,8 @@ state_reel = function(){
 		y_movement = -sin((angle * pi)/180) * reel_speed;
 		x += x_movement;
 		y += y_movement;
+		
+		if(!audio_is_playing(sfx_harpoon_reel)){audio_play_sound(sfx_harpoon_reel, 2, true);}
 	} else if (!place_meeting(x, y, obj_solid)){
 		y_speed = (in_water)? .5 : 10;
 		if (moveAndCollide()) {
@@ -134,6 +139,8 @@ state_reel = function(){
 		//show_debug_message(angle_difference(270, image_angle));
 		if (!(abs(angle_difference(270, image_angle)) < 10)) 
 		{image_angle += sign(angle_difference(270, image_angle)) * 4;}
+		
+		if(audio_is_playing(sfx_harpoon_reel)){audio_stop_sound(sfx_harpoon_reel);}
 		//if (!(image_angle < 280 && image_angle > 260)) 
 		//{image_angle += (angle_difference(270, image_angle) > 180)? 1 * 10 : 1 * -10;}
 		
@@ -144,7 +151,7 @@ state_reel = function(){
 		on_player = true;
 		state = state_point;
 		instance_destroy(myHitBox);
-		
+		if(audio_is_playing(sfx_harpoon_reel)){audio_stop_sound(sfx_harpoon_reel);}
 		//Set the guns boolean to be true
 		my_gun.harpoon_loaded = true;
 	}

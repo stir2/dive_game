@@ -23,6 +23,7 @@ death_timer = 60;
 //Rewrite tookdamage script 
 tookDamage = function() {
 	if (air_level > 0) {
+		audio_play_sound(sfx_player_hurt, 3, false);
 		air_level -= 5;
 		latest_t_hurt = global.t;
 		image_index = 0; // Reset animation frame just in case we were hurt previously

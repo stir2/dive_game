@@ -19,6 +19,10 @@ POP_ANIM_LENGTH = 0;
 
 mask_index = spr_bubble;
 
+bubble_pitch = 0;
+if(air_amount >= 20){bubble_pitch = -3;}
+else if (air_amount <= 5){bubble_pitch = 5;}
+
 function vec2(_x, _y) constructor {
     x = _x;
     y = _y;
@@ -32,6 +36,7 @@ function pop(){
 	if(state == "popped"){
 		return -1;
 	}
+	audio_play_sound(sfx_bubble_pop, 1, false, , , power(2, bubble_pitch/12));
 	state = "popped";
 	latest_t_popped = global.t;
 	mask_index = sprNoHitBox;
