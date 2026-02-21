@@ -29,12 +29,13 @@ state_point = function(){
 	target_y = mouse_y;
 	//set angle so that throw and reel can access it
 	angle = point_direction(my_player.x, my_player.y, target_x, target_y);
+	if (obj_controller.controllerPad != -1) angle = obj_controller.rightStickAngle;
 	//make harpoon sprite point towards target
 	image_angle = angle;
 	
 	#region Attack choices
 	//on left click, if on player, throw
-	if(mouse_check_button_pressed(mb_left) && on_player && harpoon_loaded){
+	if(obj_controller.check_input_pressed(Inputs.Attack1) /*mouse_check_button_pressed(mb_left)*/ && on_player && harpoon_loaded){
 		//We have launched the harpoon, we must say the variable is false. Harpoon Projectile will handle the rest
 		if (sprite_index != spr_harpoon_gun_shoot) { 
 			sprite_index = spr_harpoon_gun_shoot;
@@ -45,7 +46,7 @@ state_point = function(){
 	}
 
 	//on right click, close attack
-	if(mouse_check_button_pressed(mb_right) && on_player && harpoon_loaded){
+	if( obj_controller.check_input_pressed(Inputs.Attack2) /*mouse_check_button_pressed(mb_right)*/ && on_player && harpoon_loaded){
 		
 		if (sprite_index != spr_harpoon_gun_stab) { 
 			sprite_index = spr_harpoon_gun_stab;

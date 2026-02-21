@@ -103,7 +103,7 @@ function setAnimationFrame(){
 	var index_before = sprite_index;
 	
 	if(in_water){
-		if(key_down[UP] && abs(y_speed) > abs(x_speed)){
+		if(obj_controller.check_input(Inputs.Up)/*key_down[UP]*/ && abs(y_speed) > abs(x_speed)){
 			sprite_index = spr_diver_swim_up;
 		} else if (horiz_input == 0){
 			sprite_index = spr_diver_swim_idle;
