@@ -2,7 +2,7 @@
 // You can write your code in this editor
 start_pos = [camera_get_view_x(obj_camera.cam) + x_offset, camera_get_view_y(obj_camera.cam)  + y_offset];
 if(instance_exists(obj_player)){
-	sanddollars = obj_player.sanddollars;
+	//sanddollars = obj_player.sanddollars;
 	air_level = obj_player.air_level;
 	max_air_level = obj_player.tank_size;
 }
