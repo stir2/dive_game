@@ -1,7 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 start_pos = [0, 0];
-sanddollars = 0;
+sanddollars = obj_player_data.currency_count;
+sanddollars_to_subtract = 0;
 air_level = 0;
 max_air_level = 0;
 x_offset = 15;

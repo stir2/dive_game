@@ -28,6 +28,7 @@ switch(item_type){
 buy = function(){
 	if(obj_player.sanddollars >= price){
 		obj_player.sanddollars -= price;
+		obj_hud.sanddollars_to_subtract += price;
 		switch(item_type){
 			case ITEM.tank_up: {
 				//Action

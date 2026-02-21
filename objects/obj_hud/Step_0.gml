@@ -17,3 +17,9 @@ air_bubble_height = (air_level/max_air_level) * sprite_get_height(spr_hud_tank_b
 air_bubble_start = sprite_get_height(spr_hud_tank_bubbles) - air_bubble_height;
 
 anim_timer++;
+
+if (sanddollars_to_subtract > 0) 
+{
+	sanddollars_to_subtract--;
+	sanddollars--;
+}
