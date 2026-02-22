@@ -85,7 +85,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.1.210",
+    "IDEVersion":"2024.14.2.213",
   },
   "name":"dive_game",
   "resources":[
@@ -317,6 +317,7 @@
     {"id":{"name":"spr_sanddollar_yellow","path":"sprites/spr_sanddollar_yellow/spr_sanddollar_yellow.yy",},},
     {"id":{"name":"spr_scenes_end","path":"sprites/spr_scenes_end/spr_scenes_end.yy",},},
     {"id":{"name":"spr_scenes_intro","path":"sprites/spr_scenes_intro/spr_scenes_intro.yy",},},
+    {"id":{"name":"spr_settings_background","path":"sprites/spr_settings_background/spr_settings_background.yy",},},
     {"id":{"name":"spr_shop_cart","path":"sprites/spr_shop_cart/spr_shop_cart.yy",},},
     {"id":{"name":"spr_shop_item_highlighted","path":"sprites/spr_shop_item_highlighted/spr_shop_item_highlighted.yy",},},
     {"id":{"name":"spr_shop_item_marker","path":"sprites/spr_shop_item_marker/spr_shop_item_marker.yy",},},
@@ -324,6 +325,9 @@
     {"id":{"name":"spr_shop_item","path":"sprites/spr_shop_item/spr_shop_item.yy",},},
     {"id":{"name":"spr_shopkeeper_highlighted","path":"sprites/spr_shopkeeper_highlighted/spr_shopkeeper_highlighted.yy",},},
     {"id":{"name":"spr_shopkeeper","path":"sprites/spr_shopkeeper/spr_shopkeeper.yy",},},
+    {"id":{"name":"spr_slider_button","path":"sprites/spr_slider_button/spr_slider_button.yy",},},
+    {"id":{"name":"spr_slider_empty","path":"sprites/spr_slider_empty/spr_slider_empty.yy",},},
+    {"id":{"name":"spr_slider_full","path":"sprites/spr_slider_full/spr_slider_full.yy",},},
     {"id":{"name":"spr_testplayer","path":"sprites/spr_testplayer/spr_testplayer.yy",},},
     {"id":{"name":"spr_tile_caves1","path":"sprites/spr_tile_caves1/spr_tile_caves1.yy",},},
     {"id":{"name":"spr_tile_caves2","path":"sprites/spr_tile_caves2/spr_tile_caves2.yy",},},

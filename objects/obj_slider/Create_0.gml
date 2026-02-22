@@ -6,7 +6,7 @@ valMax = 100;
 currVal = 0;
 slider_x = 0;
 
-padding = 50;
+padding = 30;
 
 boundaries = {
 	x_min : bbox_left + padding,

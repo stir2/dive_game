@@ -3,6 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
+depth = 120;
 
 
 spawn = {x, y};

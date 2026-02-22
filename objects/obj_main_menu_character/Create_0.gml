@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+depth = 120;
+
 float_speed = .002;
 float_speed_max = .2;
 directionFloating = -1;

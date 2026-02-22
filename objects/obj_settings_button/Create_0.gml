@@ -8,7 +8,7 @@ switch(action_type){
 	//Fullscreen
 	case 0: {
 		execute = function(){obj_settings.toggle_fullscreen();}
-		label = "Toggle Fullscreen"
+		label = "Fullscreen"
 	}break;
 	
 	//Exit Settings

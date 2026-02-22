@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_menu_button_proto",
-    "path":"sprites/spr_menu_button_proto/spr_menu_button_proto.yy",
+    "name":"spr_slider_empty",
+    "path":"sprites/spr_slider_empty/spr_slider_empty.yy",
   },
   "spriteMaskId":null,
   "visible":true,
