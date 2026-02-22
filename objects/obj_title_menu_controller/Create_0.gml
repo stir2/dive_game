@@ -2,6 +2,7 @@
 // You can write your code in this editor
 using_controller = true;
 button_active = 0;
+suspension_buffer = 0;
 
 //if something else using the controller rn
 suspended = false;
@@ -9,9 +10,6 @@ suspended = false;
 up = 0;
 down = 0;
 select = 0;
-
-input_buffer_time = 5;
-input_buff = 0;
 
 button_height = 96;
 

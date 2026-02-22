@@ -6,8 +6,8 @@
   "name":"obj_volume_slider",
   "overriddenProperties":[],
   "parent":{
-    "name":"Main Menu Settings",
-    "path":"folders/Objects/Menus/Main Menu Settings.yy",
+    "name":"Settings",
+    "path":"folders/Objects/Menus/Settings.yy",
   },
   "parentObjectId":null,
   "persistent":false,
