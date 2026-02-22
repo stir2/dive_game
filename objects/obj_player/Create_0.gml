@@ -94,6 +94,7 @@ t = 0;
 
 horiz_input = 0;
 
+in_shop = false;
 
 //Create harpoon object with this obj as anchor
 instance_create_layer(x, y, "Instances", obj_harpoon_gun, {my_player : id, damage_amount : harpoon_damage, image_speed : harpoon_speed, reel_speed : harpoon_reel_speed});

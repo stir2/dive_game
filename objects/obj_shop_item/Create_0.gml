@@ -26,7 +26,7 @@ switch(item_type){
 }
 
 buy = function(){
-	if(obj_player.sanddollars >= price){
+	if(obj_player.sanddollars >= price &&  curr_level < max_level){
 		obj_player.sanddollars -= price;
 		obj_hud.sanddollars_to_subtract += price;
 		switch(item_type){
