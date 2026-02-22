@@ -14,6 +14,7 @@ camera_set_view_size(cam, w_scale * scale, h_scale * scale);
 cam_origin = [camera_get_view_width(cam)/2, camera_get_view_height(cam)/2];
 
 surface_resize(application_surface, w_scale * scale, h_scale * scale);
+//display_set_gui_size(w_scale * scale, h_scale * scale);
 
 
 x_offset = 32;
@@ -34,6 +35,12 @@ if(instance_exists(obj_player)){
 	}else{
 		camera_set_view_pos(cam, 1148, 732);
 	}
+}
+
+screenShakeCounter = 0;
+screenShakeRange = 2;
+start_screen_shake = function(_time) { 
+	screenShakeCounter = _time
 }
 
 instance_focusing = obj_player;
