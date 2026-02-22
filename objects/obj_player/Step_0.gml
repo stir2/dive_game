@@ -32,29 +32,31 @@ if(in_water){
 // END KEEP
 
 // Jump / rise in water only
-if(key_pressed[UP] && onSolid()){
+if(obj_controller.check_input_pressed(Inputs.Up) /*key_pressed[UP]*/ && onSolid()){
 	y_speed -= jump_height;
-} else if(key_down[UP]){
+} else if(obj_controller.check_input(Inputs.Up)/*key_down[UP]*/){
 	y_speed -= accel.y;
 }
 
 // Sink in water only
-if (key_down[DOWN] && !key_down[UP]){
+if (obj_controller.check_input(Inputs.Down) && !obj_controller.check_input(Inputs.Up)) {//(key_down[DOWN] && !key_down[UP]){
 	y_speed += max(accel.y, grav);
 } else {
 	y_speed += grav;
 }
 
 // Move left or right based on the latest key pressed
-if(latest_t_pressed[RIGHT] > latest_t_pressed[LEFT]){
+//if(latest_t_pressed[RIGHT] > latest_t_pressed[LEFT]){
 	
-	horiz_input = (key_down[RIGHT] ? 1 : (key_down[LEFT] ? -1 : 0));
-} else if (latest_t_pressed[RIGHT] < latest_t_pressed[LEFT]){
+//	horiz_input = (key_down[RIGHT] ? 1 : (key_down[LEFT] ? -1 : 0));
+//} else if (latest_t_pressed[RIGHT] < latest_t_pressed[LEFT]){
 	
-	horiz_input = (key_down[LEFT] ? -1 : (key_down[RIGHT] ? 1 : 0));
-} else {
-	horiz_input = 0;
-}
+//	horiz_input = (key_down[LEFT] ? -1 : (key_down[RIGHT] ? 1 : 0));
+//} else {
+//	horiz_input = 0;
+//}
+
+horiz_input = obj_controller.check_input(Inputs.Right) - obj_controller.check_input(Inputs.Left)
 
 x_speed += horiz_input * accel.x;
 

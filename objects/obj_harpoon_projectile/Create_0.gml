@@ -31,6 +31,7 @@ state_point = function(){
 	
 	//set angle so that throw and reel can access it
 	angle = point_direction(my_player.x, my_player.y, target_x, target_y);
+	if (obj_controller.controllerPad != -1) angle = obj_controller.rightStickAngle;
 	
 	image_angle = angle;
 	sprite_index = spr_harpoon;
@@ -64,7 +65,7 @@ state_throw = function(){
 		angle_speed = speed_adjust_by(angle_speed, decelration_speed, 0, 1);
 	}
 	
-	if(mouse_check_button(mb_left)){ 
+	if(obj_controller.check_input(Inputs.Attack1)/*mouse_check_button(mb_left)*/){ 
 		reel_thresh_meter ++;
 	}
 	else reel_thresh_meter = 0;
@@ -120,7 +121,7 @@ state_throw = function(){
 
 //come back to player
 state_reel = function(){
-	if(mouse_check_button(mb_left)){
+	if(obj_controller.check_input(Inputs.Attack1) /*mouse_check_button(mb_left)*/){
 		angle = point_direction(x, y, my_player.x, my_player.y);
 		image_angle = angle - 180;
 		x_movement = cos((angle * pi)/180) * reel_speed;
