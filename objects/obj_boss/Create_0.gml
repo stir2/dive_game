@@ -118,6 +118,7 @@ state_slam = function(){
 	}
 	if(rock_spawn_timer <= 0 && rock_spawn_index < array_length(shuffled_rocks_x)){
 		instance_create_layer(shuffled_rocks_x[rock_spawn_index], -512, "Instances", obj_boss_rock);
+		obj_camera.start_screen_shake(60);
 		rock_spawn_index++;
 		rock_spawn_timer = rock_spawn_cooldown;
 	}
