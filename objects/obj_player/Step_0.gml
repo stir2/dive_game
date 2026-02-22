@@ -31,6 +31,8 @@ if(in_water){
 }
 // END KEEP
 
+if (in_shop) return;
+
 // Jump / rise in water only
 if(obj_controller.check_input_pressed(Inputs.Up) /*key_pressed[UP]*/ && onSolid()){
 	y_speed -= jump_height;

@@ -3,7 +3,10 @@
 paused = false;
 pauseSprite = undefined;
 
-arrayReactivate = [obj_music, obj_sfx, obj_camera];
+arrayReactivate = [obj_music, obj_sfx, obj_camera, obj_controller,
+	obj_settings, obj_globals, obj_renderer, obj_player_data, obj_screen, obj_debug_level_switcher];
+
+my_menu = noone;
 
 togglePause = function() { 
     if (!paused) //PAUSE
@@ -16,6 +19,8 @@ togglePause = function() {
         _width, _height, false, false, 0, 0);
 		
 		audio_pause_all(); //Pause sound
+		
+		audio_resume_sound(getMusicPlaying());
 		
 		if (instance_exists(obj_boss)) { 
 			//show_debug_message("Boss Exitst");
@@ -33,18 +38,22 @@ togglePause = function() {
 		}
 		//objScreen.pauseScreenShake(); //Pause screen shake;
 		
+		my_menu = instance_create_depth(x, y, -100, obj_settings_controller, {pause_menu : true});
+		
 		paused = true; //Set Paused to true to show are game is now paused
 	} else //UNPAUSE
     {
 		//Resume all
         audio_resume_all();
 		
+		instance_destroy(my_menu);
+		
 		instance_activate_all();
 		
 		if (instance_exists(obj_boss)) { 
 			if (layer_sequence_exists("Instances", obj_boss.curr_seq)) layer_sequence_play(obj_boss.curr_seq);
 		}
-        
+		
 		paused = false; //Set our pause to false
 	
 	}

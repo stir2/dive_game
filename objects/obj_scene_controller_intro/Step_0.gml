@@ -1,4 +1,4 @@
-if((keyboard_check_pressed(vk_anykey) || mouse_check_button_pressed(mb_any)) && next_buff <= 0){
+if((keyboard_check_pressed(vk_anykey) || mouse_check_button_pressed(mb_any) || obj_controller.check_input_pressed(Inputs.Confirm)) && next_buff <= 0){
 	scene++;
 	next_buff = buffer_time;
 	

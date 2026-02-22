@@ -19,7 +19,8 @@ enum Inputs {
 	Right,
 	Attack1,
 	Attack2,
-	Pause
+	Pause,
+	Confirm
 }
 
 check_input = function (_inputType) { 
@@ -205,6 +206,17 @@ check_input_pressed = function (_inputType) {
 			else { 
 				//Check for stick up or DPad up
 				return gamepad_button_check_pressed(controllerPad, gp_start);
+			}
+		}
+		break;
+		
+		case (Inputs.Confirm): { 
+			if (controllerPad == -1) { 
+				return keyboard_check_pressed(vk_enter);
+			}
+			else { 
+				//Check for stick up or DPad up
+				return gamepad_button_check_pressed(controllerPad, gp_face1);
 			}
 		}
 		break;

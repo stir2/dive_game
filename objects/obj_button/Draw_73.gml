@@ -1,5 +1,2 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (obj_controller.check_input_pressed(Inputs.Pause)) {
-    togglePause();
-}

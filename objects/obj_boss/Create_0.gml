@@ -253,6 +253,10 @@ explosionCounter = 30;
 stateDead = function() { 
 	stopMusic();
 	
+	if (instance_exists(obj_player)) {
+		obj_player.air_level = obj_player.tank_size;
+	}
+	
 	obj_camera.instance_focusing = id;
 	if (instance_exists(myHitBox)) { 
 		instance_destroy(myHitBox);

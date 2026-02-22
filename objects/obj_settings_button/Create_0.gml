@@ -26,6 +26,10 @@ switch(action_type){
 		label = "Resume"
 		execute = function(){
 			//TODO: Add resume function
+			if (instance_exists(obj_settings)) { 
+				obj_pause.togglePause();
+				instance_destroy();
+			}
 		}
 	}break;
 	

@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-using_controller = true;
+using_controller = (obj_controller.controllerPad != -1);
 button_active = 0;
 suspension_buffer = 0;
 

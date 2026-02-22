@@ -85,7 +85,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.2.213",
+    "IDEVersion":"2024.14.1.210",
   },
   "name":"dive_game",
   "resources":[
@@ -108,8 +108,8 @@
     {"id":{"name":"obj_button_left_right_action","path":"objects/obj_button_left_right_action/obj_button_left_right_action.yy",},},
     {"id":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
-    {"id":{"name":"obj_credits","path":"objects/obj_credits/obj_credits.yy",},},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
+    {"id":{"name":"obj_credits","path":"objects/obj_credits/obj_credits.yy",},},
     {"id":{"name":"obj_debug_level_switcher","path":"objects/obj_debug_level_switcher/obj_debug_level_switcher.yy",},},
     {"id":{"name":"obj_dottedline","path":"objects/obj_dottedline/obj_dottedline.yy",},},
     {"id":{"name":"obj_eel_zap","path":"objects/obj_eel_zap/obj_eel_zap.yy",},},

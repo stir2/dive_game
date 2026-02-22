@@ -14,7 +14,7 @@ camera_set_view_size(cam, w_scale * scale, h_scale * scale);
 cam_origin = [camera_get_view_width(cam)/2, camera_get_view_height(cam)/2];
 
 surface_resize(application_surface, w_scale * scale, h_scale * scale);
-//display_set_gui_size(w_scale * scale, h_scale * scale);
+display_set_gui_size(w_scale, h_scale);
 
 
 x_offset = 32;

@@ -235,7 +235,7 @@ stateDead = function(){
 	//instance_create_layer(x, y, "Instances", obj_ridiculous_explosion);
 	
 	//spawn air if low
-	if(obj_player.air_level < obj_player.tank_size/2){
+	if(obj_player.air_level < obj_player.tank_size/2 || room == Boss){
 		instance_create_layer(x, y, "Instances", obj_bubble_medium);
 	}
 	//spawn sand dollars
