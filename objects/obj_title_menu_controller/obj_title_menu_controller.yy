@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_button_long_selection",
+    "path":"sprites/spr_button_long_selection/spr_button_long_selection.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

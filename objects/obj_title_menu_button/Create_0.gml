@@ -9,6 +9,7 @@ switch(action_type){
 	case 0: {
 		execute = function(){start_game();}
 		label = "Play"
+		sprite_index = spr_button_long_blue;
 	}break;
 	
 	//Settings
