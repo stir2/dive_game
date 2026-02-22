@@ -27,6 +27,7 @@ tookDamage = function() {
 		air_level -= 5;
 		latest_t_hurt = global.t;
 		image_index = 0; // Reset animation frame just in case we were hurt previously
+		obj_camera.start_screen_shake(30);
 	}
 }
 
