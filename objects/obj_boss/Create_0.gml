@@ -1,13 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-hp_max = 20
+hp_max = 20;
 hp = hp_max;
 attacked = false
 
 myHitBox = instance_create_depth(x, y, 0, obj_Hitbox, new HitBox([id, true, bbox_left + 20, bbox_top + 35, bbox_right - 20, bbox_bottom - 35], 1, knock_back_amount, undefined,0,0,0,[obj_player],,,-1,,60))
-move_speed = 4;
-move_speed_max = 10;
+move_speed = .2;
+move_speed_max = 3;
+
+wander_range = 50;
 
 arm_l = instance_create_layer(1104, 880, "Instances", obj_boss_arm_L);
 arm_r = instance_create_layer(1392, 880, "Instances", obj_boss_arm_R);
@@ -36,6 +38,14 @@ state_idle = function(){
 	attack_cool_timer--;
 	sprite_index = spr_boss_head_idle;
 	
+	idle_move();
+	x += x_speed;
+	y += y_speed;
+	
+	arm_l.x = bbox_left;
+	arm_l.y = y;
+	arm_r.x = bbox_right;
+	arm_r.y = y;
 }
 
 spawn_time = 20;
@@ -232,6 +242,45 @@ state_swing = function(){
 		 }
 	}
 	sprite_index = spr_boss_head_idle;
+}
+
+
+//Run the death cutscene for 5 seconds
+deathCutsceneTime = 5 * 60;
+deathCutsceneCounter = deathCutsceneTime;
+explosionTime = deathCutsceneCounter/2;
+explosionCounter = 30;
+stateDead = function() { 
+	stopMusic();
+	
+	obj_camera.instance_focusing = id;
+	if (instance_exists(myHitBox)) { 
+		instance_destroy(myHitBox);
+		instance_destroy(arm_l.myHitBox);
+		instance_destroy(arm_r.myHitBox);
+	}
+	
+	if (deathCutsceneCounter <= 0) { 
+		instance_destroy();
+	}
+	else deathCutsceneCounter--;
+	
+	if (explosionCounter <= 0) { 
+		//Create a splosion
+		playSFX(sfx_enemy_die, SFXTypes.EnviormentSound, power(2, choose(-7, 0, 2, 4, 5)/12));
+		instance_create_depth(random_range(bbox_left, bbox_right), random_range(bbox_top, bbox_bottom), depth - 1, obj_sprite_effect, {sprite_index : spr_explosion});
+		explosionTime = explosionTime/2;
+		explosionCounter = explosionTime;
+	}
+	else explosionCounter--;
+	
+	if (instance_exists(obj_Enemy)) { 
+		for (var _i = 0; _i < instance_number(obj_Enemy); _i++) {
+			var _inst = instance_find(obj_Enemy, _i);
+			if (_inst == id) continue;
+			instance_destroy(_inst);
+		}
+	}
 }
 
 state = state_idle;

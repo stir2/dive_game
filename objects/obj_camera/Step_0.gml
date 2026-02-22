@@ -1,7 +1,7 @@
 
-if(instance_exists(obj_player) && room != Shop){
-	x = obj_player.x - cam_origin[0] - (x_offset * -obj_player.x_speed);
-	y = obj_player.y - cam_origin[1] - (y_offset * -obj_player.y_speed);
+if(instance_exists(instance_focusing) && room != Shop){
+	x = instance_focusing.x - cam_origin[0] - (x_offset * -instance_focusing.x_speed);
+	y = instance_focusing.y - cam_origin[1] - (y_offset * -instance_focusing.y_speed);
 
 
 	var _old_cam_x = camera_get_view_x(cam);

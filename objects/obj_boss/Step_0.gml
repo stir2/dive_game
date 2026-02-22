@@ -12,3 +12,4 @@ if(hp <= hp_max/2 && !attack_speed_adjusted_fourth_health){
 	attack_cooldown = 3*60;
 	attack_speed_adjusted_fourth_health = true;
 }
+

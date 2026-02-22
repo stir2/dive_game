@@ -14,6 +14,10 @@ else {
 }
 
 scrSetPaletteSwapShader(default_palette, image_alpha, current_palette, (damage_shake_counter > 0)? spr_palette_hit : spr_palette_blank);
+draw_sprite_ext(spr_boss_legs, 0, x, y, image_xscale, image_yscale, 
+	image_angle + shake_angle, (damage_shake_counter > 0) ? 
+	make_colour_hsv(170, 150, 255) : c_white, image_alpha);
+	
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 
 	image_angle + shake_angle, (damage_shake_counter > 0) ? 
 	make_colour_hsv(170, 150, 255) : c_white, image_alpha);

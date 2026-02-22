@@ -85,7 +85,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.2.213",
+    "IDEVersion":"2024.14.1.210",
   },
   "name":"dive_game",
   "resources":[
@@ -229,6 +229,7 @@
     {"id":{"name":"spr_boss_gravel","path":"sprites/spr_boss_gravel/spr_boss_gravel.yy",},},
     {"id":{"name":"spr_boss_head_idle","path":"sprites/spr_boss_head_idle/spr_boss_head_idle.yy",},},
     {"id":{"name":"spr_boss_head_roar","path":"sprites/spr_boss_head_roar/spr_boss_head_roar.yy",},},
+    {"id":{"name":"spr_boss_legs","path":"sprites/spr_boss_legs/spr_boss_legs.yy",},},
     {"id":{"name":"spr_boss_pebbles","path":"sprites/spr_boss_pebbles/spr_boss_pebbles.yy",},},
     {"id":{"name":"spr_boss_proto","path":"sprites/spr_boss_proto/spr_boss_proto.yy",},},
     {"id":{"name":"spr_boss_rock","path":"sprites/spr_boss_rock/spr_boss_rock.yy",},},

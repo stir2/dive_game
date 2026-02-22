@@ -25,8 +25,11 @@ function playSFX(_sfxIndex, _sfxType, _pitchChange = 1, _looping = false) {
 		
 		if (!_looping) {
 			//If the current sound is playing stop playing it and play the new sound 
-			if (audio_is_playing(_sfxIndex)) audio_stop_sound(_sfxIndex);
-			audio_play_sound(_sfxIndex, _sfxType, false, 1 ,0 ,_pitchChange);
+			if (audio_is_playing(_sfxIndex) && audio_sound_get_track_position(lastPlayedSFX) > .1)
+			audio_stop_sound(lastPlayedSFX);
+			
+			if(!audio_is_playing(_sfxIndex))
+			lastPlayedSFX = audio_play_sound(_sfxIndex, _sfxType, false, 1 ,0 ,_pitchChange);
 		}
 		else { 
 			//if (audio_is_playing(_sfxIndex)) audio_stop_sound(_sfxIndex);

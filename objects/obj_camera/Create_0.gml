@@ -13,8 +13,6 @@ camera_set_view_size(cam, w_scale * scale, h_scale * scale);
 
 cam_origin = [camera_get_view_width(cam)/2, camera_get_view_height(cam)/2];
 
-
-
 surface_resize(application_surface, w_scale * scale, h_scale * scale);
 
 
@@ -37,3 +35,5 @@ if(instance_exists(obj_player)){
 		camera_set_view_pos(cam, 1148, 732);
 	}
 }
+
+instance_focusing = obj_player;
