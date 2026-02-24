@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if(!my_controller.using_controller && position_meeting(mouse_x, mouse_y, id) && mouse_check_button_pressed(mb_left)){
 	execute();
-}else if(my_controller.select && buffer <= 0){
+}else if(obj_controller.check_input_pressed(Inputs.Confirm) && buffer <= 0){
 	execute();
 }
 

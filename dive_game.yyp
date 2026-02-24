@@ -328,6 +328,7 @@
     {"id":{"name":"spr_slider_button","path":"sprites/spr_slider_button/spr_slider_button.yy",},},
     {"id":{"name":"spr_slider_empty","path":"sprites/spr_slider_empty/spr_slider_empty.yy",},},
     {"id":{"name":"spr_slider_full","path":"sprites/spr_slider_full/spr_slider_full.yy",},},
+    {"id":{"name":"spr_slider_selection","path":"sprites/spr_slider_selection/spr_slider_selection.yy",},},
     {"id":{"name":"spr_testplayer","path":"sprites/spr_testplayer/spr_testplayer.yy",},},
     {"id":{"name":"spr_tile_caves1","path":"sprites/spr_tile_caves1/spr_tile_caves1.yy",},},
     {"id":{"name":"spr_tile_caves2","path":"sprites/spr_tile_caves2/spr_tile_caves2.yy",},},

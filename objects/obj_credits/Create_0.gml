@@ -4,6 +4,7 @@
 execute = function(){
 	my_controller.suspended = false;
 	my_controller.suspension_buffer = 10;
+	audio_play_sound(sfx_bubble_pop, 3, false);
 	instance_destroy();
 }
 

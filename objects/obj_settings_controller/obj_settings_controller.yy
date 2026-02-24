@@ -31,13 +31,16 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"pause_menu","filters":[],"listItems":[],"multiselect":false,"name":"pause_menu","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
-    {"$GMObjectProperty":"v2","%Name":"using_controller","filters":[],"listItems":[],"multiselect":false,"name":"using_controller","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
+    {"$GMObjectProperty":"v2","%Name":"using_controller","filters":[],"listItems":[],"multiselect":false,"name":"using_controller","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"v2","%Name":"my_controller","filters":[],"listItems":[],"multiselect":false,"name":"my_controller","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"obj_title_menu_controller","path":"objects/obj_title_menu_controller/obj_title_menu_controller.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_title_menu_controller","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_button_long_selection",
+    "path":"sprites/spr_button_long_selection/spr_button_long_selection.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

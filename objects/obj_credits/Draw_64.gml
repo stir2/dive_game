@@ -1,6 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
-draw_sprite(spr_credits, 0, x, y - 150);
+draw_sprite(spr_credits, 0, x, y - 158);
 draw_self();
-draw_text_transformed(x, y, "exit credits", .5, .5, 0);
-if(my_controller.using_controller){draw_sprite(spr_title_menu_button_highlight, 0, x, y);}
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_font(font_main);
+draw_text_transformed_color(x, y, "Exit Credits", .7, .7, 0, #001146, #001146, #001146, #001146, 1);
+
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+if(my_controller.using_controller){draw_sprite(spr_button_long_selection, my_controller.image_index, x, y);}
