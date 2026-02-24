@@ -1,0 +1,1 @@
+draw_sprite(spr_settings_background, 0, x, y + 130);

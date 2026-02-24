@@ -8,12 +8,13 @@ switch(action_type){
 	//Fullscreen
 	case 0: {
 		execute = function(){obj_settings.toggle_fullscreen();}
-		label = "Fullscreen"
+		label = "Fullscreen";
 	}break;
 	
 	//Exit Settings
 	case 1: {
 		label = "Exit Settings"
+		sprite_index = spr_button_long_blue;
 		execute = function(){
 			my_controller.my_controller.suspended = false;
 			my_controller.my_controller.suspension_buffer = 10;
@@ -23,7 +24,8 @@ switch(action_type){
 	
 	//Resume
 	case 2: {
-		label = "Resume"
+		label = "Resume";
+		sprite_index = spr_button_long_blue;
 		execute = function(){
 			//TODO: Add resume function
 			if (instance_exists(obj_settings)) { 
@@ -36,6 +38,6 @@ switch(action_type){
 	//Main Menu
 	case 3: {
 		execute = function(){room_goto(rm_main_menu_new);}
-		label = "Main Menu"
+		label = "Main Menu";
 	}break;
 }

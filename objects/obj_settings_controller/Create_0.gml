@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 show_debug_message("created");
-
+depth = 105;
 button_active = 0;
 
 up = 0;
