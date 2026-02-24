@@ -9,7 +9,7 @@ switch(action_type){
 	case 0: {
 		execute = function(){
 			obj_settings.toggle_fullscreen();
-			audio_play_sound(sfx_bubble_pop, 3, false);
+			audio_play_sound(sfx_input_confirm, 3, false);
 		}
 		label = "Fullscreen";
 	}break;
@@ -21,7 +21,7 @@ switch(action_type){
 		execute = function(){
 			my_controller.my_controller.suspended = false;
 			my_controller.my_controller.suspension_buffer = 10;
-			audio_play_sound(sfx_bubble_pop, 3, false);
+			audio_play_sound(sfx_input_confirm, 3, false);
 			if(instance_exists(my_controller)){my_controller.destroy_self();}
 		}
 	}break;
@@ -36,7 +36,7 @@ switch(action_type){
 				obj_pause.togglePause();
 				instance_destroy();
 			}
-			audio_play_sound(sfx_bubble_pop, 3, false);
+			audio_play_sound(sfx_input_confirm, 3, false);
 		}
 	}break;
 	
@@ -44,7 +44,7 @@ switch(action_type){
 	case 3: {
 		execute = function(){
 			room_goto(rm_main_menu_new);
-			audio_play_sound(sfx_bubble_pop, 3, false);
+			audio_play_sound(sfx_input_confirm, 3, false);
 		}
 		label = "Main Menu";
 	}break;

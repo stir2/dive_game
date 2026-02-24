@@ -6,7 +6,7 @@ if (using_controller) {
 	if(distance_to_object(obj_player) < 50){
 		sprite_index = spr_shopkeeper_highlighted;
 		if (obj_controller.check_input_pressed(Inputs.Confirm) && !obj_player.in_shop && buffer <= 0){
-			audio_play_sound(sfx_bubble_pop, 3, false);
+			audio_play_sound(sfx_input_confirm, 3, false);
 			instance_create_layer(x, y, "Instances", obj_shop_controller);
 			obj_player.in_shop = true;
 		}

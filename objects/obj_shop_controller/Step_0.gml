@@ -19,7 +19,7 @@ if (using_controller) {
 			audio_play_sound(sfx_sanddollar_pickup, 3, false);
 			items[item_active].buy();}
 		else{
-			audio_play_sound(sfx_bubble_pop, 3, false);
+			audio_play_sound(sfx_input_confirm, 3, false);
 			obj_player.in_shop = false;
 			obj_shopkeeper.buffer = 10;
 			instance_destroy();

@@ -212,6 +212,7 @@
     {"id":{"name":"sfx_harpoon_reel","path":"sounds/sfx_harpoon_reel/sfx_harpoon_reel.yy",},},
     {"id":{"name":"sfx_harpoon_shoot","path":"sounds/sfx_harpoon_shoot/sfx_harpoon_shoot.yy",},},
     {"id":{"name":"sfx_harpoon_stab","path":"sounds/sfx_harpoon_stab/sfx_harpoon_stab.yy",},},
+    {"id":{"name":"sfx_input_confirm","path":"sounds/sfx_input_confirm/sfx_input_confirm.yy",},},
     {"id":{"name":"sfx_player_hurt","path":"sounds/sfx_player_hurt/sfx_player_hurt.yy",},},
     {"id":{"name":"sfx_sanddollar_pickup","path":"sounds/sfx_sanddollar_pickup/sfx_sanddollar_pickup.yy",},},
     {"id":{"name":"sfx_shell_pickup","path":"sounds/sfx_shell_pickup/sfx_shell_pickup.yy",},},
