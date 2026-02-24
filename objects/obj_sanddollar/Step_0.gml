@@ -43,5 +43,4 @@ else wander_counter--;
 
 set_speed_at_angle(angle_speed, point_direction(x, y, wander_target_x, wander_target_y));
 
-x += x_speed;
-y += y_speed;
+moveAndCollide();

@@ -242,7 +242,7 @@ stateDead = function(){
 	else{
 		var _sd_spacing = 50;
 		for(var _i = 0; _i < drop_amount; _i++){
-			instance_create_layer(x + random(_sd_spacing), y + random(_sd_spacing), "Instances", obj_sanddollar);
+			instance_create_layer(x + random_range(-_sd_spacing, _sd_spacing), y + random_range(-_sd_spacing, _sd_spacing), "Instances", obj_sanddollar);
 		}
 	}
 	
