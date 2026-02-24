@@ -323,6 +323,7 @@
     {"id":{"name":"spr_shop_item_marker","path":"sprites/spr_shop_item_marker/spr_shop_item_marker.yy",},},
     {"id":{"name":"spr_shop_item_selected","path":"sprites/spr_shop_item_selected/spr_shop_item_selected.yy",},},
     {"id":{"name":"spr_shop_item","path":"sprites/spr_shop_item/spr_shop_item.yy",},},
+    {"id":{"name":"spr_shop_selection","path":"sprites/spr_shop_selection/spr_shop_selection.yy",},},
     {"id":{"name":"spr_shopkeeper_highlighted","path":"sprites/spr_shopkeeper_highlighted/spr_shopkeeper_highlighted.yy",},},
     {"id":{"name":"spr_shopkeeper","path":"sprites/spr_shopkeeper/spr_shopkeeper.yy",},},
     {"id":{"name":"spr_slider_button","path":"sprites/spr_slider_button/spr_slider_button.yy",},},

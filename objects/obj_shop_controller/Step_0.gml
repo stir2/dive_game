@@ -15,8 +15,11 @@ if (using_controller) {
 	if(obj_controller.check_input_pressed(Inputs.Down)){on_exit = true;}
 	
 	if(obj_controller.check_input_pressed(Inputs.Confirm) && buffer <= 0){
-		if(!on_exit){items[item_active].buy();}
+		if(!on_exit){
+			audio_play_sound(sfx_sanddollar_pickup, 3, false);
+			items[item_active].buy();}
 		else{
+			audio_play_sound(sfx_bubble_pop, 3, false);
 			obj_player.in_shop = false;
 			obj_shopkeeper.buffer = 10;
 			instance_destroy();

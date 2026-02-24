@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_shop_selection",
+    "path":"sprites/spr_shop_selection/spr_shop_selection.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
