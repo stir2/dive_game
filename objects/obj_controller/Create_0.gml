@@ -34,7 +34,7 @@ check_input = function (_inputType) {
 			}
 			else { 
 				//Check for stick up or DPad up
-				return (gamepad_axis_value(controllerPad, gp_axislv) < -0.1) || 
+				return (gamepad_axis_value(controllerPad, gp_axislv) < -0.3) || 
 					gamepad_button_check(controllerPad, gp_padu);
 			}
 		}
@@ -47,7 +47,7 @@ check_input = function (_inputType) {
 			}
 			else { 
 				//Check for stick down or DPad down
-				return (gamepad_axis_value(controllerPad, gp_axislv) > 0.1) || 
+				return (gamepad_axis_value(controllerPad, gp_axislv) > 0.3) || 
 					gamepad_button_check(controllerPad, gp_padd);
 			}
 			
@@ -61,7 +61,7 @@ check_input = function (_inputType) {
 			}
 			else { 
 				//Check for stick right or DPad right
-				return (gamepad_axis_value(controllerPad, gp_axislh) > 0.1) || 
+				return (gamepad_axis_value(controllerPad, gp_axislh) > 0.3) || 
 					gamepad_button_check(controllerPad, gp_padr);
 			}
 		}
@@ -74,7 +74,7 @@ check_input = function (_inputType) {
 			}
 			else { 
 				//Check for stick left or DPad left
-				return (gamepad_axis_value(controllerPad, gp_axislh) < -0.1) || 
+				return (gamepad_axis_value(controllerPad, gp_axislh) < -0.3) || 
 					gamepad_button_check(controllerPad, gp_padl);
 			}			
 		}
@@ -136,7 +136,7 @@ check_input_pressed = function (_inputType) {
 			}
 			else { 
 				//Check for stick up or DPad up AND Ensure if stick it isnt 
-				return ((gamepad_axis_value(controllerPad, gp_axislv) < -0.1) && !stickUpPressed)|| 
+				return ((gamepad_axis_value(controllerPad, gp_axislv) < -0.3) && !stickUpPressed)|| 
 					gamepad_button_check_pressed(controllerPad, gp_padu);
 			}
 		}
@@ -149,7 +149,7 @@ check_input_pressed = function (_inputType) {
 			}
 			else { 
 				//Check for stick up or DPad up
-				return ((gamepad_axis_value(controllerPad, gp_axislv) > 0.1) && !stickDownPressed) || 
+				return ((gamepad_axis_value(controllerPad, gp_axislv) > 0.3) && !stickDownPressed) || 
 					gamepad_button_check_pressed(controllerPad, gp_padd);
 			}
 			
@@ -163,7 +163,7 @@ check_input_pressed = function (_inputType) {
 			}
 			else { 
 				//Check for stick up or DPad up
-				return ((gamepad_axis_value(controllerPad, gp_axislh) > 0.1) && !stickRightPressed) || 
+				return ((gamepad_axis_value(controllerPad, gp_axislh) > 0.3) && !stickRightPressed) || 
 					gamepad_button_check_pressed(controllerPad, gp_padr);
 			}
 		}
@@ -176,7 +176,7 @@ check_input_pressed = function (_inputType) {
 			}
 			else { 
 				//Check for stick up or DPad up
-				return ((gamepad_axis_value(controllerPad, gp_axislh) < -0.1) && !stickLeftPressed) || 
+				return ((gamepad_axis_value(controllerPad, gp_axislh) < -0.3) && !stickLeftPressed) || 
 					gamepad_button_check_pressed(controllerPad, gp_padl);
 			}			
 		}
