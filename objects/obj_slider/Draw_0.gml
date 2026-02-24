@@ -5,7 +5,7 @@ draw_set_valign(fa_middle);
 if(!instance_exists(my_controller)){instance_destroy();}
 else {
 	draw_self();
-	draw_sprite_part(spr_slider_full, 0, 0, 0, slider_x, sprite_get_height(spr_slider_full), bbox_top, bbox_right);
+	draw_sprite_part(spr_slider_empty, 0, 0, 0, slider_x + padding, sprite_get_height(spr_slider_empty), x - sprite_width/2,  y - sprite_height/2);
 	draw_roundrect(x - 80, bbox_top - 32, x + 80, bbox_top, false);
 	draw_sprite(spr_slider_button, 0, slider_x + boundaries.x_min, y);
 	draw_text_transformed_color(x, bbox_top - 16, label + ": " + string(currVal), .7, .7, 0, #001146, #001146, #001146, #001146, 1);

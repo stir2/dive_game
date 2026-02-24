@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_slider_empty",
-    "path":"sprites/spr_slider_empty/spr_slider_empty.yy",
+    "name":"spr_slider_full",
+    "path":"sprites/spr_slider_full/spr_slider_full.yy",
   },
   "spriteMaskId":null,
   "visible":true,
