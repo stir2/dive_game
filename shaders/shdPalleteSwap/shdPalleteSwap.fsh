@@ -1,4 +1,4 @@
-//
+///
 // Simple passthrough fragment shader
 //
 varying vec2 v_vTexcoord;
@@ -37,7 +37,7 @@ void main() {
 	vec4 currentColor = texture2D(gm_BaseTexture, v_vTexcoord);
 	vec4 color = texture2D(uBasePallete, vec2(0, 0));
 	
-	for (float i = 0.0; i <= MAX_PALLETE; i += 1.0) { 
+	for (float i = 0.0; i <= 50.0; i += 1.0) { 
 		//Check the colorsMatche boolean, if true then stop changes
 		indexToSwap = (colorMatches == 0)? (i/uPalleteSize) : indexToSwap;
 		color = (colorMatches == 0)? texture2D(uBasePallete, vec2(indexToSwap, 0)) : color;

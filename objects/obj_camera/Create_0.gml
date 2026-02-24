@@ -7,7 +7,7 @@ if(room == Boss){scale = 1;}
 view_visible[0] = true;
 view_enabled = true;
 
-cam = view_camera; //camera_create_view(0, 0, w_scale * scale, h_scale * scale);
+cam = view_get_camera(0); //camera_create_view(0, 0, w_scale * scale, h_scale * scale);
 view_set_camera(0, cam);
 camera_set_view_size(cam, w_scale * scale, h_scale * scale);
 

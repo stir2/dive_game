@@ -308,6 +308,7 @@
     {"id":{"name":"spr_palette_enemy","path":"sprites/spr_palette_enemy/spr_palette_enemy.yy",},},
     {"id":{"name":"spr_palette_hit","path":"sprites/spr_palette_hit/spr_palette_hit.yy",},},
     {"id":{"name":"spr_player_air_bar","path":"sprites/spr_player_air_bar/spr_player_air_bar.yy",},},
+    {"id":{"name":"spr_reticle","path":"sprites/spr_reticle/spr_reticle.yy",},},
     {"id":{"name":"spr_ridiculous_explosion","path":"sprites/spr_ridiculous_explosion/spr_ridiculous_explosion.yy",},},
     {"id":{"name":"spr_sanddollar_blue","path":"sprites/spr_sanddollar_blue/spr_sanddollar_blue.yy",},},
     {"id":{"name":"spr_sanddollar_collect_blue","path":"sprites/spr_sanddollar_collect_blue/spr_sanddollar_collect_blue.yy",},},

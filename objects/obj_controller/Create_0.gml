@@ -2,6 +2,8 @@
 // You can write your code in this editor
 controllerPad = -1;
 rightStickAngle = 0;
+rightStickXAxis = 0;
+rightStickYAxis = 0;
 
 //Jump/ Swim - Up stick or d pad up
 //Left/Right - left/right stick or d pad up
@@ -119,6 +121,12 @@ check_input = function (_inputType) {
 	}
 }
 
+
+stickUpPressed = false;
+stickDownPressed = false;
+stickRightPressed = false;
+stickLeftPressed = false;
+
 check_input_pressed = function (_inputType) { 
 	switch (_inputType) { 
 		case (Inputs.Up) : { 
@@ -128,7 +136,7 @@ check_input_pressed = function (_inputType) {
 			}
 			else { 
 				//Check for stick up or DPad up AND Ensure if stick it isnt 
-				return (gamepad_axis_value(controllerPad, gp_axislv) < -0.1) || 
+				return ((gamepad_axis_value(controllerPad, gp_axislv) < -0.1) && !stickUpPressed)|| 
 					gamepad_button_check_pressed(controllerPad, gp_padu);
 			}
 		}
@@ -141,7 +149,7 @@ check_input_pressed = function (_inputType) {
 			}
 			else { 
 				//Check for stick up or DPad up
-				return (gamepad_axis_value(controllerPad, gp_axislv) > 0.1) || 
+				return ((gamepad_axis_value(controllerPad, gp_axislv) > 0.1) && !stickDownPressed) || 
 					gamepad_button_check_pressed(controllerPad, gp_padd);
 			}
 			
@@ -155,7 +163,7 @@ check_input_pressed = function (_inputType) {
 			}
 			else { 
 				//Check for stick up or DPad up
-				return (gamepad_axis_value(controllerPad, gp_axislh) > 0.1) || 
+				return ((gamepad_axis_value(controllerPad, gp_axislh) > 0.1) && !stickRightPressed) || 
 					gamepad_button_check_pressed(controllerPad, gp_padr);
 			}
 		}
@@ -168,7 +176,7 @@ check_input_pressed = function (_inputType) {
 			}
 			else { 
 				//Check for stick up or DPad up
-				return (gamepad_axis_value(controllerPad, gp_axislh) < -0.1) || 
+				return ((gamepad_axis_value(controllerPad, gp_axislh) < -0.1) && !stickLeftPressed) || 
 					gamepad_button_check_pressed(controllerPad, gp_padl);
 			}			
 		}

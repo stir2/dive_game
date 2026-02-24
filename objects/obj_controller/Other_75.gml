@@ -6,7 +6,7 @@ switch(async_load[? "event_type"])             // Parse the async_load map to se
 	{	
 		// A game pad has been discovered
 		var _pad = async_load[? "pad_index"];       // Get the pad index value from the async_load map
-		gamepad_set_axis_deadzone(_pad, 0.25);       // Set the "deadzone" for the axis
+		gamepad_set_axis_deadzone(_pad, 0.2);       // Set the "deadzone" for the axis
 		gamepad_set_button_threshold(_pad, 0.1);    // Set the "threshold" for the triggers
 		show_debug_message(gamepad_get_description(_pad));
 		if (gamepad_get_description(_pad) == "XInput STANDARD GAMEPAD") //Check to see if gamepad is valid
