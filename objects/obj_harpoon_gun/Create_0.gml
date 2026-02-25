@@ -6,6 +6,7 @@ event_inherited();
 //These varaibles control what direction the harpoon will face
 target_x = mouse_x;
 target_y = mouse_y;
+reticle_alpha = 1;
 //throw_distance_total = 0;
 //throw_distance_passed = 0;
 angle = 0;
