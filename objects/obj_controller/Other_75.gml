@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+show_debug_message(async_load[? "event_type"]);
+
 switch(async_load[? "event_type"])             // Parse the async_load map to see which event has been triggered
 {
 	case ("gamepad discovered"): 
@@ -9,7 +11,7 @@ switch(async_load[? "event_type"])             // Parse the async_load map to se
 		gamepad_set_axis_deadzone(_pad, 0.1);       // Set the "deadzone" for the axis
 		gamepad_set_button_threshold(_pad, 0.1);    // Set the "threshold" for the triggers
 		show_debug_message(gamepad_get_description(_pad));
-		if (gamepad_get_description(_pad) == "XInput STANDARD GAMEPAD") //Check to see if gamepad is valid
+		if (string_upper(gamepad_get_description(_pad)) == "XINPUT STANDARD GAMEPAD") //Check to see if gamepad is valid
 		{
 			
 			//Assign pad to controller if not assigned 
@@ -22,7 +24,20 @@ switch(async_load[? "event_type"])             // Parse the async_load map to se
 			show_debug_message(gamepad_get_mapping(_pad));
 			show_debug_message("-----Controller connection complete------");
 		}
-		else if(gamepad_get_description(_pad) == "Nintendo Switch Pro Controller") //Check to see if gamepad is valid
+		else if (string_upper(gamepad_get_description(_pad)) == "STANDARD GAMEPAD") //Check to see if gamepad is valid
+		{
+			
+			//Assign pad to controller if not assigned 
+			if (controllerPad == -1) controllerPad = _pad;
+			
+			//Add to global controller
+			//array_push(objUniversalController.padArray, _pad);    //Assign Pad Number to controller
+			////objUniversalController.setToDefault(); //Run default inputs code
+			//show_debug_message("Player " + string(_i + 1) + " = " + string(_player.pad));
+			show_debug_message(gamepad_get_mapping(_pad));
+			show_debug_message("-----Controller connection complete------");
+		}
+		else if(string_upper(gamepad_get_description(_pad)) == string_upper("Nintendo Switch Pro Controller")) //Check to see if gamepad is valid
 		{
 			//Assign pad to controller if not assigned 
 			if (controllerPad == -1) controllerPad = _pad;
