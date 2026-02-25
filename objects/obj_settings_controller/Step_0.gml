@@ -13,21 +13,21 @@ if(using_controller){
 	//if this is a pause menu, then once resume is reached, right and left should switch between resume and main menu,
 	//and up should take either back to fullscreen
 	//otherwise, business as usual
-	if(pause_menu){
-		if(button_active < 3){
-			if(obj_controller.check_input_pressed(Inputs.Down)){button_active = clamp(button_active + 1, 0, array_length(buttons) - 1);}
-			if(obj_controller.check_input_pressed(Inputs.Up)){button_active = clamp(button_active - 1, 0, array_length(buttons) - 1);}
-		}
-		else{
-			if(obj_controller.check_input_pressed(Inputs.Right)){button_active = 4;}
-			if(obj_controller.check_input_pressed(Inputs.Left)){button_active = 3;}
-			if(obj_controller.check_input_pressed(Inputs.Up)){button_active = 2;}
-		}
-	}
-	else{
+	//if(pause_menu){
+	//	if(button_active < 3){
+	//		if(obj_controller.check_input_pressed(Inputs.Down)){button_active = clamp(button_active + 1, 0, array_length(buttons) - 1);}
+	//		if(obj_controller.check_input_pressed(Inputs.Up)){button_active = clamp(button_active - 1, 0, array_length(buttons) - 1);}
+	//	}
+	//	else{
+	//		if(obj_controller.check_input_pressed(Inputs.Right)){button_active = 4;}
+	//		if(obj_controller.check_input_pressed(Inputs.Left)){button_active = 3;}
+	//		if(obj_controller.check_input_pressed(Inputs.Up)){button_active = 2;}
+	//	}
+	//}
+	//else{
 		if(obj_controller.check_input_pressed(Inputs.Down)){button_active = clamp(button_active + 1, 0, array_length(buttons) - 1);}
 		if(obj_controller.check_input_pressed(Inputs.Up)){button_active = clamp(button_active - 1, 0, array_length(buttons) - 1);}
-	}
+	//}
 	
 	//if left or right and button_active is 0 (sfx slider) or 1 (music slider), push the slider left or right.
 	if((obj_controller.check_input(Inputs.Left) || obj_controller.check_input(Inputs.Right)) && (button_active == 0 || button_active == 1)){
