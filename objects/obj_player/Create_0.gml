@@ -31,7 +31,7 @@ tookDamage = function() {
 	}
 }
 
-myHurtbox = instance_create_depth(x, y, 0, obj_HurtBox, new HurtBox(id, true, bbox_left, bbox_top, bbox_right, bbox_bottom));
+myHurtbox = instance_create_depth(x, y, 0, obj_HurtBox, new HurtBox(id, true, bbox_left, bbox_top + 10, bbox_right, bbox_bottom - 10));
 
 
 // Define control constants

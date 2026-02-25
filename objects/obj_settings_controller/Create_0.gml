@@ -28,10 +28,10 @@ if(!pause_menu){
 	array_push(buttons, exit_btn);
 }
 else{
-	resume_btn = instance_create_layer(x - 150, y + button_height * 3, "Instances", obj_settings_button, {action_type : 2});
+	resume_btn = instance_create_layer(x, y + button_height * 3, "Instances", obj_settings_button, {action_type : 2});
 	array_push(buttons, resume_btn);
-	main_menu_btn = instance_create_layer(x + 150, y + button_height * 3, "Instances", obj_settings_button, {action_type : 3});
-	array_push(buttons, main_menu_btn);
+	//main_menu_btn = instance_create_layer(x + 150, y + button_height * 3, "Instances", obj_settings_button, {action_type : 3});
+	//array_push(buttons, main_menu_btn);
 }
 
 destroy_self = function(){instance_destroy();}
