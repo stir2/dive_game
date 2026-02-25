@@ -88,7 +88,7 @@ state_point = function(){
 		y = my_player.y + -sin((image_angle * pi)/180) * hit_length;
 				
 		//Create effect object
-		instance_create_depth(x, y, -10, obj_sprite_effect, {sprite_index : spr_effect_harpoon_stab, image_angle : image_angle});
+		if (place_meeting(x, y, obj_water_zone)) instance_create_depth(x, y, -10, obj_sprite_effect, {sprite_index : spr_effect_harpoon_stab, image_angle : image_angle});
 		
 		//Create hitbox
 		var _temp_angle = image_angle;

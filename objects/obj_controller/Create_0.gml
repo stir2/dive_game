@@ -2,6 +2,8 @@
 // You can write your code in this editor
 controllerPad = -1;
 rightStickAngle = 0;
+rightStickAngleQueue = ds_queue_create();
+
 rightStickXAxis = 0;
 rightStickYAxis = 0;
 

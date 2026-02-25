@@ -11,8 +11,17 @@ if (controllerPad = -1) {
 	//}
 	rightStickXAxis = gamepad_axis_value(controllerPad, gp_axisrh);
 	rightStickYAxis = gamepad_axis_value(controllerPad, gp_axisrv);
-	if (rightStickXAxis != 0 || rightStickYAxis != 0)
+	if (rightStickXAxis != 0 || rightStickYAxis != 0) { 
+		if (ds_queue_size(rightStickAngleQueue) >= 2) ds_queue_dequeue(rightStickAngleQueue);
+		
 		rightStickAngle = point_direction(0, 0, rightStickXAxis, rightStickYAxis);
+		//ds_queue_enqueue(rightStickAngleQueue ,rightStickAngle);
+	}
+	else {
+		if (ds_queue_size(rightStickAngleQueue) >= 2) { 
+			//rightStickAngle = ds_queue_enqueue(rightStickAngleQueue);
+		}
+	}
 }
 
 

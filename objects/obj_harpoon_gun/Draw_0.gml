@@ -6,6 +6,6 @@ draw_self();
 
 if (obj_controller.controllerPad != -1) {
 	draw_sprite(spr_reticle, 0, 
-	x + lengthdir_x(150, image_angle), 
-	y + lengthdir_y(150, image_angle));
+	x + lengthdir_x(100, image_angle), 
+	y + lengthdir_y(100, image_angle));
 }
