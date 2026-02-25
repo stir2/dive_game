@@ -38,7 +38,11 @@ togglePause = function() {
 		}
 		//objScreen.pauseScreenShake(); //Pause screen shake;
 		
-		my_menu = instance_create_depth(x, y, -100, obj_settings_controller, {pause_menu : true});
+		with (obj_camera) {
+			other.my_menu = instance_create_depth(camera_get_view_x(cam) + (w_scale * scale)/2
+			, camera_get_view_y(cam) - 100 + (h_scale * scale)/2, 
+			-1000, obj_settings_controller, {pause_menu : true});
+		}
 		
 		paused = true; //Set Paused to true to show are game is now paused
 	} else //UNPAUSE
