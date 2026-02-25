@@ -11,7 +11,6 @@ function scrSetPaletteSwapShader(_defaultPalette, _alpha = 1, _swappingPalette =
 _effectPalette1 = spr_palette_blank, _effectPalette2 = spr_palette_blank, _overlayColor = spr_palette_blank){
 	//Call Shader Set
 	shader_set(shdPalleteSwap);
-	
 	//--Set Base Pallete--//
 	var _uBasePallete =  shader_get_sampler_index(shdPalleteSwap, "uBasePallete");
 	var _spr = sprite_get_texture(_defaultPalette, 0);
@@ -27,9 +26,9 @@ _effectPalette1 = spr_palette_blank, _effectPalette2 = spr_palette_blank, _overl
 	var _uSwapPallete = shader_get_sampler_index(shdPalleteSwap, "uPalleteSwaping");
 	
 	//If array was inputed, access the elements in it.
-	if (is_array(_swappingPalette)) var _spr = sprite_get_texture(_swappingPalette[0], _swappingPalette[1]); 
+	if (is_array(_swappingPalette)) _spr = sprite_get_texture(_swappingPalette[0], _swappingPalette[1]); 
 	//Default use case
-	else var _spr = sprite_get_texture(_swappingPalette, 0);
+	else _spr = sprite_get_texture(_swappingPalette, 0);
 	
 	//Set the texture Stage
 	texture_set_stage(_uSwapPallete, _spr);
@@ -40,9 +39,9 @@ _effectPalette1 = spr_palette_blank, _effectPalette2 = spr_palette_blank, _overl
 	var _uEffectPallete =  shader_get_sampler_index(shdPalleteSwap, "uPalleteEffect");
 	
 	//If array was inputed, access the elements in it.
-	if (is_array(_effectPalette1)) var _spr = sprite_get_texture(_effectPalette1[0], _effectPalette1[1]); 
+	if (is_array(_effectPalette1)) _spr = sprite_get_texture(_effectPalette1[0], _effectPalette1[1]); 
 	//Default use case
-	else var _spr = sprite_get_texture(_effectPalette1, 0);
+	else _spr = sprite_get_texture(_effectPalette1, 0);
 	
 	//Set the texture Stage
 	texture_set_stage(_uEffectPallete, _spr);
@@ -52,9 +51,9 @@ _effectPalette1 = spr_palette_blank, _effectPalette2 = spr_palette_blank, _overl
 	var _uEffectPallete2 =  shader_get_sampler_index(shdPalleteSwap, "uPalleteEffect2");
 	
 	//If array was inputed, access the elements in it.
-	if (is_array(_effectPalette2)) var _spr = sprite_get_texture(_effectPalette2[0], _effectPalette2[1]); 
+	if (is_array(_effectPalette2)) _spr = sprite_get_texture(_effectPalette2[0], _effectPalette2[1]); 
 	//Default use case
-	else var _spr = sprite_get_texture(_effectPalette2, 0);
+	else _spr = sprite_get_texture(_effectPalette2, 0);
 	
 	//Set the texture Stage
 	texture_set_stage(_uEffectPallete2, _spr);
@@ -64,9 +63,9 @@ _effectPalette1 = spr_palette_blank, _effectPalette2 = spr_palette_blank, _overl
 	var _uColorOverlay =  shader_get_sampler_index(shdPalleteSwap, "uColorOverlay");
 	
 	//If array was inputed, access the elements in it.
-	if (is_array(_overlayColor)) var _spr = sprite_get_texture(_overlayColor[0], _overlayColor[1]); 
+	if (is_array(_overlayColor)) _spr = sprite_get_texture(_overlayColor[0], _overlayColor[1]); 
 	//Default use case
-	else var _spr = sprite_get_texture(_overlayColor, 0);
+	else _spr = sprite_get_texture(_overlayColor, 0);
 	
 	//Set the texture Stage
 	texture_set_stage(_uColorOverlay, _spr);
