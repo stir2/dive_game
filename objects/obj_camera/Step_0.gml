@@ -1,4 +1,4 @@
-if (keyboard_check_pressed(vk_space)) start_screen_shake(30);
+//if (keyboard_check_pressed(vk_space)) start_screen_shake(30);
 var _x_offset = 0;
 var _y_offset = 0
 if (screenShakeCounter > 0) { 
